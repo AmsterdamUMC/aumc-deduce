@@ -50,7 +50,7 @@
 # woord is a surname but also a word ;-).
 25	P	Aa Bb Cc	B	Aaa	BBBB	bezoekdatum 1999-05-12 woord erachter	bezoekdatum [LANGNUMMER-1][PERSOON-1] erachter
 26	P	Aa Bb Cc	B	Aaa	BBBB	begon 2-3dg geleden	begon 2-3dg geleden
-27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [LANGNUMMER-1][PERSOON-1] erachter
+27	P	Aa Bb Cc	B	Aaa	BBBB	card olvg van 01-01-2001 woord erachter	card [ZIEKENHUIS-1] van [LANGNUMMER-1]woord erachter
 28	P	Aa Bb Cc	B	Aaa	BBBB	vanaf 05-12 ook	vanaf [DATUM-1] ook
 29	P	Aa Bb Cc	B	Aaa	BBBB	zie 1/1/2001 pt	zie [DATUM-1] pt
 30	P	Aa Bb Cc	B	Aaa	BBBB	temp 37 1	temp 37 1
@@ -192,14 +192,14 @@
 162	P	Aa Bb Cc	B	Aaa	BBBB	Van: Ribbert, M.A.H.	Van: [PERSOON-1]
 163	P	Aa Bb Cc	B	Aaa	BBBB	Aios M Binnema	Aios [PERSOON-1]
 164	P	Aa Bb Cc	B	Aaa	BBBB	Naar : [PERSOON-1] Driest (POH GGZ)	Naar : [PERSOON-1] [PERSOON-1] (POH GGZ)
-165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : MAH [PERSOON-1],rontgen
+165	P	Aa Bb Cc	B	Aaa	BBBB	Van : MAH RIBBERT,rontgen	Van : [PERSOON-1],rontgen
 166	P	Aa Bb Cc	B	Aaa	BBBB	Van : Eenhorst, oog c/cornea nu rustig	Van : [PERSOON-1], oog c/cornea nu rustig
 167	P	Aa Bb Cc	B	Aaa	BBBB	Van : KNOTTENBELT, pch c/fibroom kin	Van : [PERSOON-1], pch c/fibroom kin
-168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	Regiearts [PERSOON-1] tel: in gesprek
+168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	[PERSOON-1] tel: in gesprek
 169	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blankevoort, SEH	Van: [PERSOON-1], SEH
 170	P	Aa Bb Cc	B	Aaa	BBBB	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. [PERSOON-1]. Benauwd, hoest, bekend met
-171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	Van: Chirurgie [ZIEKENHUIS-1]
-172	P	Aa Bb Cc	B	Aaa	BBBB	Van: Linzel, longarts	Van: Linzel, longarts
+171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	Van: Chirurgie [LOCATIE-1]
+172	P	Aa Bb Cc	B	Aaa	BBBB	Van: Linzel, longarts	Van: [PERSOON-1], longarts
 173	P	Aa Bb Cc	B	Aaa	BBBB	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	TC met pt en met [PERSOON-1] [PERSOON-1]. Gaat ma [LANGNUMMER-1]
 174	P	Aa Bb Cc	B	Aaa	BBBB	Van : Craanen	Van : [PERSOON-1]
 175	P	Aa Bb Cc	B	Aaa	BBBB	Opname Cardioloog blaricum	Opname Cardioloog [LOCATIE-1]
@@ -665,4 +665,4 @@
 606	P	Aa Bb Cc	B	Aaa	BBBB	Van Der Sluis	[PERSOON-1]
 607	P	Aa Bb Cc	B	Aaa	BBBB	Schouder Links	Schouder Links
 608	P	Aa Bb Cc	B	Aaa	BBBB	Schouder Rechts	Schouder Rechts
-609	P	Aa Bb Cc	B	Aaa	BBBB	59- jarige patiente metÂ intraventriculaire bloeding met cerebellair AVM links d.d. 26/10/19	NNNNNNNNNNNNNN
+609	P	Aa Bb Cc	B	Aaa	BBBB	59- jarige patiente metÂ intraventriculaire bloeding met cerebellair AVM links d.d. 26/10/19	59- jarige patiente metÂ intraventriculaire bloeding met cerebellair AVM links d.d. [DATUM-1]
