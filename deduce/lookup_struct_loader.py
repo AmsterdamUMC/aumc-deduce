@@ -10,12 +10,12 @@ from deduce.utils import lookup_set_to_trie
 def load_common_word_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
     """Load common_word LookupSet."""
 
-    common_word = dd.ds.LookupSet()
+    common_word = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
     common_word.add_items_from_iterable(
         raw_itemsets["common_word"],
     )
 
-    surnames_lowercase = dd.ds.LookupSet()
+    surnames_lowercase = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
     surnames_lowercase.add_items_from_iterable(
         raw_itemsets["surname"],
         cleaning_pipeline=[
@@ -35,7 +35,7 @@ def load_whitelist_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
 
     Composed of medical terms, top 1000 frequent words (except surnames), and stopwords.
     """
-    medical_term = dd.ds.LookupSet()
+    medical_term = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
 
     medical_term.add_items_from_iterable(
         raw_itemsets["medical_term"],
@@ -43,7 +43,7 @@ def load_whitelist_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
 
     common_word = load_common_word_lookup(raw_itemsets)
 
-    stop_word = dd.ds.LookupSet()
+    stop_word = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
     stop_word.add_items_from_iterable(raw_itemsets["stop_word"])
 
     whitelist = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
@@ -59,7 +59,7 @@ def load_eponymous_disease_lookup(
     raw_itemsets: dict[str, set[str]], tokenizer: Tokenizer
 ) -> dd.ds.LookupTrie:
     """Loads eponymous disease LookupTrie (e.g. Henoch-Schonlein)."""
-    epo_disease = dd.ds.LookupSet()
+    epo_disease = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
     epo_disease.add_items_from_iterable(raw_itemsets["eponymous_disease"])
     epo_disease.add_items_from_self(
         cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()]
@@ -71,7 +71,7 @@ def load_eponymous_disease_lookup(
 def load_prefix_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
     """Load prefix LookupSet (e.g. 'dr', 'mw')."""
 
-    prefix = dd.ds.LookupSet()
+    prefix = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
 
     prefix.add_items_from_iterable(raw_itemsets["prefix"])
     prefix.add_items_from_self(cleaning_pipeline=[UpperCaseFirstChar()])
