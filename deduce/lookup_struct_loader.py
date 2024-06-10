@@ -15,17 +15,6 @@ def load_common_word_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSe
         raw_itemsets["common_word"],
     )
 
-    surnames_lowercase = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
-    surnames_lowercase.add_items_from_iterable(
-        raw_itemsets["surname"],
-        cleaning_pipeline=[
-            dd.str.LowercaseString(),
-            dd.str.FilterByLength(min_len=2),
-        ],
-    )
-
-    common_word -= surnames_lowercase
-
     return common_word
 
 
