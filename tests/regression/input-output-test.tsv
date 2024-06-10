@@ -504,7 +504,7 @@
 463	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 04-2017 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
 464	P	Aa Bb Cc	B	Aaa	BBBB	venserpolder 01-2017 (onderdeel van datum)	[LOCATIE-1] [DATUM-1] (onderdeel van datum)
 465	P	Aa Bb Cc	B	Aaa	BBBB	Scheemda	[LOCATIE-1]
-466	P	Aa Bb Cc	B	Aaa	BBBB	Coev & Hardenber	[LOCATIE-1]
+466	P	Aa Bb Cc	B	Aaa	BBBB	Coev & Hardenber	[LOCATIE-1] & [LOCATIE-2]
 467	P	Aa Bb Cc	B	Aaa	BBBB	Frankrijk	[LOCATIE-1]
 468	P	Aa Bb Cc	B	Aaa	BBBB	Groningen	[LOCATIE-1]
 469	P	Aa Bb Cc	B	Aaa	BBBB	hapert	[LOCATIE-1]
@@ -611,7 +611,7 @@
 # Missing capital in amsterdam ...
 559	P	Aa Bb Cc	B	Aaa	BBBB	Opgenomen in amsterdam Universitair Medisch Centrum	Opgenomen in [ZIEKENHUIS-1]
 560	P	Aa Bb Cc	B	Aaa	BBBB	Zijn broer klaas ...	Zijn broer [PERSOON-1] ...
-561	P	Aa Bb Cc	B	Aaa	BBBB	The patient heeft diabetes type-1 sindsmei-1974	The patient heeft diabetes type-1 sinds[DATUM-1]
+561	P	Aa Bb Cc	B	Aaa	BBBB	De patient heeft diabetes type-1 sindsmei-1974	De patient heeft diabetes type-1 sinds[DATUM-1]
 # a number of failing test with erronerous whitespaces or punctuations in the identifiable information
 562	F	Aa Bb Cc	B	Aaa	BBBB	Klom penhouwer heeft last van ADHD	[PERSOON-1] heeft last van ADHD 
 # Test cases for words with and without diacriticals while the lookup values have diacritials in the lookup lists
