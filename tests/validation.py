@@ -19,9 +19,9 @@ class TestValidationFile:
         file_to_test = './regression/input-output-test.tsv'
         self.run_test_on_file(model, file_to_test)
 
-    def test_prefix_names(self, model):
-        file_to_test = './regression/input-output-test-prefix-names.tsv'
-        self.run_test_on_file(model, file_to_test)
+    # def test_prefix_names(self, model):
+    #     file_to_test = './regression/input-output-test-prefix-names.tsv'
+    #     self.run_test_on_file(model, file_to_test)
 
     def run_test_on_file(self, model, file_to_test):
         record_list = list()

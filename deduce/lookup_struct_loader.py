@@ -71,7 +71,7 @@ def load_eponymous_disease_lookup(
 def load_prefix_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
     """Load prefix LookupSet (e.g. 'dr', 'mw')."""
 
-    prefix = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    prefix = dd.ds.LookupSet()
 
     prefix.add_items_from_iterable(raw_itemsets["prefix"])
     prefix.add_items_from_self(cleaning_pipeline=[UpperCaseFirstChar()])
@@ -84,7 +84,7 @@ def load_first_name_lookup(
 ) -> dd.ds.LookupTrie:
     """Load first_name LookupTrie."""
 
-    first_name = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    first_name = dd.ds.LookupSet()
 
     first_name.add_items_from_iterable(
         raw_itemsets["first_name"],
@@ -106,7 +106,7 @@ def load_first_name_lookup(
 def load_interfix_lookup(raw_itemsets: dict[str, set[str]]) -> dd.ds.LookupSet:
     """Load interfix LookupSet ('van der', etc.)."""
 
-    interfix = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    interfix = dd.ds.LookupSet()
 
     interfix.add_items_from_iterable(raw_itemsets["interfix"])
     interfix.add_items_from_self(cleaning_pipeline=[UpperCaseFirstChar()])
@@ -121,7 +121,7 @@ def load_surname_lookup(
 ) -> dd.ds.LookupTrie:
     """Load surname LookupTrie."""
 
-    surname = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    surname = dd.ds.LookupSet()
 
     surname.add_items_from_iterable(
         raw_itemsets["surname"],
@@ -145,9 +145,9 @@ def load_street_lookup(
 ) -> dd.ds.LookupTrie:
     """Load street LookupTrie."""
 
-    streetnames = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    street = dd.ds.LookupSet()
 
-    streetnames.add_items_from_iterable(
+    street.add_items_from_iterable(
         raw_itemsets["street"],
         cleaning_pipeline=[
             dd.str.StripString(),
@@ -155,9 +155,9 @@ def load_street_lookup(
         ],
     )
 
-    streetnames.add_items_from_self(cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()])
+    street.add_items_from_self(cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()])
 
-    return lookup_set_to_trie(streetnames, tokenizer)
+    return lookup_set_to_trie(street, tokenizer)
 
 
 def load_placename_lookup(
@@ -165,7 +165,7 @@ def load_placename_lookup(
 ) -> dd.ds.LookupTrie:
     """Load placename LookupTrie."""
 
-    placename = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    placename = dd.ds.LookupSet()
 
     placename.add_items_from_iterable(
         raw_itemsets["placename"],
@@ -223,7 +223,7 @@ def load_institution_lookup(
 ) -> dd.ds.LookupTrie:
     """Load institution LookupTrie."""
 
-    institution = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
+    institution = dd.ds.LookupSet()
     institution.add_items_from_iterable(
         raw_itemsets["healthcare_institution"],
         cleaning_pipeline=[dd.str.StripString(), dd.str.FilterByLength(min_len=3)],
