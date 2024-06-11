@@ -16,8 +16,14 @@ def annotators_from_group(model: Deduce, group: str) -> set[str]:
 
 class TestValidationFile:
     def test_with_validation_file(self, model):
-
         file_to_test = './regression/input-output-test.tsv'
+        self.run_test_on_file(model, file_to_test)
+
+    def test_prefix_names(self, model):
+        file_to_test = './regression/input-output-test-prefix-names.tsv'
+        self.run_test_on_file(model, file_to_test)
+
+    def run_test_on_file(self, model, file_to_test):
         record_list = list()
 
         with open(file_to_test, mode="r", encoding="utf-8") as file:
@@ -55,11 +61,15 @@ class TestValidationFile:
             expected_output = columns[7]
 
             failure_status = columns[1]
-            first_names = columns[2].strip().split()
+            first_names = columns[2].strip()
             initials = columns[3].strip()
             surname = columns[4].strip()
 
-            patient = Person(first_names=first_names, initials=initials, surname=surname)
+            patient = Person.from_keywords(
+                patient_first_names=first_names,
+                patient_surname=surname,
+            )
+
             metadata = {"patient": patient}
 
             result_document = model.deidentify(text=identifiable_input, metadata=metadata)

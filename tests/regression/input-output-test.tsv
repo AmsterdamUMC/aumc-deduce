@@ -666,4 +666,13 @@
 607	P	Aa Bb Cc	B	Aaa	BBBB	Schouder Links	Schouder Links
 608	P	Aa Bb Cc	B	Aaa	BBBB	Schouder Rechts	Schouder Rechts
 609	P	Aa Bb Cc	B	Aaa	BBBB	59- jarige patiente metÂ intraventriculaire bloeding met cerebellair AVM links d.d. 26/10/19	59- jarige patiente metÂ intraventriculaire bloeding met cerebellair AVM links d.d. [DATUM-1]
-610	P	Aa Bb Cc	B	Aaa	BBBB	Test met whitelist en surname: groen en schoon	Test met whitelist en surname: groen en schoon
+# 
+# A number of test cases to verfity the correct anonymisation of the patient name
+# as included in the meta data. Groen and Amrani are both interfix surnames
+#
+610	P	Aa Bb Cc	B	Groen	BBBB	Test met whitelist en surname: groen en schoon	Test met whitelist en surname: [PATIENT] en schoon
+611	P	Aa Bb Cc	B	van Groen - van Amrani	BBBB	Test met whitelist en surname: van Groen - van Amrani en blabla	Test met whitelist en surname: [PATIENT] en blabla
+612	P	Aa Bb Cc	B	Groen -van Amrani	BBBB	Ontbrekende spatie voor interfix: Groen - van Amrani en blabla	Ontbrekende spatie voor interfix: [PATIENT] en blabla
+613	P	Aa Bb Cc	B	Groen -van Amrani	BBBB	Ontbrekende spatie in metadata voor interfix met prefix: dhr. Groen - Amrani en blabla	Ontbrekende spatie in metadata voor interfix met prefix: dhr. [PATIENT] en blabla
+614	P	Aa Bb Cc	B	Groen - Amrani	BBBB	Ontbrekende voorvoegsels in metadata: mevr. de Groen - van Amrani en blabla	Ontbrekende voorvoegsels in metadata:: [PATIENT] en blabla
+615	P	Aa Bb Cc	B	Groen Amrani	BBBB	Ontbrekende spatie en streepje in metadata: dhr. Groen - Amrani en blabla	Ontbrekende spatie en streepje in metadata: dhr. [PATIENT] en blabla
