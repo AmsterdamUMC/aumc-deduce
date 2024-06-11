@@ -110,6 +110,7 @@ def load_raw_itemsets(base_path: Path, subdirs: list[str]) -> dict[str, set[str]
         name = name.removeprefix("lst_")
         lists[name] = load_raw_itemset(base_path / _SRC_SUBDIR / lst)
 
+    logging.info("Finished loading items.")
     return lists
 
 
