@@ -41,10 +41,19 @@ class Person:
         patient_first_names_lst = []
 
         if patient_first_names:
-            patient_first_names_lst = patient_first_names.split(" ")
+            patient_first_names_lst = patient_first_names.split()
+
+        if patient_initials:
+            patient_initials = (patient_initials
+                                .strip()
+                                .replace(" ", "")
+                                .replace(",", "."))
 
         if patient_given_name:
             patient_first_names_lst.append(patient_given_name)
+
+        if patient_surname:
+            patient_surname = patient_surname.strip()
 
         return cls(
             first_names=patient_first_names_lst or None,
