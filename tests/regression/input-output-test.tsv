@@ -671,4 +671,4 @@
 # as included in the meta data. Groen and Amrani are both interfix surnames
 #
 610	P	Aa Bb Cc	B	Groen	BBBB	Test met whitelist en surname: groen en schoon	Test met whitelist en surname: [PATIENT] en schoon
-611	P	Aa Bb Cc	B	Aaa	BBBB	Het AVM links cerebellair is op blanco CT niet / nauwelijks herkenbaar.	Het AVM links cerebellair is op blancoZ CT niet / nauwelijks herkenbaar.
+611	P	Aa Bb Cc	B	Aaa	BBBB	Het AVM links cerebellair is op blanco CT niet / nauwelijks herkenbaar.	Het AVM links cerebellair is op blanco CT niet / nauwelijks herkenbaar.
