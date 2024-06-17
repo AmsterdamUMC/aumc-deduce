@@ -72,6 +72,8 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         build_lookup_structs: bool = False,
     ) -> None:
 
+        global all_lists
+
         super().__init__()
 
         if config_file is not None:
@@ -93,12 +95,21 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
         else:
             self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
-        logging.info("\nLoading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
+        logging.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
+        if "all_lists" in self.config.keys():
+            all_lists=self.config["all_lists"]
+        if len(all_lists) == 0:
+            # generate a new one if deduce.data.lookup.src.all_lists is empty AND it is empty/not present in config.json
+            all_lists=[]
+            for i in self.lookup_data_path.glob("src/*/lst_*"):
+                all_lists.append( os.path.basename(os.path.split(i)[0]) + "/" + os.path.basename(i))
+
         self.lookup_structs = get_lookup_structs(
-            lookup_path=self.lookup_data_path,
+            lookup_path=Path(os.path.realpath(self.lookup_data_path)),
             tokenizer=self.tokenizers["default"],
+            all_lists=all_lists,
             deduce_version=__version__,
             build=build_lookup_structs,
         )
@@ -179,7 +190,7 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             args.update(
                 lookup_values=lookup_struct.items(),
                 matching_pipeline=lookup_struct.matching_pipeline,
-                tokenizer=extras["tokenizer]"],
+                tokenizer=extras["tokenizer"],
             )
         elif isinstance(lookup_struct, dd.ds.LookupTrie):
             args.update(trie=lookup_struct)
