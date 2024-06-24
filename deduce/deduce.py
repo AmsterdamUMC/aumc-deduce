@@ -37,7 +37,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 class Deduce(dd.DocDeid):  # pylint: disable=R0903
     """
-    Main class for de-identifiation.
+    Main class for de-identification.
 
     Inherits from ``docdeid.DocDeid``, and as such, most information on deidentifying
     text with a Deduce object is available there.
@@ -51,7 +51,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             are overwritten, and other defaults are kept. When `load_base_config` is
             set to `False`, no defaults are loaded and only configuration from `config`
             is applied.
-        looup_data_path: The path to look for lookup data, by default included in
+        lookup_data_path: The path to look for lookup data, by default included in
             the package. If you want to make changes to source files, it's recommended
             to copy the source data and pointing deduce to this folder with this
             argument.
@@ -63,6 +63,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         self,
         load_base_config: bool = True,
         config: Optional[Union[str, dict]] = None,
+        config_file: Optional[str] = None,
         lookup_data_path: Union[str, Path] = _LOOKUP_LIST_PATH,
         build_lookup_structs: bool = False,
     ) -> None:
@@ -73,7 +74,12 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             load_base_config=load_base_config, user_config=config
         )
 
-        self.lookup_data_path = self._initialize_lookup_data_path(lookup_data_path)
+        if "lookup_table_path" in self.config.keys():
+            config_file_path = Path(os.path.dirname(Path(self.config["config_file_dir"])))
+            self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
+        else:
+            self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
+        logging.info("\nLoading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
         self.lookup_structs = get_lookup_structs(
@@ -109,9 +115,12 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
                 base_config = json.load(file)
 
             utils.overwrite_dict(config, base_config)
+            # store the config-file-dir as an entry in the config dict
+            config["config_file_dir"] = _BASE_CONFIG_FILE
 
         if user_config is not None:
             if isinstance(user_config, str):
+                config["config_file_dir"] = user_config
                 with open(user_config, "r", encoding="utf-8") as file:
                     user_config = json.load(file)
 
@@ -156,7 +165,7 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             args.update(
                 lookup_values=lookup_struct.items(),
                 matching_pipeline=lookup_struct.matching_pipeline,
-                tokenizer=extras["tokenizer]"],
+                tokenizer=extras["tokenizer"],
             )
         elif isinstance(lookup_struct, dd.ds.LookupTrie):
             args.update(trie=lookup_struct)

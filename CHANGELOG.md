@@ -13,6 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - annotator types `custom`, `regexp`, `token_pattern`, `dd_token_pattern` and `annotation_context`, all replaced by setting class directly as `annotator_type` 
 - everything in `deduce.pattern`, patient patterns now replaced by `PatientNameAnnotator`
 
+## 3.0.3 (Unreleased)
+Adaptation of DEDUCE for use at the AmsterdamUMC. Changes to be included are:
+- Configurable file location of the base_config.json file and lookup tables
+- Case-sensitivity of some annotator types
+- Addition of test-cases for unit- and integration testing
+- Introduction of annotation sorting
+- Changed minimum length of healthcare institution to be loaded to 4 
+
 ## 3.0.2 (2023-02-15)
 
 ### Changed
