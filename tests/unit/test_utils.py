@@ -1,4 +1,5 @@
-from pathlib import Path
+import os
+from pathlib import Path, PurePath
 
 import docdeid as dd
 import pytest
@@ -230,10 +231,10 @@ class TestStrVariations:
 
 class TestOptionalLoad:
     def test_optional_load_items(self):
-
-        path = Path("tests/data/lookup/src/lst_test_nested/items.txt")
-
-        assert utils.optional_load_items(path) == {"a", "b"}
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/lookup/src/lst_test_nested/items.txt")
+        items_loaded = utils.optional_load_items(path)
+        assert items_loaded == {"a", "b"}
 
     def test_optional_load_items_nonexisting(self):
 
@@ -242,8 +243,8 @@ class TestOptionalLoad:
         assert utils.optional_load_items(path) is None
 
     def test_optional_load_json(self):
-
-        path = Path("tests/data/small.json")
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/small.json")
 
         assert utils.optional_load_json(path) == {"test": True}
 

@@ -203,6 +203,7 @@ def get_lookup_structs(
     lookup_path: Path,
     tokenizer: Tokenizer,
     deduce_version: str,
+    all_lists: list,
     build: bool = False,
     save_cache: bool = True,
 ) -> dd.ds.DsCollection:

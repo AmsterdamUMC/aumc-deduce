@@ -1,5 +1,6 @@
 import io
-from pathlib import Path
+import os
+from pathlib import Path, PurePath
 from unittest.mock import patch
 
 import docdeid as dd
@@ -17,8 +18,9 @@ DATA_PATH = Path(".").cwd() / "tests" / "data" / "lookup"
 
 class TestLookupStruct:
     def test_load_raw_itemset(self):
-
-        raw_itemset = load_raw_itemset(DATA_PATH / "src" / "lst_test")
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/lookup/src/lst_test")
+        raw_itemset = load_raw_itemset(Path(path))
 
         assert len(raw_itemset) == 5
         assert "de Vries" in raw_itemset
@@ -29,15 +31,17 @@ class TestLookupStruct:
         assert "Wolter" not in raw_itemset
 
     def test_load_raw_itemset_nested(self):
-
-        raw_itemset = load_raw_itemset(DATA_PATH / "src" / "lst_test_nested")
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/lookup/src/lst_test_nested")
+        raw_itemset = load_raw_itemset(Path(path))
 
         assert raw_itemset == {"a", "b", "c", "d"}
 
     def test_load_raw_itemsets(self):
-
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/lookup")
         raw_itemsets = load_raw_itemsets(
-            base_path=DATA_PATH, subdirs=["lst_test", "lst_test_nested"]
+            base_path=Path(path), subdirs=["lst_test", "lst_test_nested"]
         )
 
         assert "test" in raw_itemsets
@@ -81,9 +85,10 @@ class TestLookupStruct:
 
     @patch("deduce.lookup_structs.validate_lookup_struct_cache", return_value=True)
     def test_load_lookup_structs_from_cache(self, _):
-
+        root = PurePath(os.path.dirname(__file__)).parent.parent
+        path = root / PurePath("tests/data/lookup")
         ds_collection = load_lookup_structs_from_cache(
-            base_path=DATA_PATH, deduce_version="_"
+            base_path=Path(path), deduce_version="_"
         )
 
         assert len(ds_collection) == 2
