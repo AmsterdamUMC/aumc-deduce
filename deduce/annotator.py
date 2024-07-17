@@ -1,6 +1,7 @@
 """Contains components for annotating."""
 
 import re
+import sys
 import warnings
 from typing import Literal, Optional
 
@@ -8,6 +9,7 @@ import docdeid as dd
 from docdeid import Annotation, Document, Tokenizer
 from docdeid.process import RegexpAnnotator
 
+from deduce.tokenizer import DeduceTokenizer
 from deduce.utils import str_match
 
 warnings.simplefilter(action="default")
@@ -355,12 +357,13 @@ class PatientNameAnnotator(dd.process.Annotator):
             into multiple tokens.
     """
 
-    def __init__(self, tokenizer: Tokenizer, *args, **kwargs) -> None:
+    def __init__(self, tokenizer: DeduceTokenizer, *args, **kwargs) -> None:
 
         self.tokenizer = tokenizer
         self.skip = [".", "-", " "]
-
+        self.surname_start_words = tokenizer.start_words
         super().__init__(*args, **kwargs)
+        self.priority = sys.maxsize - 1
 
     @staticmethod
     def _match_first_names(
@@ -409,7 +412,9 @@ class PatientNameAnnotator(dd.process.Annotator):
         while True:
             token = token.next()
 
-            if (token is None) or (token not in self.skip):
+            if ((token is None) and
+                (token not in self.skip) and
+                (token not in self.surname_start_words)):
                 break
 
         return token
@@ -429,15 +434,16 @@ class PatientNameAnnotator(dd.process.Annotator):
         start_token = token
 
         while True:
-            if not str_match(surname_token.text, token.text, max_edit_distance=1):
-                return None
+            if token.text not in self.skip:
+                if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                    return None
 
             match_end_token = token
 
             surname_token = self.next_with_skip(surname_token)
             token = self.next_with_skip(token)
 
-            if surname_token is None:
+            if (surname_token is None) and (match_end_token.text not in self.surname_start_words) and (match_end_token.text not in self.skip):
                 return start_token, match_end_token  # end of pattern
 
             if token is None:

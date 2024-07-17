@@ -23,7 +23,7 @@ class DeduceTokenizer(dd.tokenizer.Tokenizer):  # pylint: disable=R0903
         self._pattern = _TOKENIZER_PATTERN
         self._trie: Optional[dd.ds.LookupTrie] = None
 
-        self._start_words: set[str] = set()
+        self.start_words: set[str] = set()
 
         if merge_terms is not None:
             self._init_merge_structures(merge_terms=merge_terms)
@@ -41,7 +41,7 @@ class DeduceTokenizer(dd.tokenizer.Tokenizer):  # pylint: disable=R0903
         for term in merge_terms:
             tokens = [token.text for token in self._split_text(text=term)]
             trie.add_item(tokens)
-            self._start_words.add(tokens[0])
+            self.start_words.add(tokens[0])
 
         self._trie = trie
 
@@ -87,7 +87,7 @@ class DeduceTokenizer(dd.tokenizer.Tokenizer):  # pylint: disable=R0903
 
         while i < len(tokens):
 
-            if tokens_text[i] not in self._start_words:
+            if tokens_text[i] not in self.start_words:
                 tokens_merged.append(tokens[i])
                 i += 1
                 continue

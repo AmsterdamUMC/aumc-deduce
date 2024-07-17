@@ -186,7 +186,8 @@
       "annotator_type": "deduce.annotator.PatientNameAnnotator",
       "group": "names",
       "args": {
-        "tag": "_"
+        "tag": "_",
+        "priority": 1000000
       }
     },
     "name_context": {

@@ -5,93 +5,93 @@
 #
 # Comment lines begin with a hash-sign
 #
-# =============================================================================							
+# =============================================================================
 # Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
 # Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en in tekst:
-1	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - Amerongen en blabla	De patiente: [PATIENT][LOCATIE-1] en blabla
+1	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - Amerongen en blabla	De patiente: [PATIENT] en blabla
 # Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en aanwezig in tekst:
-2	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - van Amerongen en blabla	De patiente: [PERSOON-1][LOCATIE-1] en blabla
+2	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - van Amerongen en blabla	De patiente: [PATIENT] en blabla
 # ------------
 # 2 namen zonder voorvoegsels: 
 # ------------
 3	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Pietersen - Janssen en blabla	De patient [PATIENT] en blabla
-4	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Pietersen - Janssen en blabla	De patient [PERSOON-1] en blabla
+4	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Pietersen - Janssen en blabla	De patient [PATIENT] en blabla
 5	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Pietersen - Janssen en blabla	De patient [PATIENT] en blabla
 6	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Pietersen - Janssen en blabla	De patient [PATIENT] en blabla
-7	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PERSOON-1] en blabla
+7	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PATIENT] en blabla
 8	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PATIENT] en blabla
-9	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PERSOON-1] en blabla
-10	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PERSOON-1] en blabla
-11	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-12	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-13	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-14	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
+9	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PATIENT] en blabla
+10	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Pietersen Janssen en blabla	De patient [PATIENT] en blabla
+11	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+12	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+13	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+14	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
 15	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 16	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 17	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 18	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 19	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Janssen - Pietersenen en blabla	De patient [PERSOON-1] en blabla
 20	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Janssen - Pietersenen en blabla	De patient [PERSOON-1] en blabla
-21	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Janssen - Pietersen en blabla	De patient [PERSOON-1] en blabla
-22	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Janssen - Pietersen en blabla	De patient [PERSOON-1] en blabla
-23	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PERSOON-1] en blabla
-24	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PERSOON-1] en blabla
-25	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PERSOON-1] en blabla
-26	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PERSOON-1] en blabla
+21	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Janssen - Pietersen en blabla	De patient [PATIENT] en blabla
+22	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Janssen - Pietersen en blabla	De patient [PATIENT] en blabla
+23	P	Aa Bb Cc	B	Pietersen - Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PATIENT] en blabla
+24	P	Aa Bb Cc	B	Pietersen Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PATIENT] en blabla
+25	P	Aa Bb Cc	B	Pietersen- Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PATIENT] en blabla
+26	P	Aa Bb Cc	B	Pietersen -Janssen	BBBB	De patient mevr. Janssen Pietersen en blabla	De patient [PATIENT] en blabla
 # ------------
 # 2 namen zonder voorvoegsels waarbij een van de namen (Rood) ook in de whitelist staat: 
 # ------------
 27	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
-28	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PERSOON-1] en blabla
+28	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 29	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 30	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
-31	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PERSOON-1] en blabla
+31	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PATIENT] en blabla
 32	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PATIENT] en blabla
-33	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PERSOON-1] en blabla
-34	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PERSOON-1] en blabla
-35	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PERSOON-1] en blabla
-36	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PERSOON-1] en blabla
-37	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PERSOON-1] en blabla
-38	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PERSOON-1] en blabla
+33	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PATIENT] en blabla
+34	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood Janssen en blabla	De patient [PATIENT] en blabla
+35	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PATIENT] en blabla
+36	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PATIENT] en blabla
+37	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PATIENT] en blabla
+38	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood en blabla	De patient [PATIENT] en blabla
 39	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 40	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 41	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 42	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Janssen en blabla	De patient [PERSOON-1] en blabla
 43	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PATIENT] en blabla
-44	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PERSOON-1] en blabla
-45	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Janssen - Rood blabla	De patient [PERSOON-1] en blabla
-46	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PERSOON-1] en blabla
-47	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PERSOON-1] en blabla
-48	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PERSOON-1] en blabla
-49	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PERSOON-1] en blabla
-50	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PERSOON-1] en blabla
+44	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PATIENT] en blabla
+45	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PATIENT] en blabla
+46	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Janssen - Rood en blabla	De patient [PATIENT] en blabla
+47	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PATIENT] en blabla
+48	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PATIENT] en blabla
+49	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PATIENT] en blabla
+50	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Janssen Rood en blabla	De patient [PATIENT] en blabla
 # ------------
 # Tweede naam met voorvoegsel en geen plaatsnaam
 # ------------
 51	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen - van Dijck en blabla	De patient [PATIENT] en blabla
-52	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen - van Dijck en blabla	De patient [PERSOON-1] en blabla
+52	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen - van Dijck en blabla	De patient [PATIENT] en blabla
 53	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen - van Dijck en blabla	De patient [PATIENT] en blabla
 54	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen - van Dijck en blabla	De patient [PATIENT] en blabla
-55	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PERSOON-1] en blabla
+55	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PATIENT] en blabla
 56	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PATIENT] en blabla
-57	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PERSOON-1] en blabla
-58	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PERSOON-1] en blabla
-59	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-60	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-61	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
+57	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PATIENT] en blabla
+58	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen van Dijck en blabla	De patient [PATIENT] en blabla
+59	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+60	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+61	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
 62	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-63	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
+63	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PATIENT] en blabla
 64	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 65	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 66	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 67	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck - Pietersenen en blabla	De patient [PERSOON-1] en blabla
 68	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. van Dijck - Pietersenen en blabla	De patient [PERSOON-1] en blabla
-69	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck - Pietersen en blabla	De patient [PERSOON-1] en blabla
-70	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck - Pietersen en blabla	De patient [PERSOON-1] en blabla
-71	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PERSOON-1] en blabla
-72	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PERSOON-1] en blabla
-73	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PERSOON-1] en blabla
-74	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PERSOON-1] en blabla
+69	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck - Pietersen en blabla	De patient [PATIENT] en blabla
+70	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck - Pietersen en blabla	De patient [PATIENT] en blabla
+71	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PATIENT] en blabla
+72	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PATIENT] en blabla
+73	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PATIENT] en blabla
+74	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck Pietersen en blabla	De patient [PATIENT] en blabla
 # -----------------
 # beide namen met voorvoegels en beide geen plaatsnaam
 # -----------------
