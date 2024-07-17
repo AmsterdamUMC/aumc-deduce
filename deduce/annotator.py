@@ -424,9 +424,16 @@ class PatientNameAnnotator(dd.process.Annotator):
     ) -> Optional[tuple[dd.Token, dd.Token]]:
 
         if doc.metadata["surname_pattern"] is None:
-            doc.metadata["surname_pattern"] = self.tokenizer.tokenize(
+            token_list = self.tokenizer.tokenize(
                 doc.metadata["patient"].surname
             )
+            surname_pattern_token = token_list[0]
+            cleaned_list = []
+            while not surname_pattern_token is None:
+                if (surname_pattern_token.text not in self.surname_start_words) and (surname_pattern_token.text not in self.skip):
+                    cleaned_list.append(surname_pattern_token)
+                surname_pattern_token = surname_pattern_token.next()
+            doc.metadata["surname_pattern"] = cleaned_list
 
         surname_pattern = doc.metadata["surname_pattern"]
 

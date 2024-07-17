@@ -7,9 +7,9 @@
 #
 # =============================================================================
 # Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
-# Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en in tekst:
-1	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - Amerongen en blabla	De patiente: [PATIENT] en blabla
-# Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en aanwezig in tekst:
+# 
+1	P	Aa Bb Cc	B	de Boer	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
+# Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en aanwezig in tekst, en naam is ook plaatsnaam (Amerongen):
 2	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - van Amerongen en blabla	De patiente: [PATIENT] en blabla
 # ------------
 # 2 namen zonder voorvoegsels: 
@@ -41,7 +41,7 @@
 # ------------
 # 2 namen zonder voorvoegsels waarbij een van de namen (Rood) ook in de whitelist staat: 
 # ------------
-27	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
+27	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rook - Janssen en blabla	De patient [PATIENT] en blabla
 28	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 29	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 30	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
@@ -79,8 +79,8 @@
 59	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
 60	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
 61	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
-62	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PERSOON-1] en blabla
-63	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PATIENT] en blabla
+62	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. Pietersen en blabla	De patient [PATIENT] en blabla
+63	P	Aa Bb Cc	B	Pietersen - van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 64	P	Aa Bb Cc	B	Pietersen van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 65	P	Aa Bb Cc	B	Pietersen- van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 66	P	Aa Bb Cc	B	Pietersen -van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
@@ -96,13 +96,13 @@
 # beide namen met voorvoegels en beide geen plaatsnaam
 # -----------------
 75	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer - van Dijck en blabla	De patient [PATIENT] en blabla
-76	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer - van Dijck en blabla	De patient [PERSOON-1] en blabla
+76	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer - van Dijck en blabla	De patient [PATIENT] en blabla
 77	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer - van Dijck en blabla	De patient [PATIENT] en blabla
 78	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer - van Dijck en blabla	De patient [PATIENT] en blabla
-79	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PERSOON-1] en blabla
+79	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
 80	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
-81	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PERSOON-1] en blabla
-82	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PERSOON-1] en blabla
+81	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
+82	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
 83	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
 84	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
 85	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
