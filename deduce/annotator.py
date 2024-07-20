@@ -3,6 +3,7 @@
 import re
 import warnings
 from typing import Literal, Optional
+import unicodedata
 
 import docdeid as dd
 from docdeid import Annotation, Document, Tokenizer
@@ -514,6 +515,356 @@ class PatientNameAnnotator(dd.process.Annotator):
 
         return annotations
 
+
+class AumcPatientNameAnnotator(dd.process.Annotator):
+    """
+    Annotates patient names, based on information present in document metadata. This
+    class implements logic for detecting first name(s), initials and surnames.
+
+    Args:
+        tokenizer: A tokenizer, that is used for breaking up the patient surname
+            into multiple tokens.
+    """
+
+    def __init__(self, tokenizer: Tokenizer, *args, **kwargs) -> None:
+
+        self.tokenizer = tokenizer
+        self.skip = [".", "-", " "]
+        self._firstnameslist=[]
+        self._surname_pattern_1=[]
+        self._surname_pattern_2=[]
+        self._surname_pattern_3=[]
+        self._surname_pattern_4=[]
+        self._idnumber="Unknown"
+
+        super().__init__(*args, **kwargs)
+
+    @staticmethod
+    def _match_first_names(
+        doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        for first_name in doc.metadata["patient"].first_names:
+#        for first_name in self._firstnameslist:
+
+            if str_match(token.text, first_name) or (
+                len(token.text) > 3
+                and str_match(token.text, first_name, max_edit_distance=1)
+            ):
+                return token, token
+
+        return None
+
+    def _match_first_names2(self,
+        doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+#        for first_name in doc.metadata["patient"].first_names:
+        for first_name in self._firstnameslist:
+
+            if str_match(token.text, first_name) or (
+                len(token.text) > 3
+                and str_match(token.text, first_name, max_edit_distance=1)
+            ):
+                return token, token
+
+        return None
+
+    @staticmethod
+    def _match_initial_from_name(
+        doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        for _, first_name in enumerate(doc.metadata["patient"].first_names):
+            if str_match(token.text, first_name[0]):
+                next_token = token.next()
+
+                if (next_token is not None) and str_match(next_token.text, "."):
+                    return token, next_token
+
+                return token, token
+
+        return None
+
+    @staticmethod
+    def _match_initials(
+        doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if str_match(token.text, doc.metadata["patient"].initials):
+            return token, token
+
+        return None
+
+    def next_with_skip(self, token: dd.Token) -> Optional[dd.Token]:
+        """Find the next token, while skipping certain punctuation."""
+
+        while True:
+            token = token.next()
+
+            if (token is None) or (token not in self.skip):
+                break
+
+        return token
+
+    def _match_surname(
+        self, doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if doc.metadata["surname_pattern"] is None:
+            doc.metadata["surname_pattern"] = self.tokenizer.tokenize(
+                doc.metadata["patient"].surname
+            )
+
+        surname_pattern = doc.metadata["surname_pattern"]
+
+        surname_token = surname_pattern[0]
+        start_token = token
+
+        while True:
+            if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                return None
+
+            match_end_token = token
+
+            surname_token = self.next_with_skip(surname_token)
+            token = self.next_with_skip(token)
+
+            if surname_token is None:
+                return start_token, match_end_token  # end of pattern
+
+            if token is None:
+                return None  # end of tokens
+
+    def _match_surname_1(
+        self, doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if len(self._surname_pattern_1) < 1 :
+            return None
+
+        surname_pattern = self._surname_pattern_1
+
+        surname_token = surname_pattern[0]
+        start_token = token
+
+        while True:
+            if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                return None
+
+            match_end_token = token
+
+            surname_token = self.next_with_skip(surname_token)
+            token = self.next_with_skip(token)
+
+            if surname_token is None:
+                return start_token, match_end_token  # end of pattern
+
+            if token is None:
+                return None  # end of tokens
+
+    def _match_surname_2(
+        self, doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if len(self._surname_pattern_2) < 1 :
+            return None
+
+        surname_pattern = self._surname_pattern_2
+
+        surname_token = surname_pattern[0]
+        start_token = token
+
+        while True:
+            if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                return None
+
+            match_end_token = token
+
+            surname_token = self.next_with_skip(surname_token)
+            token = self.next_with_skip(token)
+
+            if surname_token is None:
+                return start_token, match_end_token  # end of pattern
+
+            if token is None:
+                return None  # end of tokens
+            
+    def _match_surname_3(
+        self, doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if len(self._surname_pattern_3) < 1 :
+            return None
+        
+        surname_pattern = self._surname_pattern_3
+
+        surname_token = surname_pattern[0]
+        start_token = token
+
+        while True:
+            if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                return None
+
+            match_end_token = token
+
+            surname_token = self.next_with_skip(surname_token)
+            token = self.next_with_skip(token)
+
+            if surname_token is None:
+                return start_token, match_end_token  # end of pattern
+
+            if token is None:
+                return None  # end of tokens
+
+    def _match_surname_4(
+        self, doc: dd.Document, token: dd.Token
+    ) -> Optional[tuple[dd.Token, dd.Token]]:
+
+        if len(self._surname_pattern_4) < 1 :
+            return None
+
+        surname_pattern = self._surname_pattern_4
+
+        surname_token = surname_pattern[0]
+        start_token = token
+
+        while True:
+            if not str_match(surname_token.text, token.text, max_edit_distance=1):
+                return None
+
+            match_end_token = token
+
+            surname_token = self.next_with_skip(surname_token)
+            token = self.next_with_skip(token)
+
+            if surname_token is None:
+                return start_token, match_end_token  # end of pattern
+
+            if token is None:
+                return None  # end of tokens
+
+    def annotate(self, doc: Document) -> list[Annotation]:
+        """
+        Annotates the document, based on the patient metadata.
+
+        Args:
+            doc: The input document.
+
+        Returns: A document with any relevant Annotations added.
+        """
+
+        """
+        todo: 
+        Check for junk in the metadata, and remove it when present. This prevent false positives.
+        Add extra info to detect name spelling variants in the text (normalized, capitalized)
+            - ? 0-9  )( {} [] -> remove the element
+            - one character -> remove element (L confused with Liter, C confused with Celcius etc)
+            - done: add normalize UTF8 to compare with text without diacritics (perhaps normalize every token? effect on perfomance?)
+            - done: add capitalized to compare with capitalized NAMES
+        """
+                
+        if doc.metadata is None or doc.metadata["patient"] is None:
+            return []
+        
+        if doc.metadata["patientid"] is None or doc.metadata["patientid"] != self._idnumber:
+            if not doc.metadata["patientid"] is None and doc.metadata["patientid"] != self._idnumber:
+                self._idnumber=doc.metadata["patientid"]
+            else:
+                self._idnumber="Unknown"
+        
+        
+            """
+            Create a list of first_names, in Capitalized and UPPER versions optionally with and without diacritics
+            """
+            self._firstnameslist=[]
+            if not doc.metadata["patient"].first_names is None:
+                for i in range(len(doc.metadata["patient"].first_names)):
+                    tmpname=doc.metadata["patient"].first_names[i]
+                    self._firstnameslist.append(tmpname)
+                    self._firstnameslist.append(tmpname.capitalize())
+                    self._firstnameslist.append(tmpname.upper())
+                    self._firstnameslist.append(unicodedata.normalize('NFD',tmpname.capitalize()).encode("ascii", "ignore").decode('utf-8'))
+                    self._firstnameslist.append(unicodedata.normalize('NFD',tmpname.upper()).encode("ascii", "ignore").decode('utf-8'))
+                # remove duplicates
+                self._firstnameslist = list(dict.fromkeys(self._firstnameslist))
+#                print(self._firstnameslist)
+    
+            """
+            Create surname surname Capitalized and UPPER versions optionally with and without diacritics
+            """
+            self._surname_pattern_1 = []
+            self._surname_pattern_2 = []
+            self._surname_pattern_3 = []
+            self._surname_pattern_4 = []
+            if not doc.metadata["patient"].surname is None :
+                tmpname = doc.metadata["patient"].surname    
+                self._surname_pattern_1 = self.tokenizer.tokenize(tmpname)
+                if not tmpname.isupper():
+                    self._surname_pattern_2 = self.tokenizer.tokenize(tmpname.upper())
+                    if not tmpname.isascii():
+                        tmpname2=unicodedata.normalize('NFKD',tmpname).encode("ascii", "ignore").decode('utf-8')
+                        self._surname_pattern_3 = self.tokenizer.tokenize(tmpname2)
+                        tmpname2=unicodedata.normalize('NFKD',tmpname.upper()).encode("ascii", "ignore").decode('utf-8')
+                        self._surname_pattern_4 = self.tokenizer.tokenize(tmpname2)
+                else:
+                    self._surname_pattern_2 = self.tokenizer.tokenize(tmpname.title())
+                    if not tmpname.isascii():
+                        self._surname_pattern_3 = self.tokenizer.tokenize(unicodedata.normalize(
+                            'NFKD',tmpname).encode("ascii", "ignore").decode('utf-8'))
+                        self._surname_pattern_4 = self.tokenizer.tokenize(unicodedata.normalize(
+                            'NFKD',tmpname.title()).encode("ascii", "ignore").decode('utf-8'))
+         
+    #            print(self._surname_pattern_1._tokens)           
+    #            print(self._surname_pattern_2._tokens)           
+    #            if len(self._surname_pattern_3) > 0:           
+    #                print(self._surname_pattern_3._tokens)           
+    #                print(self._surname_pattern_4._tokens)           
+
+
+        matcher_to_attr = {
+            self._match_first_names2: ("first_names", "voornaam_patient"),
+            self._match_initial_from_name: ("first_names", "initiaal_patient"),
+            self._match_initials: ("initials", "initiaal_patient"),
+            self._match_surname_1: ("surname", "achternaam_patient"),
+            self._match_surname_2: ("surname", "achternaam_patient"),
+            self._match_surname_3: ("surname", "achternaam_patient"),
+            self._match_surname_4: ("surname", "achternaam_patient"),
+        }
+
+        matchers = []
+        patient_metadata = doc.metadata["patient"]
+
+        for matcher, (attr, tag) in matcher_to_attr.items():
+            if getattr(patient_metadata, attr) is not None:
+                matchers.append((matcher, tag))
+
+        annotations = []
+
+        for token in doc.get_tokens():
+
+            for matcher, tag in matchers:
+
+                match = matcher(doc, token)
+
+                if match is None:
+                    continue
+
+                start_token, end_token = match
+
+                annotations.append(
+                    dd.Annotation(
+                        text=doc.text[start_token.start_char : end_token.end_char],
+                        start_char=start_token.start_char,
+                        end_char=end_token.end_char,
+                        tag=tag,
+                        priority=self.priority,
+                        start_token=start_token,
+                        end_token=end_token,
+                    )
+                )
+
+        return annotations
 
 class RegexpPseudoAnnotator(RegexpAnnotator):
     """
