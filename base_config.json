@@ -165,7 +165,7 @@
       }
     },
     "patient_name": {
-      "annotator_type": "deduce.annotator.PatientNameAnnotator",
+      "annotator_type": "deduce.annotator.AumcPatientNameAnnotator",
       "group": "names",
       "args": {
         "tag": "_"
@@ -411,7 +411,7 @@
       "annotator_type": "docdeid.process.RegexpAnnotator",
       "group": "locations",
       "args": {
-        "regexp_pattern": "([Pp]ostbus\\s\\d{1,5}(\\.\\d{2,4})?)",
+        "regexp_pattern": "([Pp][Oo][Ss][Tt][Bb][Uu][Ss]\\s\\d{1,5}(\\.\\d{2,4})?)",
         "tag": "locatie",
         "pre_match_words": ["postbus"]
       }
