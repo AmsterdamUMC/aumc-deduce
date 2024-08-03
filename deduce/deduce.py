@@ -132,13 +132,13 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
 
         raw_itemsets = load_raw_itemsets(
             base_path=lookup_data_path,
-            subdirs=["names/lst_interfix", "names/lst_prefix"],
+            subdirs=["names/lst_interfix", "names/lst_prefix", "whitelist/lst_extra_mergeterms"],
         )
 
         prefix = load_prefix_lookup(raw_itemsets)
         interfix = load_interfix_lookup(raw_itemsets)
 
-        merge_terms = itertools.chain(prefix.items(), interfix.items())
+        merge_terms = itertools.chain(prefix.items(), interfix.items(),raw_itemsets["extra_mergeterms"])
 
         return DeduceTokenizer(merge_terms=merge_terms)
 
