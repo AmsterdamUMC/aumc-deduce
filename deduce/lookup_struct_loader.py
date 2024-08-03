@@ -156,7 +156,7 @@ def load_street_lookup(
     )
 
     street.add_items_from_self(cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()])
-
+    street.add_items_from_self(cleaning_pipeline=[UpperCase()])
     return lookup_set_to_trie(street, tokenizer)
 
 
