@@ -15,6 +15,8 @@ class Person:
     first_names: Optional[list[str]] = None
     initials: Optional[str] = None
     surname: Optional[str] = None
+    id: Optional[str] = None
+    
 
     @classmethod
     def from_keywords(
@@ -23,6 +25,7 @@ class Person:
         patient_initials: str = "",
         patient_surname: str = "",
         patient_given_name: str = "",
+        patient_id: str = ""
     ) -> Person:
         """
         Get a Person from keywords. Mainly used for compatibility with keyword as used
@@ -59,4 +62,5 @@ class Person:
             first_names=patient_first_names_lst or None,
             initials=patient_initials or None,
             surname=patient_surname or None,
+            id=patient_id or None
         )

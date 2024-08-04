@@ -535,7 +535,7 @@ class AumcPatientNameAnnotator(dd.process.Annotator):
         self._surname_pattern_2=[]
         self._surname_pattern_3=[]
         self._surname_pattern_4=[]
-        self._idnumber="Unknown"
+        self._id_string = None
 
         super().__init__(*args, **kwargs)
 
@@ -767,11 +767,16 @@ class AumcPatientNameAnnotator(dd.process.Annotator):
         if doc.metadata is None or doc.metadata["patient"] is None:
             return []
         
-        if doc.metadata["patientid"] is None or doc.metadata["patientid"] != self._idnumber:
-            if not doc.metadata["patientid"] is None and doc.metadata["patientid"] != self._idnumber:
-                self._idnumber=doc.metadata["patientid"]
+        """
+        Keep the patient id in memory to avoid repeatedly creating the same _firstnameslist and _surname_pattern_1-4
+        If the patient is different or unknown we reset and recreate these lists. 
+        """
+        if doc.metadata["patient"].id is None or doc.metadata["patient"].id != self._id_string:
+
+            if doc.metadata["patient"].id is None:
+                self._id_string=None
             else:
-                self._idnumber="Unknown"
+                self._id_string=doc.metadata["patient"].id
         
         
             """
@@ -788,7 +793,7 @@ class AumcPatientNameAnnotator(dd.process.Annotator):
                     self._firstnameslist.append(unicodedata.normalize('NFD',tmpname.upper()).encode("ascii", "ignore").decode('utf-8'))
                 # remove duplicates
                 self._firstnameslist = list(dict.fromkeys(self._firstnameslist))
-#                print(self._firstnameslist)
+    #                print(self._firstnameslist)
     
             """
             Create surname surname Capitalized and UPPER versions optionally with and without diacritics
@@ -803,17 +808,17 @@ class AumcPatientNameAnnotator(dd.process.Annotator):
                 if not tmpname.isupper():
                     self._surname_pattern_2 = self.tokenizer.tokenize(tmpname.upper())
                     if not tmpname.isascii():
-                        tmpname2=unicodedata.normalize('NFKD',tmpname).encode("ascii", "ignore").decode('utf-8')
+                        tmpname2=unicodedata.normalize('NFD',tmpname).encode("ascii", "ignore").decode('utf-8')
                         self._surname_pattern_3 = self.tokenizer.tokenize(tmpname2)
-                        tmpname2=unicodedata.normalize('NFKD',tmpname.upper()).encode("ascii", "ignore").decode('utf-8')
+                        tmpname2=unicodedata.normalize('NFD',tmpname.upper()).encode("ascii", "ignore").decode('utf-8')
                         self._surname_pattern_4 = self.tokenizer.tokenize(tmpname2)
                 else:
                     self._surname_pattern_2 = self.tokenizer.tokenize(tmpname.title())
                     if not tmpname.isascii():
                         self._surname_pattern_3 = self.tokenizer.tokenize(unicodedata.normalize(
-                            'NFKD',tmpname).encode("ascii", "ignore").decode('utf-8'))
+                            'NFD',tmpname).encode("ascii", "ignore").decode('utf-8'))
                         self._surname_pattern_4 = self.tokenizer.tokenize(unicodedata.normalize(
-                            'NFKD',tmpname.title()).encode("ascii", "ignore").decode('utf-8'))
+                            'NFD',tmpname.title()).encode("ascii", "ignore").decode('utf-8'))
          
     #            print(self._surname_pattern_1._tokens)           
     #            print(self._surname_pattern_2._tokens)           
