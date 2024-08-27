@@ -89,7 +89,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
 
         if "lookup_table_path" in self.config.keys():
             config_file_path = Path(self.config["lookup_table_path"])
-            self.lookup_data_path = Path(self.config["lookup_table_path"])
+            self.lookup_data_path = Path(config_file_path)
         else:
             self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
         logging.info("\nLoading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")

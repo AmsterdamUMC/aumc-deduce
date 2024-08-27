@@ -1,9 +1,11 @@
 import re
+from pathlib import Path
 from unittest.mock import patch
 
 import docdeid as dd
 import pytest
 
+from deduce import Deduce
 from deduce.annotator import (
     BsnAnnotator,
     ContextAnnotator,
@@ -14,7 +16,6 @@ from deduce.annotator import (
     _PatternPositionMatcher,
 )
 from deduce.person import Person
-from deduce.tokenizer import DeduceTokenizer
 from tests.helpers import linked_tokens
 
 
@@ -36,7 +37,7 @@ def ds():
 
 @pytest.fixture
 def tokenizer():
-    return DeduceTokenizer()
+    return Deduce._initialize_tokenizer(lookup_data_path=Path("../../deduce/data/lookup"))
 
 
 @pytest.fixture
@@ -79,7 +80,7 @@ def phone_number_doc():
 
 @pytest.fixture
 def surname_pattern():
-    return linked_tokens(["Van der", "Heide", "-", "Ginkel"])
+    return linked_tokens(["Van", "der", "Heide", "Ginkel"])
 
 
 def token(text: str):
@@ -567,14 +568,14 @@ class TestPatientNameAnnotator:
         assert ann._match_initials(doc=doc, token=tokens[0]) == (tokens[0], tokens[0])
         assert ann._match_initials(doc=doc, token=tokens[1]) is None
 
-    @pytest.mark.skip(reason="No time to fix this unit test")
     def test_match_surname_equal(self, tokenizer, surname_pattern):
-
-        metadata = {"surname_pattern": surname_pattern}
-        tokens = linked_tokens(["Van der", "Heide", "-", "Ginkel", "is", "de", "naam"])
+        # Always use similar constructs to create the fixture as used in the actual code.
+        text_to_test = "van der Heide - Ginkel is de naam"
+        metadata = {"patient": Person(first_names=["Patricia"], surname="van der Heide - Ginkel")}
+        tokens = tokenizer.tokenize(text_to_test)
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
-        doc = dd.Document(text="_", metadata=metadata)
+        doc = dd.Document(text=text_to_test, metadata=metadata)
 
         with patch.object(tokenizer, "tokenize", return_value=surname_pattern):
 

@@ -3,12 +3,12 @@
 # This file contains a large set of combinations of surname + maiden name 
 # and metadata van data. 
 #
-# Comment lines begin with a hash-sign
+# Comment lines begin with a hash-sign. Empty lines are not allowed.
 #
 # =============================================================================
 # Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
 # 
-1	P	Aa Bb Cc	B	de Boer	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
+1	P	Aa Bb Cc	B	de Boer	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
 # Een naam met voorvoegsel, voorvoegsel ontbrekend in metadata en aanwezig in tekst, en naam is ook plaatsnaam (Amerongen):
 2	P	Aa Bb Cc	B	Pietersen - Amerongen	BBBB	De patiente: mevr. Pietersen - van Amerongen en blabla	De patiente: [PATIENT] en blabla
 # ------------
@@ -103,19 +103,46 @@
 80	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
 81	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
 82	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer van Dijck en blabla	De patient [PATIENT] en blabla
-83	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
-84	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
-85	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
-86	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PERSOON-1] en blabla
+83	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+84	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+85	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+86	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
 87	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 88	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 89	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 90	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. van Dijck en blabla	De patient [PERSOON-1] en blabla
 91	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. van Dijck - de Boeren en blabla	De patient [PERSOON-1] en blabla
 92	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. van Dijck - de Boeren en blabla	De patient [PERSOON-1] en blabla
-93	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. van Dijck - de Boer en blabla	De patient [PERSOON-1] en blabla
-94	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. van Dijck - de Boer en blabla	De patient [PERSOON-1] en blabla
-95	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PERSOON-1] en blabla
-96	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PERSOON-1] en blabla
-97	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PERSOON-1] en blabla
-98	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PERSOON-1] en blabla
+93	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. van Dijck - de Boer en blabla	De patient [PATIENT] en blabla
+94	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. van Dijck - de Boer en blabla	De patient [PATIENT] en blabla
+95	P	Aa Bb Cc	B	de Boer - van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PATIENT] en blabla
+96	P	Aa Bb Cc	B	de Boer van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PATIENT] en blabla
+97	P	Aa Bb Cc	B	de Boer- van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PATIENT] en blabla
+98	P	Aa Bb Cc	B	de Boer -van Dijck	BBBB	De patient mevr. van Dijck de Boer en blabla	De patient [PATIENT] en blabla
+# -----------------
+# beide namen met voorvoegels en een ervan (de 2-de) plaatsnaam
+# -----------------
+99	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. de Boer - van Amerongen en blabla	De patient [PATIENT] en blabla
+100	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. de Boer - van Amerongen en blabla	De patient [PATIENT] en blabla
+101	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. de Boer - van Amerongen en blabla	De patient [PATIENT] en blabla
+102	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. de Boer - van Amerongen en blabla	De patient [PATIENT] en blabla
+103	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. de Boer van Amerongen en blabla	De patient [PATIENT] en blabla
+104	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. de Boer van Amerongen en blabla	De patient [PATIENT] en blabla
+105	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. de Boer van Amerongen en blabla	De patient [PATIENT] en blabla
+106	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. de Boer van Amerongen en blabla	De patient [PATIENT] en blabla
+107	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+108	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+109	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+110	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. de Boer en blabla	De patient [PATIENT] en blabla
+111	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. van Amerongen en blabla	De patient [PERSOON-1] en blabla
+112	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. van Amerongen en blabla	De patient [PERSOON-1] en blabla
+113	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. van Amerongen en blabla	De patient [PERSOON-1] en blabla
+114	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. van Amerongen en blabla	De patient [PERSOON-1] en blabla
+115	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. van Amerongen - de Boeren en blabla	De patient [PERSOON-1] en blabla
+116	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. van Amerongen - de Boeren en blabla	De patient [PERSOON-1] en blabla
+117	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. van Amerongen - de Boer en blabla	De patient [PATIENT] en blabla
+118	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. van Amerongen - de Boer en blabla	De patient [PATIENT] en blabla
+119	P	Aa Bb Cc	B	de Boer - van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
+120	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
+121	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
+122	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
