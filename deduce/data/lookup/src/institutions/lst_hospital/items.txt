@@ -366,3 +366,6 @@ het Catharina Gasthuis
 het Lange Land
 het Lange Land Ziekenhuis
 mProve
+AmsterdamUMC
+OLVG
+WZA

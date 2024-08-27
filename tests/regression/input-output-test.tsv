@@ -20,7 +20,7 @@
 #							
 # =============================================================================							
 # Rec_id	Pass_or_Fail	Pat_Firstnames	Pat_Initials	Pat_Surname	Pat_Givenname	Identifiable_input	Expected_output
-1	P	Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001.	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1]
+1	P	Peter Benjamin	PB	Rabbit	Peter	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001.	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on [DATUM-1].
 2	P	Aa Bb Cc	B	Aaa	BBBB	fys 40 jarige	fys [LEEFTIJD-1] jarige
 3	P	Aa Bb Cc	B	Aaa	BBBB	wordt 33 jaar	wordt [LEEFTIJD-1] jaar
 4	P	Aa Bb Cc	B	Aaa	BBBB	10-jarige patient	[LEEFTIJD-1]-jarige patient
@@ -149,10 +149,10 @@
 119	P	Aa Bb Cc	B	Aaa	BBBB	BSN 354	[NUMMERWOORD-1]
 120	P	Aa Bb Cc	B	Aaa	BBBB	Bsn: 638 678909	[NUMMERWOORD-1]
 121	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 576	[NUMMERWOORD-1]
-122	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 78690678	[NUMMERWOORD-1]
-123	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  365896790	[NUMMERWOORD-1]
-124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	[NUMMERWOORD-1]
-125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	[NUMMERWOORD-1]
+122	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 78690678	Bsn [ID-1]
+123	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  365896790	Bsn  [ID-1]
+124	P	Aa Bb Cc	B	Aaa	BBBB	Bsn  3 65896790	Bsn  3 [ID-1]
+125	P	Aa Bb Cc	B	Aaa	BBBB	bsn 357689765	bsn [ID-1]
 126	P	Aa Bb Cc	B	Aaa	BBBB	Meneer Zwart	[PERSOON-1]
 127	P	Mathijs Theodoor Anton Marietjepietje	M TH A M 	Van den Ende	BBBB	M.TH.A.M. VAN DEN ENDE/A.N.	[PERSOON-1]
 128	P	Mathijs Theodoor Anton MalleMarierietje	M TH A M 	VAN DEN ENDE	BBBB	M.TH.A.M. VAN DEN ENDE / A.N.	[PERSOON-1]
@@ -198,7 +198,7 @@
 168	P	Aa Bb Cc	B	Aaa	BBBB	Regiearts Vanlerberghe tel: in gesprek	[PERSOON-1] tel: in gesprek
 169	P	Aa Bb Cc	B	Aaa	BBBB	Van: Blankevoort, SEH	Van: [PERSOON-1], SEH
 170	P	Aa Bb Cc	B	Aaa	BBBB	Visite. S. Markovic. Benauwd, hoest, bekend met	Visite. [PERSOON-1]. Benauwd, hoest, bekend met
-171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	Van: Chirurgie [LOCATIE-1]
+171	P	Aa Bb Cc	B	Aaa	BBBB	Van: Chirurgie Flevo	Van: Chirurgie [ZIEKENHUIS-1]
 172	P	Aa Bb Cc	B	Aaa	BBBB	Van: Linzel, longarts	Van: [PERSOON-1], longarts
 173	P	Aa Bb Cc	B	Aaa	BBBB	TC met pt en met [PERSOON-1] Reiss. Gaat ma [LANGNUMMER-1]	TC met pt en met [PERSOON-1] [PERSOON-1]. Gaat ma [LANGNUMMER-1]
 174	P	Aa Bb Cc	B	Aaa	BBBB	Van : Craanen	Van : [PERSOON-1]
@@ -575,14 +575,14 @@
 528	P	Aa Bb Cc	B	Aaa	BBBB	DORPstraat 16	[LOCATIE-1]
 529	P	Aa Bb Cc	B	Aaa	BBBB	dorpstraat 17	[LOCATIE-1]
 530	P	Aa Bb Cc	B	Aaa	BBBB	dorpStraat 18	[LOCATIE-1]
-531	P	Aa Bb Cc	B	Aaa	BBBB	BSN 123456789	[NUMMERWOORD-1]
-532	P	Aa Bb Cc	B	Aaa	BBBB	BSN123456789	[NUMMERWOORD-1]
-533	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 123456789	[NUMMERWOORD-1]
+531	P	Aa Bb Cc	B	Aaa	BBBB	BSN 123456789	BSN [ID-1]
+532	P	Aa Bb Cc	B	Aaa	BBBB	BSN123456789	BSN[ID-1]
+533	P	Aa Bb Cc	B	Aaa	BBBB	Bsn 123456789	Bsn [ID-1]
 534	P	Aa Bb Cc	B	Aaa	BBBB	Bsb123456789	Bsb[ID-1]
-535	P	Aa Bb Cc	B	Aaa	BBBB	bsn 123456789	[NUMMERWOORD-1]
-536	P	Aa Bb Cc	B	Aaa	BBBB	bsn123456789	[NUMMERWOORD-1]
-537	P	Aa Bb Cc	B	Aaa	BBBB	bSN 123456789	[NUMMERWOORD-1]
-538	P	Aa Bb Cc	B	Aaa	BBBB	bSN123456789	[NUMMERWOORD-1]
+535	P	Aa Bb Cc	B	Aaa	BBBB	bsn 123456789	bsn [ID-1]
+536	P	Aa Bb Cc	B	Aaa	BBBB	bsn123456789	bsn[ID-1]
+537	P	Aa Bb Cc	B	Aaa	BBBB	bSN 123456789	bSN [ID-1]
+538	P	Aa Bb Cc	B	Aaa	BBBB	bSN123456789	bSN[ID-1]
 # Test case for a combination of two Dutch surnames with prefixes and 'en'. Example of two known Dutch comedians.
 539	P	Aa Bb Cc	B	Aaa	BBBB	van Kooten en de Bie	[PERSOON-1] en [PERSOON-2]
 # Test case for Dutch surnames with a large number of interfixes.
