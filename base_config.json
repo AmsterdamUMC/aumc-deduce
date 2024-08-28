@@ -354,7 +354,7 @@
           }
         ],
         "tag": "straat",
-        "priority": 1
+        "priority": -20000
       }
     },
     "street_lookup": {
@@ -364,7 +364,7 @@
         "lookup_values": "street",
         "overlapping": true,
         "tag": "straat",
-        "priority": 1
+        "priority": -20001
       }
     },
     "housenumber": {
@@ -451,7 +451,8 @@
       "args": {
         "lookup_values": "healthcare_institution",
         "overlapping": true,
-        "tag": "zorginstelling"
+        "tag": "zorginstelling",
+        "priority": 1
       }
     },
     "date_dmy_1": {

@@ -84,7 +84,7 @@ def load_first_name_lookup(
 ) -> dd.ds.LookupTrie:
     """Load first_name LookupTrie."""
 
-    first_name = dd.ds.LookupSet()
+    first_name = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
 
     first_name.add_items_from_iterable(
         raw_itemsets["first_name"],
@@ -145,7 +145,7 @@ def load_street_lookup(
 ) -> dd.ds.LookupTrie:
     """Load street LookupTrie."""
 
-    street = dd.ds.LookupSet()
+    street = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
 
     street.add_items_from_iterable(
         raw_itemsets["street"],
@@ -165,7 +165,7 @@ def load_placename_lookup(
 ) -> dd.ds.LookupTrie:
     """Load placename LookupTrie."""
 
-    placename = dd.ds.LookupSet()
+    placename = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
 
     placename.add_items_from_iterable(
         raw_itemsets["placename"],
@@ -223,7 +223,7 @@ def load_institution_lookup(
 ) -> dd.ds.LookupTrie:
     """Load institution LookupTrie."""
 
-    institution = dd.ds.LookupSet()
+    institution = dd.ds.LookupSet(matching_pipeline=[dd.str.LowercaseString()])
     institution.add_items_from_iterable(
         raw_itemsets["healthcare_institution"],
         cleaning_pipeline=[dd.str.StripString(), dd.str.FilterByLength(min_len=4)],

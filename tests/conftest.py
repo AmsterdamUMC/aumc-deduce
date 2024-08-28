@@ -12,5 +12,5 @@ def model():
     root = PurePath(os.path.dirname(__file__)).parent
     path = root / PurePath("base_config.json")
     return Deduce(config=Path(path).as_posix(),
-                  build_lookup_structs=False,
-                  load_base_config=False)
+                  build_lookup_structs=True,
+                  load_base_config=True)
