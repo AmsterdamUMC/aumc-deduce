@@ -41,7 +41,7 @@
 # ------------
 # 2 namen zonder voorvoegsels waarbij een van de namen (Rood) ook in de whitelist staat: 
 # ------------
-27	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rook - Janssen en blabla	De patient [PATIENT] en blabla
+27	P	Aa Bb Cc	B	Rood - Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 28	P	Aa Bb Cc	B	Rood Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 29	P	Aa Bb Cc	B	Rood- Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
 30	P	Aa Bb Cc	B	Rood -Janssen	BBBB	De patient mevr. Rood - Janssen en blabla	De patient [PATIENT] en blabla
@@ -146,3 +146,4 @@
 120	P	Aa Bb Cc	B	de Boer van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
 121	P	Aa Bb Cc	B	de Boer- van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
 122	P	Aa Bb Cc	B	de Boer -van Amerongen	BBBB	De patient mevr. van Amerongen de Boer en blabla	De patient [PATIENT] en blabla
+
