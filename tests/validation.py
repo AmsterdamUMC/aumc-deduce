@@ -80,18 +80,17 @@ class TestValidationFile:
             if not matching:
                 if failure_status == 'F':
                     expected_failure_count += 1
-                    # print("\n==> Expected failure at record ", record_id)
+                    print("\n==> Expected failure at record ", record_id)
                 else:
                     mismatch_count += 1
                     failed = True
                     print("\n==> Mismatch at record ", record_id)
-                    print("Raw:      >" + identifiable_input + "<")
-                    print("Expected: >" + expected_output + "<")
-                    print("Actual:   >" + actual_output + "<")
             else:
                 match_count += 1
-                # print("\n==> Match at record ", record_id)
-
+                print("\n==> Match at record ", record_id)
+            print("Raw:      >" + identifiable_input + "<")
+            print("Expected: >" + expected_output + "<")
+            print("Actual:   >" + actual_output + "<")
         # assert mismatch_count == 0
         print("Done")
         print("==============================================================")
