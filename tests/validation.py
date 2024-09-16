@@ -94,8 +94,8 @@ class TestValidationFile:
         # assert mismatch_count == 0
         print("Done")
         print("==============================================================")
-        print("Numer of records    :", record_count)
-        print("Numer of matches    :", match_count)
+        print("Number of records   :", record_count)
+        print("Number of matches   :", match_count)
         print("Number of mismatches:", mismatch_count)
         print("Expected mismatches :", expected_failure_count)
 
