@@ -128,7 +128,12 @@ def load_surname_lookup(
         cleaning_pipeline=[dd.str.FilterByLength(min_len=2)],
     )
 
-    surname.add_items_from_self(
+    
+    # Tom
+    # surname.add_items_from_self(cleaning_pipeline=[UpperCase()])
+
+
+surname.add_items_from_self(
         cleaning_pipeline=[
             FilterBasedOnLookupSet(
                 filter_set=load_whitelist_lookup(raw_itemsets), case_sensitive=False
@@ -156,6 +161,10 @@ def load_street_lookup(
     )
 
     street.add_items_from_self(cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()])
+
+    # Tom
+    # street.add_items_from_self(cleaning_pipeline=[UpperCase()])
+
 
     return lookup_set_to_trie(street, tokenizer)
 
