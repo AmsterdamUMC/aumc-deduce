@@ -829,14 +829,16 @@ class AumcPatientNameAnnotator(dd.process.Annotator):
 
         matcher_to_attr = {
             self._match_first_names2: ("first_names", "voornaam_patient"),
-            self._match_initial_from_name: ("first_names", "initiaal_patient"),
             self._match_initials: ("initials", "initiaal_patient"),
             self._match_surname_1: ("surname", "achternaam_patient"),
             self._match_surname_2: ("surname", "achternaam_patient"),
             self._match_surname_3: ("surname", "achternaam_patient"),
             self._match_surname_4: ("surname", "achternaam_patient"),
         }
-
+    # removed because it too often masks single characters as initials when they are really medically relevant terms 
+    # such as L(iter), C(elsius), V(entrikel), A(rtery) etc
+    #       self._match_initial_from_name: ("first_names", "initiaal_patient"),
+    
         matchers = []
         patient_metadata = doc.metadata["patient"]
 
