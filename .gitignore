@@ -127,3 +127,7 @@ ENV/
 # ide
 .idea
 .vscode
+
+# eclipse
+.project
+.pydevproject
