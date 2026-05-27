@@ -1,0 +1,23 @@
+# =============================================================================												
+#												
+# This file contains a large set of text fragments used to validate DEDUCE. It contains 12 tab-delimited columns:												
+# 0) the record ID. Is not used in the testing code and its only purpose is to ease find a test case for a human user [Rec_ID]												
+# 1) the failure / pass status. 'F' denotes that this record produces a known failure. 'P' denotes that it should pass. Values must be in capitals [Pass_or_Fail]												
+# The following patient data fields are obtained from Snowflake: VOORNAAM, INITIALEN, EIGENNAAM, PARTNERNAAM, FIRSTNAMES, PAT_MRN_ID, ADRES_REGEL_1, WOONPLAATS												
+# The last two columns are the identifiable_input and the expected_output from DEDUCE												
+#												
+# The following test records have been temporarily marked as failing because in the first 2 production runs the ‘dates’ and ‘age’ annotator groups are disabled. These test-cases assumed that the both groups are active.												
+# 13,18,45,46,47,72,127,128,131,133,134,135,146,152,162,164,165,172,175,179,188,193,194,195,197,200,201,202,203,206,207,212,216,219,221,223,226,227,229,230,231,232,233,234,235,236,238,240,241,244,245,246,247,248,249,251,252,255,256,257,258,259,260,261,263,268,273,287,300,301,306,308,317,323,324,325,327,328,331,333,334,336,338,339,345,346,353,357,466,469,474,482,483,487,489,505,512,518,528,529,530,540,558,560,563,564,572,573,574,582,584,585,586,587,590,591,592,605												
+# A great propotion of the failure is due to case sensitive matching of locations, names etc.												
+#												
+# A special set of lookup-lists TODO finish the documentation once the code is												
+#												
+# This file was originally included in the HAG (dept. General Practice)												
+# version of DEDUCE which was maintained by the KIK (dept. Clinical Informatics);\												
+# both departments are part of the AmsterdamUMC.												
+#												
+# Comment lines begin with a hash-sign												
+#												
+# =============================================================================												
+# Rec_id	Pass_or_Fail	VOORNAAM	INITIALEN	EIGENNAAM	PARTNERNAAM	FIRSTNAMES	PAT_MRN_ID	ADRES_REGEL_1	WOONPLAATS	LANDNAAM	Identifiable_input	Expected_output
+1	P	Peter Benjamin	PB	Rabbit		Peter	pat_id_rec_1	Dorpstraat	Mokkumerhei	NEDERLAND	Mr Rabbit was admitted to Onze Lieve Vrouwe Gasthuis in Amsterdam on 01-02-2001.	[PATIENT] was admitted to [ZIEKENHUIS-1] in [LOCATIE-1] on 01-02-2001.

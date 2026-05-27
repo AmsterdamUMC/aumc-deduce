@@ -8,6 +8,7 @@ from deduce.annotator import (
     BsnAnnotator,
     ContextAnnotator,
     PatientNameAnnotator,
+    PatientDataAnnotator,
     PhoneNumberAnnotator,
     RegexpPseudoAnnotator,
     TokenPatternAnnotator,
@@ -16,7 +17,6 @@ from deduce.annotator import (
 from deduce.person import Person
 from deduce.tokenizer import DeduceTokenizer
 from tests.helpers import linked_tokens
-
 
 @pytest.fixture
 def ds():
@@ -87,6 +87,21 @@ def token(text: str):
 
 
 class TestPositionMatcher:
+    
+    def test_non_existing_function(self):
+        with pytest.raises(NotImplementedError) as expected_exception:
+            _PatternPositionMatcher.match({"non-existing-function": "test"}, token=token("test"))
+        assert "No known logic for pattern non-existing-function" in str(expected_exception.value)
+    
+    def test_value_error(self):
+        with pytest.raises(ValueError) as expected_exception:
+            _PatternPositionMatcher.match({"value_1": "test", "value_2": "test"}, token=token("test"))
+        assert "Cannot parse token pattern ({'value_1': 'test', 'value_2': 'test'}) with more than 1 key" in str(expected_exception.value)
+        
+    def test_deprecation_warning(self):
+        with pytest.deprecated_call(): 
+            _PatternPositionMatcher.match({"is_initial": "test"}, token=token("test"))
+    
     def test_equal(self):
         assert _PatternPositionMatcher.match({"equal": "test"}, token=token("test"))
         assert not _PatternPositionMatcher.match({"equal": "_"}, token=token("test"))
@@ -207,6 +222,21 @@ class TestPositionMatcher:
 
 
 class TestTokenPatternAnnotator:
+    
+    def test_error_empty_ds(self):
+        pattern = [{"lookup": "first_names"}, {"like_name": True}]
+        with pytest.raises(RuntimeError) as expected_exception:
+            token_pattern_annotator = TokenPatternAnnotator(pattern=pattern, ds=None, tag="_")
+        assert "Created pattern with lookup in TokenPatternAnnotator, but no lookup structures provided." in str(expected_exception.value)
+        
+    
+    def test_mismatch_lookup_type(self, pattern_doc, ds):
+        pattern = [{"lookup": "first_names"}, {"like_name": True}]
+        ds["first_names"] = "Incorrect typem (str)"
+        with pytest.raises(ValueError) as expected_exception:
+            token_pattern_annotator = TokenPatternAnnotator(pattern=pattern, ds=ds, tag="_")
+        assert "Expected a LookupSet, but got a <class 'str'>" in str(expected_exception.value)    
+    
     def test_match_sequence(self, pattern_doc, ds):
         pattern = [{"lookup": "first_names"}, {"like_name": True}]
 
@@ -267,12 +297,12 @@ class TestTokenPatternAnnotator:
             is None
         )
 
-    def test_annotate(self, pattern_doc, ds):
+    def test_annotate_token_pattern_annotator(self, pattern_doc, ds):
         pattern = [{"lookup": "first_names"}, {"like_name": True}]
 
-        tpa = TokenPatternAnnotator(pattern=pattern, ds=ds, tag="_")
+        token_pattern_annotator  = TokenPatternAnnotator(pattern=pattern, ds=ds, tag="_")
 
-        assert tpa.annotate(pattern_doc) == [
+        assert token_pattern_annotator.annotate(pattern_doc) == [
             dd.Annotation(text="Andries Meijer", start_char=12, end_char=26, tag="_")
         ]
 
@@ -469,9 +499,33 @@ class TestContextAnnotator:
 
 
 class TestPatientNameAnnotator:
+    
+    
+    def test_metadata_none_or_empty(self, tokenizer):
+        
+        metadata = None
+        patient_name_annotator = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+        annotation_list = patient_name_annotator.annotate(doc)
+        assert annotation_list == []
+        
+        metadata = []
+        doc = dd.Document(text="_", metadata=metadata)
+        annotation_list = patient_name_annotator.annotate(doc)
+        assert annotation_list == []
+        
+            
     def test_match_first_name_multiple(self, tokenizer):
 
-        metadata = {"patient": Person(first_names=["Jan", "Adriaan"])}
+        metadata = {"patient":  Person(first_names=["Jan", "Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
         tokens = linked_tokens(["Jan", "Adriaan"])
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
         doc = dd.Document(text="_", metadata=metadata)
@@ -488,7 +542,15 @@ class TestPatientNameAnnotator:
 
     def test_match_first_name_fuzzy(self, tokenizer):
 
-        metadata = {"patient": Person(first_names=["Adriaan"])}
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
         tokens = linked_tokens(["Adriana"])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -501,7 +563,15 @@ class TestPatientNameAnnotator:
 
     def test_match_first_name_fuzzy_short(self, tokenizer):
 
-        metadata = {"patient": Person(first_names=["Jan"])}
+        metadata = {"patient": Person(first_names=["Jan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
         tokens = linked_tokens(["Dan"])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -511,7 +581,15 @@ class TestPatientNameAnnotator:
 
     def test_match_initial_from_name(self, tokenizer):
 
-        metadata = {"patient": Person(first_names=["Jan", "Adriaan"])}
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
         tokens = linked_tokens(["A", "J"])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -528,8 +606,15 @@ class TestPatientNameAnnotator:
         )
 
     def test_match_initial_from_name_with_period(self, tokenizer):
-
-        metadata = {"patient": Person(first_names=["Jan", "Adriaan"])}
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                     initials="",
+                                     surname=[""],
+                                     partnername=[""],
+                                     given_name=[],
+                                     person_id="",
+                                     street=[],
+                                     country=[],
+                                     location=[])}
         tokens = linked_tokens(["J", ".", "A", "."])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -546,8 +631,15 @@ class TestPatientNameAnnotator:
         )
 
     def test_match_initial_from_name_no_match(self, tokenizer):
-
-        metadata = {"patient": Person(first_names=["Jan", "Adriaan"])}
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                     initials="",
+                                     surname=[""],
+                                     partnername=[""],
+                                     given_name=[],
+                                     person_id="",
+                                     street=[],
+                                     country=[],
+                                     location=[])}
         tokens = linked_tokens(["F", "T"])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -557,8 +649,15 @@ class TestPatientNameAnnotator:
         assert ann._match_initial_from_name(doc=doc, token=tokens[1]) is None
 
     def test_match_initials(self, tokenizer):
-
-        metadata = {"patient": Person(initials="AFTH")}
+        metadata = {"patient": Person(first_names=[],
+                                         initials="AFTH",
+                                         surname=[""],
+                                         partnername=[""],
+                                         given_name=[],
+                                         person_id="",
+                                         street=[],
+                                         country=[],
+                                         location=[])}
         tokens = linked_tokens(["AFTH", "THFA"])
 
         ann = PatientNameAnnotator(tokenizer=tokenizer, tag="_")
@@ -639,9 +738,15 @@ class TestPatientNameAnnotator:
     def test_annotate_first_name(self, tokenizer):
 
         metadata = {
-            "patient": Person(
-                first_names=["Jan", "Johan"], initials="JJ", surname="Jansen"
-            )
+            "patient": Person(first_names=["Jan", "Johan"],
+                                         initials="JJ",
+                                         surname=["Jansen"],
+                                         partnername=[""],
+                                         given_name=[],
+                                         person_id="",
+                                         street=[],
+                                         country=[],
+                                         location=[])
         }
         text = "De patient heet Jan"
         tokens = tokenizer.tokenize(text)
@@ -665,11 +770,16 @@ class TestPatientNameAnnotator:
         ]
 
     def test_annotate_initials_from_name(self, tokenizer):
-
         metadata = {
-            "patient": Person(
-                first_names=["Jan", "Johan"], initials="JJ", surname="Jansen"
-            )
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="",
+                              street=[],
+                              country=[],
+                              location=[])
         }
         text = "De patient heet JJ"
         tokens = tokenizer.tokenize(text)
@@ -695,9 +805,15 @@ class TestPatientNameAnnotator:
     def test_annotate_initial(self, tokenizer):
 
         metadata = {
-            "patient": Person(
-                first_names=["Jan", "Johan"], initials="JJ", surname="Jansen"
-            )
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="",
+                              street=[],
+                              country=[],
+                              location=[])
         }
         text = "De patient heet J."
         tokens = tokenizer.tokenize(text)
@@ -721,11 +837,16 @@ class TestPatientNameAnnotator:
         ]
 
     def test_annotate_surname(self, tokenizer):
-
         metadata = {
-            "patient": Person(
-                first_names=["Jan", "Johan"], initials="JJ", surname="Jansen"
-            )
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="",
+                              street=[],
+                              country=[],
+                              location=[])
         }
         text = "De patient heet Jansen"
         tokens = tokenizer.tokenize(text)
@@ -747,6 +868,430 @@ class TestPatientNameAnnotator:
                 tag="achternaam_patient",
             )
         ]
+
+
+class TestPatientDataAnnotator:
+    
+    
+    def test_metadata_none_or_empty_patient_name_annotator(self, tokenizer):
+        
+        metadata = None
+        patient_name_annotator = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+        annotation_list = patient_name_annotator.annotate(doc)
+        assert annotation_list == []
+        
+        metadata = []
+        doc = dd.Document(text="_", metadata=metadata)
+        annotation_list = patient_name_annotator.annotate(doc)
+        assert annotation_list == []
+        
+    def test_extend_patient_tokens(self, tokenizer):
+        metadata = {"patient":  Person(first_names=[],
+                                       initials="",
+                                       surname=["bol", "HOL", "Güs", "hös", "ČUK"],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="ID_EXTEND_PATIENT_TOKENS",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        tokens = linked_tokens(["Dol", "Adriaan"])
+        patient_data_annotator = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        extended_list = patient_data_annotator.extend_patient_tokens(metadata["patient"].surname)
+        # TODO Ask if it is intentional that  'bol' (lower case only) is not extended with 'Bol' (title case).
+        # Ask how multi token strings (with Dutch surname prefixes are to be dealt with (e.g. 'de Boer'
+        word_list = []
+        for token_list in extended_list:
+            for token in token_list:
+                word_list.append(token.text)
+        assert len(word_list) == 16
+           
+    def test_match_first_name_multiple(self, tokenizer):
+
+        metadata = {"patient":  Person(first_names=["Jan", "Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="ID_MATCH_FIRST_NAME_MULTIPLE",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        tokens = linked_tokens(["Jan", "Adriaan"])
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="De patient Jan Adriaan woont ...", metadata=metadata)
+
+        assert ann._match_first_names(doc=doc, token=tokens[0]) == (
+            tokens[0],
+            tokens[0],
+        )
+
+        assert ann._match_first_names(doc=doc, token=tokens[1]) == (
+            tokens[1],
+            tokens[1],
+        )
+
+    def test_match_first_name_fuzzy(self, tokenizer):
+
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="ID_MATCH_FIRST_NAME_FUZZY",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        tokens = linked_tokens(["Adriana"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_first_names(doc=doc, token=tokens[0]) == (
+            tokens[0],
+            tokens[0],
+        )
+
+    def test_match_first_name_fuzzy_short(self, tokenizer):
+
+        metadata = {"patient": Person(first_names=["Jan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="ID_MATCH_FIRST_NAME_FUZZY_SHORT",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        tokens = linked_tokens(["Dan"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_first_names(doc=doc, token=tokens[0]) is None
+
+    def test_match_initial_from_name(self, tokenizer):
+
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="ID_MATCH_INITIAL_FROM_NAME",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        tokens = linked_tokens(["A", "J"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_initial_from_name(doc=doc, token=tokens[0]) == (
+            tokens[0],
+            tokens[0],
+        )
+
+        assert ann._match_initial_from_name(doc=doc, token=tokens[1]) == (
+            tokens[1],
+            tokens[1],
+        )
+
+    def test_match_initial_from_name_with_period(self, tokenizer):
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                     initials="",
+                                     surname=[""],
+                                     partnername=[""],
+                                     given_name=[],
+                                     person_id="ID_MATCH_INITIAL_FROM_NAME_WITH_PERIOD",
+                                     street=[],
+                                     country=[],
+                                     location=[])}
+        tokens = linked_tokens(["J", ".", "A", "."])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_initial_from_name(doc=doc, token=tokens[0]) == (
+            tokens[0],
+            tokens[1],
+        )
+
+        assert ann._match_initial_from_name(doc=doc, token=tokens[2]) == (
+            tokens[2],
+            tokens[3],
+        )
+
+        metadata = {"patient": Person(first_names=["Jan", "Adriaan"],
+                                     initials="",
+                                     surname=[""],
+                                     partnername=[""],
+                                     given_name=[],
+                                     person_id="",
+                                     street=[],
+                                     country=[],
+                                     location=[])}
+        tokens = linked_tokens(["F", "T"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_initial_from_name(doc=doc, token=tokens[0]) is None
+        assert ann._match_initial_from_name(doc=doc, token=tokens[1]) is None
+
+        metadata = {"patient": Person(first_names=[],
+                                         initials="AFTH",
+                                         surname=[""],
+                                         partnername=[""],
+                                         given_name=[],
+                                         person_id="",
+                                         street=[],
+                                         country=[],
+                                         location=[])}
+        tokens = linked_tokens(["AFTH", "THFA"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        assert ann._match_initials(doc=doc, token=tokens[0]) == (tokens[0], tokens[0])
+        assert ann._match_initials(doc=doc, token=tokens[1]) is None
+
+    def test__match_surname(self, tokenizer):
+        # Test for the ( _match_surname ) method. This method could be replaced with a 
+        # common method for surname, streets and locations. There is  a lot of duplicate code 
+        # in these match methods.
+        metadata = {"patient": Person(first_names=[],
+                                         initials="",
+                                         surname=["AAAAA"],
+                                         partnername=[""],
+                                         given_name=[],
+                                         person_id="",
+                                         street=[],
+                                         country=[],
+                                         location=[])}
+        
+        tokens = linked_tokens(["AAAAA", "BBBBB"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+        ann.initialize_metadata(doc)
+        assert ann._match_surname(doc=doc, token=tokens[0]) == (
+                tokens[0],
+                tokens[0],
+            )
+        
+        metadata["patient"].surname = [""]
+        doc = dd.Document(text="_", metadata=metadata)
+        ann.initialize_metadata(doc)
+        assert ann._match_surname(doc=doc, token=tokens[0]) is None
+         
+        metadata["patient"].surname = []
+        doc = dd.Document(text="_", metadata=metadata)
+        ann.initialize_metadata(doc)
+        assert ann._match_surname(doc=doc, token=tokens[0]) is None
+
+        # use one of the skip variables
+        metadata["patient"].surname = ["Puk"]
+        tokens = linked_tokens(["", ""])
+        doc = dd.Document(text="_", metadata=metadata)
+        ann.initialize_metadata(doc)
+        assert ann._match_surname(doc=doc, token=tokens[0]) is None
+        
+
+    def test_match_surname_longer_than_tokens(self, tokenizer, surname_pattern):
+
+        metadata = {"surname_pattern": surname_pattern}
+        tokens = linked_tokens(["Van der", "Heide"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        with patch.object(tokenizer, "tokenize", return_value=surname_pattern):
+
+            assert ann._match_surname(doc=doc, token=tokens[0]) is None
+
+    def test_match_surname_unequal_first(self, tokenizer, surname_pattern):
+
+        metadata = {"surname_pattern": surname_pattern}
+        tokens = linked_tokens(["v/der", "Heide", "-", "Ginkel", "is", "de", "naam"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        with patch.object(tokenizer, "tokenize", return_value=surname_pattern):
+
+            assert ann._match_surname(doc=doc, token=tokens[0]) is None
+
+     # TODO consult Tom to ask him what to do with the prefix names
+    @pytest.mark.skip("Skipping for now")
+    def test_match_surname_unequal_first_fuzzy(self, tokenizer, surname_pattern):
+
+        metadata = {"surname_pattern": surname_pattern}
+        tokens = linked_tokens(["Van den", "Heide", "-", "Ginkel", "is", "de", "naam"])
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text="_", metadata=metadata)
+
+        with patch.object(tokenizer, "tokenize", return_value=surname_pattern):
+
+            assert ann._match_surname(doc=doc, token=tokens[0]) == (
+                tokens[0],
+                tokens[3],
+            )
+
+    def test_annotate_first_name(self, tokenizer):
+
+        metadata = {
+            "patient": Person(first_names=["Jan", "Johan"],
+                                         initials="JJ",
+                                         surname=["Jansen"],
+                                         partnername=[""],
+                                         given_name=[],
+                                         person_id="TEST_ANNOTATE_FIRST_NAME",
+                                         street=[],
+                                         country=[],
+                                         location=[])
+        }
+        text = "De patient heet Jan"
+        tokens = tokenizer.tokenize(text)
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text=text, metadata=metadata)
+
+        with patch.object(doc, "get_tokens", return_value=tokens):
+            with patch.object(
+                tokenizer, "tokenize", return_value=linked_tokens(["Jansen"])
+            ):
+                annotations = ann.annotate(doc)
+
+        assert annotations == [
+            dd.Annotation(
+                text="Jan",
+                start_char=16,
+                end_char=19,
+                tag="voornaam_patient",
+            )
+        ]
+
+    def test_lower_case_surnames(self, tokenizer):
+        metadata = {
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["jansen", "nelissen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="ID_MIXED_CASE_SURNAMES",
+                              street=[],
+                              country=[],
+                              location=[])
+        }
+        text = "De patient heet jan johan jansen nelissen"
+        tokens = tokenizer.tokenize(text)
+        patient_data_annotator = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text=text, metadata=metadata)
+
+    def test_annotate_initials_from_name(self, tokenizer):
+        metadata = {
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="ID_ANNOTATE_INITIALS_FROM_NAME",
+                              street=[],
+                              country=[],
+                              location=[])
+        }
+        text = "De patient heet JJ"
+        tokens = tokenizer.tokenize(text)
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text=text, metadata=metadata)
+
+        with patch.object(doc, "get_tokens", return_value=tokens):
+            with patch.object(
+                tokenizer, "tokenize", return_value=linked_tokens(["Jansen"])
+            ):
+                annotations = ann.annotate(doc)
+
+        assert annotations == [
+            dd.Annotation(
+                text="JJ",
+                start_char=16,
+                end_char=18,
+                tag="initiaal_patient",
+            )
+        ]
+
+    # TODO consult Tom to ask him what to do with patient initials in the text.
+    @pytest.mark.skip("Skipping for now")
+    def test_annotate_initial(self, tokenizer):
+
+        metadata = {
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="ID_ANNOTATE_INITIAL",
+                              street=[],
+                              country=[],
+                              location=[])
+        }
+        text = "De patient heet J."
+        tokens = tokenizer.tokenize(text)
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text=text, metadata=metadata)
+
+        with patch.object(doc, "get_tokens", return_value=tokens):
+            with patch.object(
+                tokenizer, "tokenize", return_value=linked_tokens(["Jansen"])
+            ):
+                annotations = ann.annotate(doc)
+
+        assert annotations == [
+            dd.Annotation(
+                text="J.",
+                start_char=16,
+                end_char=18,
+                tag="initiaal_patient",
+            )
+        ]
+
+    def test_annotate_surname(self, tokenizer):
+        metadata = {
+            "patient": Person(first_names=["Jan", "Johan"],
+                              initials="JJ",
+                              surname=["Jansen"],
+                              partnername=[""],
+                              given_name=[],
+                              person_id="ID_ANNOTATE_SURNAME",
+                              street=[],
+                              country=[],
+                              location=[])
+        }
+        text = "De patient heet Jansen"
+        tokens = tokenizer.tokenize(text)
+
+        ann = PatientDataAnnotator(tokenizer=tokenizer, tag="_")
+        doc = dd.Document(text=text, metadata=metadata)
+
+        with patch.object(doc, "get_tokens", return_value=tokens):
+            with patch.object(
+                tokenizer, "tokenize", return_value=linked_tokens(["Jansen"])
+            ):
+                annotations = ann.annotate(doc)
+
+        assert annotations == [
+            dd.Annotation(
+                text="Jansen",
+                start_char=16,
+                end_char=22,
+                tag="achternaam_patient",
+            )
+        ]
+
 
 
 class TestRegexpPseudoAnnotator:
@@ -790,7 +1335,7 @@ class TestRegexpPseudoAnnotator:
     def test_validate_match_pre(self, regexp_pseudo_doc):
 
         r = RegexpPseudoAnnotator(
-            regexp_pattern="_", tag="_", pre_pseudo=["sinds", "al", "vanaf"]
+            regexp_pattern="_", tag="_", pre_pseudo={"sinds", "al", "vanaf"}
         )
         pattern = re.compile(r"\d+ jaar")
 
@@ -801,7 +1346,7 @@ class TestRegexpPseudoAnnotator:
     def test_validate_match_post(self, regexp_pseudo_doc):
 
         r = RegexpPseudoAnnotator(
-            regexp_pattern="_", tag="_", post_pseudo=["geleden", "getrouwd", "gestopt"]
+            regexp_pattern="_", tag="_", post_pseudo={"geleden", "getrouwd", "gestopt"}
         )
         pattern = re.compile(r"\d+ jaar")
 
@@ -842,9 +1387,9 @@ class TestBsnAnnotator:
         with pytest.raises(ValueError):
             an._elfproef("test")
 
-    def test_annotate(self, bsn_doc):
-        an = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
-        annotations = an.annotate(bsn_doc)
+    def test_bsn_annotator(self, bsn_doc):
+        bsn_annotator = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
+        annotations = bsn_annotator.annotate(bsn_doc)
 
         expected_annotations = [
             dd.Annotation(text="111222333", start_char=26, end_char=35, tag="_"),

@@ -128,6 +128,11 @@ def load_surname_lookup(
         cleaning_pipeline=[dd.str.FilterByLength(min_len=2)],
     )
 
+    
+    # Tom
+    surname.add_items_from_self(cleaning_pipeline=[dd.str.FilterByLength(min_len=5),UpperCase()])
+
+
     surname.add_items_from_self(
         cleaning_pipeline=[
             FilterBasedOnLookupSet(
@@ -156,6 +161,10 @@ def load_street_lookup(
     )
 
     street.add_items_from_self(cleaning_pipeline=[dd.str.ReplaceNonAsciiCharacters()])
+
+    # Tom
+    # street.add_items_from_self(cleaning_pipeline=[UpperCase()])
+
 
     return lookup_set_to_trie(street, tokenizer)
 
@@ -226,7 +235,7 @@ def load_institution_lookup(
     institution = dd.ds.LookupSet()
     institution.add_items_from_iterable(
         raw_itemsets["healthcare_institution"],
-        cleaning_pipeline=[dd.str.StripString(), dd.str.FilterByLength(min_len=4)],
+        cleaning_pipeline=[dd.str.StripString(), dd.str.FilterByLength(min_len=3)],
     )
 
     institution.add_items_from_self(cleaning_pipeline=[UpperCase()])

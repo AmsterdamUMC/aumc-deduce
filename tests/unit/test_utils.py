@@ -1,3 +1,5 @@
+import os
+
 from pathlib import Path
 
 import docdeid as dd
@@ -6,6 +8,8 @@ import pytest
 from deduce import utils
 from deduce.annotator import TokenPatternAnnotator
 
+
+BASE_PATH = Path(os.path.dirname(__file__)).parent
 
 class TestStrMatch:
     def test_str_match(self):
@@ -93,7 +97,7 @@ class TestOverwriteDict:
 
 
 class TestHasOverlap:
-    def test_has_overlap(self):
+    def test_utils_has_overlap(self):
 
         assert not utils.has_overlap([])
         assert not utils.has_overlap([(0, 10)])
@@ -231,24 +235,24 @@ class TestStrVariations:
 class TestOptionalLoad:
     def test_optional_load_items(self):
 
-        path = Path("tests/data/lookup/src/lst_test_nested/items.txt")
+        path = str(BASE_PATH) + "/data/lookup/src/lst_test_nested/items.txt"
 
         assert utils.optional_load_items(path) == {"a", "b"}
 
     def test_optional_load_items_nonexisting(self):
 
-        path = Path("tests/data/non/existing/file.txt")
+        path = str(BASE_PATH) + "/data/non/existing/file.txt"
 
         assert utils.optional_load_items(path) is None
 
     def test_optional_load_json(self):
 
-        path = Path("tests/data/small.json")
+        path = str(BASE_PATH) + "/data/small.json"
 
         assert utils.optional_load_json(path) == {"test": True}
 
     def test_optional_load_json_nonexisting(self):
 
-        path = Path("tests/data/non/existing/file.json")
+        path = str(BASE_PATH) + "/data/non/existing/file.json"
 
         assert utils.optional_load_json(path) is None

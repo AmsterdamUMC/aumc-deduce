@@ -454,7 +454,6 @@ leek
 leerling
 leeuw
 leger
-leiden
 lenen
 lengte
 lepel

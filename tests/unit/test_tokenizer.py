@@ -47,6 +47,16 @@ class TestTokenizer:
 
         assert tokenizer._split_text(text=text) == expected_tokens
 
+    def test__merge(self):
+        tokenizer = DeduceTokenizer()
+        text = ""
+        expected_tokens = [
+            dd.Token(text="", start_char=0, end_char=0)
+        ]
+        actual_tokens = tokenizer._merge(text, expected_tokens)
+        assert actual_tokens == expected_tokens
+        
+        
     def test_split_multiple_spaces(self):
         tokenizer = DeduceTokenizer()
         text = "Pieter van der Zee     Bergen Op  Zoom"

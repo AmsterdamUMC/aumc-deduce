@@ -49,6 +49,12 @@
                     "text": "Academisch Ziekenhuis Utrecht",
                     "start_char": 0,
                     "end_char": 29,
+                    "tag": "zorginstelling"
+                },
+                {
+                    "text": "Academisch Ziekenhuis Utrecht",
+                    "start_char": 0,
+                    "end_char": 29,
                     "tag": "ziekenhuis"
                 }
             ]
@@ -62,6 +68,12 @@
                     "start_char": 0,
                     "end_char": 29,
                     "tag": "ziekenhuis"
+                },
+                {
+                    "text": "ACADEMISCH ZIEKENHUIS UTRECHT",
+                    "start_char": 0,
+                    "end_char": 29,
+                    "tag": "zorginstelling"
                 }
             ]
         },
@@ -164,6 +176,12 @@
                     "start_char": 0,
                     "end_char": 27,
                     "tag": "ziekenhuis"
+                },
+                {
+                    "text": "Centraal Militair Hospitaal",
+                    "start_char": 0,
+                    "end_char": 27,
+                    "tag": "zorginstelling"
                 }
             ]
         },

@@ -111,7 +111,7 @@ def has_overlap(intervals: list[tuple]) -> bool:
     return False
 
 
-def repl_segments(s: str, matches: list[tuple]) -> list[list[str]]:
+def repl_segments(s: str, matches: list[tuple]) -> list[set[str]]:
     """
     Segment a string into consecutive substrings, with one or more options for each
     substring.

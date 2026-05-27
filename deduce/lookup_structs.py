@@ -10,7 +10,7 @@ from typing import Optional
 import docdeid as dd
 from docdeid.tokenizer import Tokenizer
 
-from deduce.data.lookup.src import all_lists
+
 from deduce.depr import DeprecatedDsCollection
 from deduce.lookup_struct_loader import (
     load_eponymous_disease_lookup,
@@ -60,7 +60,7 @@ def load_raw_itemset(path: Path) -> set[str]:
     Returns:
         The raw items, as a set of strings.
     """
-
+    logging.info("Loading items from: " + os.path.abspath(path))
     items = optional_load_items(path / "items.txt")
     exceptions = optional_load_items(path / "exceptions.txt")
 
@@ -73,7 +73,7 @@ def load_raw_itemset(path: Path) -> set[str]:
                 f"Cannot import lookup list {path}, did not find "
                 f"items.txt or any sublists."
             )
-
+        
         items = set()
 
     if exceptions is not None:
@@ -110,6 +110,7 @@ def load_raw_itemsets(base_path: Path, subdirs: list[str]) -> dict[str, set[str]
         name = name.removeprefix("lst_")
         lists[name] = load_raw_itemset(base_path / _SRC_SUBDIR / lst)
 
+    logging.info("Finished loading items.")
     return lists
 
 
@@ -203,6 +204,7 @@ def get_lookup_structs(
     lookup_path: Path,
     tokenizer: Tokenizer,
     deduce_version: str,
+    all_lists: list,
     build: bool = False,
     save_cache: bool = True,
 ) -> dd.ds.DsCollection:
@@ -212,6 +214,7 @@ def get_lookup_structs(
         lookup_path: The base path for lookup sets.
         tokenizer: The tokenizer, used to create sequences for LookupTrie
         deduce_version: The current deduce version, used to validate cache.
+        all_lists: The list of lookup tables that must be used.
         build: Whether to do a full build, even when cache is present and valid.
         save_cache: Whether to save to cache. Only used after building.
 

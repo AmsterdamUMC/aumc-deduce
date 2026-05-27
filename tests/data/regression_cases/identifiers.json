@@ -38,13 +38,25 @@
                     "start_char": 0,
                     "end_char": 14,
                     "tag": "id"
+                },
+                {
+                    "text": "99999999999999",
+                    "start_char": 0,
+                    "end_char": 14,
+                    "tag": "langnummer"
                 }
             ]
         },
         {
             "id": 4,
             "text": "99999 99999",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "99999 99999",
+                    "start_char": 0,
+                    "end_char": 11,
+                    "tag": "langnummer"
+                }]
         },
         {
             "id": 5,
@@ -75,6 +87,12 @@
             "text": "345934583495 patnr",
             "annotations": [
                 {
+                    "text": "345934583495 ",
+                    "start_char": 0,
+                    "end_char": 13,
+                    "tag": "langnummer"
+                },
+                {
                     "text": "345934583495",
                     "start_char": 0,
                     "end_char": 12,
@@ -104,6 +122,12 @@
             "id": 9,
             "text": "bsn: 111222334",
             "annotations": [
+                {
+                    "text": "bsn: 111222334",
+                    "start_char": 0,
+                    "end_char": 14,
+                    "tag": "nummerwoord"
+                },
                 {
                     "text": "111222334",
                     "start_char": 5,

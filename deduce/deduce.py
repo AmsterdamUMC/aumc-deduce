@@ -27,7 +27,10 @@ from deduce.lookup_structs import get_lookup_structs, load_raw_itemsets
 from deduce.redactor import DeduceRedactor
 from deduce.tokenizer import DeduceTokenizer
 
-__version__ = importlib.metadata.version(__package__ or __name__)
+try:
+    __version__ = importlib.metadata.version(__package__ or __name__)
+except:
+    __version__ = "test.1.2.3"
 
 
 _BASE_PATH = Path(os.path.dirname(__file__)).parent
@@ -35,13 +38,13 @@ _LOOKUP_LIST_PATH = _BASE_PATH / "deduce" / "data" / "lookup"
 _BASE_CONFIG_FILE = _BASE_PATH / "base_config.json"
 
 
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 warnings.simplefilter(action="default")
 
 
 class Deduce(dd.DocDeid):  # pylint: disable=R0903
     """
-    Main class for de-identifiation.
+    Main class for de-identification.
 
     Inherits from ``docdeid.DocDeid``, and as such, most information on deidentifying
     text with a Deduce object is available there.
@@ -55,7 +58,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             are overwritten, and other defaults are kept. When `load_base_config` is
             set to `False`, no defaults are loaded and only configuration from `config`
             is applied.
-        looup_data_path: The path to look for lookup data, by default included in
+        lookup_data_path: The path to look for lookup data, by default included in
             the package. If you want to make changes to source files, it's recommended
             to copy the source data and pointing deduce to this folder with this
             argument.
@@ -71,6 +74,8 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         lookup_data_path: Union[str, Path] = _LOOKUP_LIST_PATH,
         build_lookup_structs: bool = False,
     ) -> None:
+
+        global all_lists
 
         super().__init__()
 
@@ -88,12 +93,26 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             load_base_config=load_base_config, user_config=config
         )
 
-        self.lookup_data_path = self._initialize_lookup_data_path(lookup_data_path)
+        if "lookup_table_path" in self.config.keys():
+            config_file_path = Path(os.path.dirname(Path(self.config["config_file_dir"])))
+            self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
+        else:
+            self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
+        logging.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
+        if "all_lists" in self.config.keys():
+            all_lists=self.config["all_lists"]
+        if len(all_lists) == 0:
+            # generate a new one if deduce.data.lookup.src.all_lists is empty AND it is empty/not present in config.json
+            all_lists=[]
+            for i in self.lookup_data_path.glob("src/*/lst_*"):
+                all_lists.append( os.path.basename(os.path.split(i)[0]) + "/" + os.path.basename(i))
+
         self.lookup_structs = get_lookup_structs(
-            lookup_path=self.lookup_data_path,
+            lookup_path=Path(os.path.realpath(self.lookup_data_path)),
             tokenizer=self.tokenizers["default"],
+            all_lists=all_lists,
             deduce_version=__version__,
             build=build_lookup_structs,
         )
@@ -124,9 +143,12 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
                 base_config = json.load(file)
 
             utils.overwrite_dict(config, base_config)
+            # store the config-file-dir as an entry in the config dict
+            config["config_file_dir"] = _BASE_CONFIG_FILE
 
         if user_config is not None:
             if isinstance(user_config, str):
+                config["config_file_dir"] = user_config
                 with open(user_config, "r", encoding="utf-8") as file:
                     user_config = json.load(file)
 
@@ -147,13 +169,13 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
 
         raw_itemsets = load_raw_itemsets(
             base_path=lookup_data_path,
-            subdirs=["names/lst_interfix", "names/lst_prefix"],
+            subdirs=["names/lst_interfix", "names/lst_prefix", "whitelist/lst_extra_mergeterms"],
         )
 
         prefix = load_prefix_lookup(raw_itemsets)
         interfix = load_interfix_lookup(raw_itemsets)
 
-        merge_terms = itertools.chain(prefix.items(), interfix.items())
+        merge_terms = itertools.chain(prefix.items(), interfix.items(),raw_itemsets["extra_mergeterms"])
 
         return DeduceTokenizer(merge_terms=merge_terms)
 
@@ -171,7 +193,7 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
             args.update(
                 lookup_values=lookup_struct.items(),
                 matching_pipeline=lookup_struct.matching_pipeline,
-                tokenizer=extras["tokenizer]"],
+                tokenizer=extras["tokenizer"],
             )
         elif isinstance(lookup_struct, dd.ds.LookupTrie):
             args.update(trie=lookup_struct)
@@ -337,7 +359,6 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
                 annotator = self._get_annotator_from_class(annotator_type, args, extras)
 
             group.add_processor(annotator_name, annotator)
-
         return annotators
 
     @staticmethod
@@ -351,15 +372,16 @@ class _DeduceProcessorLoader:  # pylint: disable=R0903
     def _load_location_processors(location_group: dd.process.DocProcessorGroup) -> None:
 
         location_group.add_processor(
-            "remove_street_tags", RemoveAnnotations(tags=["straat"])
+            "remove_street_tags", RemoveAnnotations(tags=["straatnaam"])
         )
 
         location_group.add_processor(
             "clean_street_tags",
             CleanAnnotationTag(
                 tag_map={
-                    "straat+huisnummer": "locatie",
-                    "straat+huisnummer+huisnummerletter": "locatie",
+                    "straatnaam+huisnummer": "locatie",
+                    "straatnaam+huisnummer+huisnummerletter": "locatie",
+                    "straatnaam_bare": "locatie"
                 }
             ),
         )

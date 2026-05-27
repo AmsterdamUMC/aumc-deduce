@@ -405,22 +405,50 @@
         {
             "id": 44,
             "text": "kees",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "kees",
+                    "start_char": 0,
+                    "end_char": 4,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 45,
             "text": "marie",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "marie",
+                    "start_char": 0,
+                    "end_char": 5,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 46,
             "text": "daan",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "daan",
+                    "start_char": 0,
+                    "end_char": 4,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 47,
             "text": "ahmed",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "ahmed",
+                    "start_char": 0,
+                    "end_char": 5,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 48,
@@ -496,17 +524,38 @@
         {
             "id": 58,
             "text": "zoutenbier",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "zoutenbier",
+                    "start_char": 0,
+                    "end_char": 10,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 59,
             "text": "zuidgeest",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "zuidgeest",
+                    "start_char": 0,
+                    "end_char": 9,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 60,
             "text": "wiegmans",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "wiegmans",
+                    "start_char": 0,
+                    "end_char": 8,
+                    "tag": "persoon"
+                }
+            ]
         },
         {
             "id": 61,

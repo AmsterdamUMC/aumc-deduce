@@ -37,7 +37,14 @@
         {
             "id": 4,
             "text": "utrecht",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "utrecht",
+                    "start_char": 0,
+                    "end_char": 7,
+                    "tag": "locatie"
+                }
+            ]
         },
         {
             "id": 5,
@@ -127,7 +134,14 @@
         {
             "id": 15,
             "text": "bosch en duin",
-            "annotations": []
+            "annotations": [
+                {
+                    "text": "bosch en duin",
+                    "start_char": 0,
+                    "end_char": 13,
+                    "tag": "locatie"
+                }
+            ]
         },
         {
             "id": 16,
@@ -194,9 +208,9 @@
             "text": "Bovenkerk (nh)",
             "annotations": [
                 {
-                    "text": "Bovenkerk",
+                    "text": "Bovenkerk (nh)",
                     "start_char": 0,
-                    "end_char": 9,
+                    "end_char": 14,
                     "tag": "locatie"
                 }
             ]

@@ -181,7 +181,7 @@ class TestPersonAnnotationConverter:
 
 
 class TestRemoveAnnotations:
-    def test_remove_annotations(self):
+    def test_remove_annotations_with_nonexisting_tag(self):
 
         ra = RemoveAnnotations(tags=["voornaam_patient", "nonexisting_tag"])
 
@@ -208,7 +208,7 @@ class TestRemoveAnnotations:
 
 
 class TestCleanAnnotationTag:
-    def test_remove_annotations(self):
+    def test_clean_annotation_tag(self):
 
         cat = CleanAnnotationTag(
             tag_map={"voornaam_patient": "voornaam", "nonexistent": "test"}
