@@ -61,7 +61,7 @@ def bsn_doc():
     d = dd.DocDeid()
 
     return d.deidentify(
-        text="Geldige voorbeelden zijn: 111222333 en 123456782. "
+        text="Geldige voorbeelden zijn: 111222333 en 123456782. \n"
         "Patientnummer is 01234, en ander id 01234567890."
     )
 
@@ -1367,8 +1367,12 @@ class TestRegexpPseudoAnnotator:
 
 
 class TestBsnAnnotator:
+    
+    bsn_regexp = r"(\b)(\d(\D?\d\D?){7}\d)(\b)"
+    capture_group = 2
+    
     def test_elfproef(self):
-        an = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
+        an = BsnAnnotator(bsn_regexp=TestBsnAnnotator.bsn_regexp, capture_group=TestBsnAnnotator.capture_group, tag="_")
 
         assert an._elfproef("111222333")
         assert not an._elfproef("111222334")
@@ -1376,19 +1380,15 @@ class TestBsnAnnotator:
         assert not an._elfproef("123456783")
 
     def test_elfproef_wrong_length(self):
-        an = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
-
-        with pytest.raises(ValueError):
-            an._elfproef("12345678")
+        an = BsnAnnotator(bsn_regexp=TestBsnAnnotator.bsn_regexp, capture_group=TestBsnAnnotator.capture_group, tag="_")
+        assert False == an._elfproef("12345678")
 
     def test_elfproef_non_numeric(self):
-        an = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
-
-        with pytest.raises(ValueError):
-            an._elfproef("test")
+        an = BsnAnnotator(bsn_regexp=TestBsnAnnotator.bsn_regexp, capture_group=TestBsnAnnotator.capture_group, tag="_")
+        assert False == an._elfproef("test")
 
     def test_bsn_annotator(self, bsn_doc):
-        bsn_annotator = BsnAnnotator(bsn_regexp="(\\D|^)(\\d{9})(\\D|$)", capture_group=2, tag="_")
+        bsn_annotator = BsnAnnotator(bsn_regexp=TestBsnAnnotator.bsn_regexp, capture_group=TestBsnAnnotator.capture_group, tag="_")
         annotations = bsn_annotator.annotate(bsn_doc)
 
         expected_annotations = [
@@ -1399,14 +1399,61 @@ class TestBsnAnnotator:
         assert annotations == expected_annotations
 
     def test_annotate_with_nondigits(self, bsn_doc):
-        an = BsnAnnotator(bsn_regexp=r"\d{4}\.\d{2}\.\d{3}", tag="_")
-        doc = dd.Document("1234.56.782")
+        an = BsnAnnotator(bsn_regexp=TestBsnAnnotator.bsn_regexp, capture_group=TestBsnAnnotator.capture_group, tag="_")
+        # First a BSN like number which matches the reg-exp but fails the 11-proof
+        doc = dd.Document("9999.97.611")
         annotations = an.annotate(doc)
+        
+        expected_annotations = []
+        assert annotations == expected_annotations
+        
+        # a series of digits with non-numeric separators which match the reg-exp
+        doc = dd.Document("9.7 14.8 8.1 13.8")
+        annotations = an.annotate(doc)
+        
+        expected_annotations = []
+        assert annotations == expected_annotations
+        
+        doc = dd.Document("9999.97.610")
+        annotations = an.annotate(doc)
+        
 
         expected_annotations = [
-            dd.Annotation(text="1234.56.782", start_char=0, end_char=11, tag="_"),
+            dd.Annotation(text="9999.97.610", start_char=0, end_char=11, tag="_"),
         ]
-
+        assert annotations == expected_annotations
+        
+        # Trailing and preceeding non-numeric group separators
+        doc = dd.Document("   9999.97.300. ")
+        annotations = an.annotate(doc)
+        
+        expected_annotations = [
+            dd.Annotation(text="9999.97.300", start_char=3, end_char=14, tag="_"),
+        ]
+        assert annotations == expected_annotations
+        
+        doc = dd.Document("9999.97.099")
+        annotations = an.annotate(doc)
+        
+        expected_annotations = [
+            dd.Annotation(text="9999.97.099", start_char=0, end_char=11, tag="_"),
+        ]
+        assert annotations == expected_annotations
+        
+        doc = dd.Document("9999-95-108")
+        annotations = an.annotate(doc)
+        
+        expected_annotations = [
+            dd.Annotation(text="9999-95-108", start_char=0, end_char=11, tag="_"),
+        ]
+        assert annotations == expected_annotations
+        
+        doc = dd.Document("9999 95 777")
+        annotations = an.annotate(doc)
+        
+        expected_annotations = [
+            dd.Annotation(text="9999 95 777", start_char=0, end_char=11, tag="_"),
+        ]
         assert annotations == expected_annotations
 
 

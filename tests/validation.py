@@ -70,8 +70,8 @@ class TestValidationFile:
                 record_id = "Missing record ID at approx. record ID: ", record_count
 
             if len(columns) != 13:
-                print("Missing column in record with ID  " + record_id)
-                fail("Missing column in record with ID  " + record_id)
+                print("Missing column in record with ID  ", record_id)
+                fail("Missing column in record with ID  ", record_id)
                 continue
 
             failure_status = columns[1]

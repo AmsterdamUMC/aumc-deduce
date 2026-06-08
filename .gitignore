@@ -127,3 +127,4 @@ ENV/
 # ide
 .idea
 .vscode
+/.pytest_cache/

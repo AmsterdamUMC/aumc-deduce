@@ -963,9 +963,7 @@ class BsnAnnotator(dd.process.Annotator):
     @staticmethod
     def _elfproef(bsn: str) -> bool:
         if len(bsn) != 9 or (any(not char.isdigit() for char in bsn)):
-            raise ValueError(
-                "Elfproef for testing BSN can only be applied to strings with 9 digits."
-            )
+            return False
 
         total = 0
 
@@ -980,20 +978,23 @@ class BsnAnnotator(dd.process.Annotator):
         for match in self.bsn_regexp.finditer(doc.text):
 
             text = match.group(self.capture_group)
-            digits = re.sub(r"\D", "", text)
-
-            start, end = match.span(self.capture_group)
-
-            if self._elfproef(digits):
-                annotations.append(
-                    Annotation(
-                        text=text,
-                        start_char=start,
-                        end_char=end,
-                        tag=self.tag,
-                        priority=self.priority,
+            # Length of 13 because we assume a 9 digit BSN with maximally 
+            # 4 group separator characters between the digits
+            if len(text) <= 13:
+                digits = re.sub(r"\D", "", text)
+    
+                start, end = match.span(self.capture_group)
+    
+                if self._elfproef(digits):
+                    annotations.append(
+                        Annotation(
+                            text=text,
+                            start_char=start,
+                            end_char=end,
+                            tag=self.tag,
+                            priority=self.priority,
+                        )
                     )
-                )
 
         return annotations
 
