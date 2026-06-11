@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "deduce"
-version = "4.0.0"
-description = "Deduce: de-identification method for Dutch medical text AUMC version"
+version = "4.0.1"
+description = "Deduce: de-identification method for Dutch medical text - AUMC version"
 authors = ["Vincent Menger <vmenger@protonmail.com>"]
 maintainers = ["Jacob Rousseau <j.b.i.rousseau@amsterdamumc.nl>","Tom Welter <t.g.welter@amsterdamumc.nl>"]
 license = "LGPL-3.0-or-later"
