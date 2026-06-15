@@ -940,6 +940,40 @@ class RegexpPseudoAnnotator(RegexpAnnotator):
         )
 
 
+class PatientMedicalRecordNumberAnnotator(dd.process.Annotator):
+    
+    def __init__(
+        self, mrn_regexp: str, *args, capture_group: int = 0, **kwargs
+    ) -> None:
+        self.mrn_regexp = re.compile(mrn_regexp)
+        self.capture_group = capture_group
+        super().__init__(*args, **kwargs)
+        
+    def annotate(self, doc: Document) -> list[Annotation]:
+        annotations = []
+        medical_record_number = doc.metadata["patient"].person_id
+        mrn_digits = re.sub(r"\D", "", medical_record_number)
+
+        for match in self.mrn_regexp.finditer(doc.text):
+
+            text = match.group(self.capture_group)
+            digits = re.sub(r"\D", "", text)
+
+            start, end = match.span(self.capture_group)
+
+            if mrn_digits == digits:
+                annotations.append(
+                    Annotation(
+                        text=text,
+                        start_char=start,
+                        end_char=end,
+                        tag=self.tag,
+                        priority=self.priority,
+                    )
+                )
+
+        return annotations
+
 class BsnAnnotator(dd.process.Annotator):
     """
     Annotates Burgerservicenummer (BSN), according to the elfproef logic.

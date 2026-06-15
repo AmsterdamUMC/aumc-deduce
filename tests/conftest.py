@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 from deduce import Deduce
+from deduce.person import Person
 from attr._compat import get_generic_base
 
 
@@ -19,10 +20,8 @@ def get_checked_out_branch(config_path):
 def model():
     user_home = Path.home()
     user_name = os.environ.get("USER", os.environ.get("USERNAME"))
-    if ("jacob" in user_name):
-        workspace_dir = "workspace"
-    else:
-        workspace_dir = "git"
+
+    workspace_dir = "git"
 
     git_path = os.path.join(user_home, workspace_dir, "aumc-deduce-conf")
     checked_out_branch = get_checked_out_branch(git_path)
@@ -33,4 +32,20 @@ def model():
     config_path = os.path.join(user_home, workspace_dir, "aumc-deduce-conf",  "aumc_config.json")
     # config_path = os.path.join(user_home, "workspace", "aumc-deduce", "base_config.json")
     print("Loading Deduce config file: ", config_path, flush=True)
-    return Deduce(config=config_path, build_lookup_structs=True, load_base_config=False)
+    
+    # Add an empty patient to the metadata
+    person = Person(first_names=[""],
+                        initials="",
+                        surname=[""],
+                        partnername=[""],
+                        given_name=[""],
+                        person_id="",
+                        location=[""],
+                        country=[""],
+                        street=[""])
+    model = Deduce(config=config_path, build_lookup_structs=False, load_base_config=False)
+    metadata = {
+                    "persoon" : person
+                }
+    model.metadata = metadata
+    return model

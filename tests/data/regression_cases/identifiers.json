@@ -2,7 +2,10 @@
     "examples": [
         {
             "id": 0,
-            "text": "123456",
+			"person": {
+				"patient_id": "123456"
+			},
+            "text": "8888888",
             "annotations": []
         },
         {

@@ -166,11 +166,11 @@ class TestDeduce:
                                        surname=["Janssen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       person_id="0003344",
                                        street=["dorpstraat"],
                                        country=[],
                                        location=[])}
-        text_with_location = ("betreft: Jan Jansen, bsn 111222333, patnr 000334433. De patient J. Jansen is 64 "
+        text_with_location = ("betreft: Jan Jansen, bsn 111222333, med. dossier 000.334.4. De patient J. Jansen is 64 "
                               "jaar oud en woonachtig in Dorpstraat 1, DORPSTRAAT 2, DorpStraat 3, dorpstraat 4, "
                               "Dorpstraat 6, Amsterdamsestraatweg, 1234 AA, 1e Achterstraat, "
                               "Amsterdamsestraatweg")
@@ -178,7 +178,7 @@ class TestDeduce:
         doc = model.deidentify(text_with_location, metadata=metadata)
         # TODO: lowercase and mixed case locations (typo's) don't seem to work. Discussion point
         expected_deidentified = (
-            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], patnr [ID-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar oud en "
+            "betreft: [PATIENT], [NUMMERWOORD-1][BSN-1], med. dossier [MRN-1]. De patient [PATIENT] is [LEEFTIJD-1] jaar oud en "
             "woonachtig in [LOCATIE-1], [LOCATIE-2], DorpStraat 3, dorpstraat 4, [LOCATIE-1], [LOCATIE-3], "
             "[LOCATIE-4], [LOCATIE-5], [LOCATIE-3]"
         )

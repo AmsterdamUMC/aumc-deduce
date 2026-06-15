@@ -41,7 +41,6 @@ def regression_test(
         expected = AnnotationSet(
             Annotation(**annotation) for annotation in example["annotations"]
         )
-        
         actual = model.deidentify(text=example["text"], metadata=None, enabled=enabled).annotations
         try:
             is_subset = expected.issubset(actual)

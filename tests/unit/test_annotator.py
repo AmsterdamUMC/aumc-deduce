@@ -6,6 +6,7 @@ import pytest
 
 from deduce.annotator import (
     BsnAnnotator,
+    PatientMedicalRecordNumberAnnotator,
     ContextAnnotator,
     PatientNameAnnotator,
     PatientDataAnnotator,
@@ -1365,6 +1366,34 @@ class TestRegexpPseudoAnnotator:
 
         assert not r._validate_match(match, regexp_pseudo_doc)
 
+
+class TestPatientMedicalRecordNumberAnnotator:
+    # Length of the MRN is 7 so we use {5} with 1 leading and tailing digit.
+    mrn_regexp = r"(\b)(\d(\D?\d\D?){5}\d)(\b)"
+    capture_group = 2
+    
+    def test_non_continious_number(self):
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       person_id="0003344",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        an = PatientMedicalRecordNumberAnnotator(mrn_regexp=TestPatientMedicalRecordNumberAnnotator.mrn_regexp,
+                                                 capture_group=TestPatientMedicalRecordNumberAnnotator.capture_group,
+                                                 tag="_")
+        doc = dd.Document("000.334.4.")
+        doc.metadata = metadata
+        annotations = an.annotate(doc)
+
+        expected_annotations = [
+            dd.Annotation(text="000.334.4", start_char=0, end_char=9, tag="_"),
+        ]
+
+        assert annotations == expected_annotations
 
 class TestBsnAnnotator:
     
