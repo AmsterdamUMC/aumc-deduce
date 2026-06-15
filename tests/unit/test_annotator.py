@@ -523,7 +523,7 @@ class TestPatientNameAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -548,7 +548,7 @@ class TestPatientNameAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -569,7 +569,7 @@ class TestPatientNameAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -587,7 +587,7 @@ class TestPatientNameAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -612,7 +612,7 @@ class TestPatientNameAnnotator:
                                      surname=[""],
                                      partnername=[""],
                                      given_name=[],
-                                     person_id="",
+                                     patient_id="",
                                      street=[],
                                      country=[],
                                      location=[])}
@@ -637,7 +637,7 @@ class TestPatientNameAnnotator:
                                      surname=[""],
                                      partnername=[""],
                                      given_name=[],
-                                     person_id="",
+                                     patient_id="",
                                      street=[],
                                      country=[],
                                      location=[])}
@@ -655,7 +655,7 @@ class TestPatientNameAnnotator:
                                          surname=[""],
                                          partnername=[""],
                                          given_name=[],
-                                         person_id="",
+                                         patient_id="",
                                          street=[],
                                          country=[],
                                          location=[])}
@@ -744,7 +744,7 @@ class TestPatientNameAnnotator:
                                          surname=["Jansen"],
                                          partnername=[""],
                                          given_name=[],
-                                         person_id="",
+                                         patient_id="",
                                          street=[],
                                          country=[],
                                          location=[])
@@ -777,7 +777,7 @@ class TestPatientNameAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="",
+                              patient_id="",
                               street=[],
                               country=[],
                               location=[])
@@ -811,7 +811,7 @@ class TestPatientNameAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="",
+                              patient_id="",
                               street=[],
                               country=[],
                               location=[])
@@ -844,7 +844,7 @@ class TestPatientNameAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="",
+                              patient_id="",
                               street=[],
                               country=[],
                               location=[])
@@ -893,7 +893,7 @@ class TestPatientDataAnnotator:
                                        surname=["bol", "HOL", "Güs", "hös", "ČUK"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="ID_EXTEND_PATIENT_TOKENS",
+                                       patient_id="ID_EXTEND_PATIENT_TOKENS",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -915,7 +915,7 @@ class TestPatientDataAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="ID_MATCH_FIRST_NAME_MULTIPLE",
+                                       patient_id="ID_MATCH_FIRST_NAME_MULTIPLE",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -940,7 +940,7 @@ class TestPatientDataAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="ID_MATCH_FIRST_NAME_FUZZY",
+                                       patient_id="ID_MATCH_FIRST_NAME_FUZZY",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -961,7 +961,7 @@ class TestPatientDataAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="ID_MATCH_FIRST_NAME_FUZZY_SHORT",
+                                       patient_id="ID_MATCH_FIRST_NAME_FUZZY_SHORT",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -979,7 +979,7 @@ class TestPatientDataAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="ID_MATCH_INITIAL_FROM_NAME",
+                                       patient_id="ID_MATCH_INITIAL_FROM_NAME",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -1004,7 +1004,7 @@ class TestPatientDataAnnotator:
                                      surname=[""],
                                      partnername=[""],
                                      given_name=[],
-                                     person_id="ID_MATCH_INITIAL_FROM_NAME_WITH_PERIOD",
+                                     patient_id="ID_MATCH_INITIAL_FROM_NAME_WITH_PERIOD",
                                      street=[],
                                      country=[],
                                      location=[])}
@@ -1028,7 +1028,7 @@ class TestPatientDataAnnotator:
                                      surname=[""],
                                      partnername=[""],
                                      given_name=[],
-                                     person_id="",
+                                     patient_id="",
                                      street=[],
                                      country=[],
                                      location=[])}
@@ -1045,7 +1045,7 @@ class TestPatientDataAnnotator:
                                          surname=[""],
                                          partnername=[""],
                                          given_name=[],
-                                         person_id="",
+                                         patient_id="",
                                          street=[],
                                          country=[],
                                          location=[])}
@@ -1066,7 +1066,7 @@ class TestPatientDataAnnotator:
                                          surname=["AAAAA"],
                                          partnername=[""],
                                          given_name=[],
-                                         person_id="",
+                                         patient_id="",
                                          street=[],
                                          country=[],
                                          location=[])}
@@ -1148,7 +1148,7 @@ class TestPatientDataAnnotator:
                                          surname=["Jansen"],
                                          partnername=[""],
                                          given_name=[],
-                                         person_id="TEST_ANNOTATE_FIRST_NAME",
+                                         patient_id="TEST_ANNOTATE_FIRST_NAME",
                                          street=[],
                                          country=[],
                                          location=[])
@@ -1181,7 +1181,7 @@ class TestPatientDataAnnotator:
                               surname=["jansen", "nelissen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="ID_MIXED_CASE_SURNAMES",
+                              patient_id="ID_MIXED_CASE_SURNAMES",
                               street=[],
                               country=[],
                               location=[])
@@ -1198,7 +1198,7 @@ class TestPatientDataAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="ID_ANNOTATE_INITIALS_FROM_NAME",
+                              patient_id="ID_ANNOTATE_INITIALS_FROM_NAME",
                               street=[],
                               country=[],
                               location=[])
@@ -1234,7 +1234,7 @@ class TestPatientDataAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="ID_ANNOTATE_INITIAL",
+                              patient_id="ID_ANNOTATE_INITIAL",
                               street=[],
                               country=[],
                               location=[])
@@ -1267,7 +1267,7 @@ class TestPatientDataAnnotator:
                               surname=["Jansen"],
                               partnername=[""],
                               given_name=[],
-                              person_id="ID_ANNOTATE_SURNAME",
+                              patient_id="ID_ANNOTATE_SURNAME",
                               street=[],
                               country=[],
                               location=[])
@@ -1378,7 +1378,7 @@ class TestPatientMedicalRecordNumberAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="0003344",
+                                       patient_id="0003344",
                                        street=[],
                                        country=[],
                                        location=[])}

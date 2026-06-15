@@ -39,13 +39,13 @@ def model():
                         surname=[""],
                         partnername=[""],
                         given_name=[""],
-                        person_id="",
+                        patient_id="",
                         location=[""],
                         country=[""],
                         street=[""])
     model = Deduce(config=config_path, build_lookup_structs=False, load_base_config=False)
     metadata = {
-                    "persoon" : person
-                }
+                    "patient" : person
+            }
     model.metadata = metadata
     return model

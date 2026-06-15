@@ -2,14 +2,27 @@
     "examples": [
         {
             "id": 0,
-			"person": {
-				"patient_id": "123456"
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
 			},
-            "text": "8888888",
+            "text": "123456",
             "annotations": []
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234567",
             "annotations": [
                 {
@@ -22,6 +35,14 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "12345678",
             "annotations": [
                 {
@@ -34,6 +55,14 @@
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "99999999999999",
             "annotations": [
                 {
@@ -52,6 +81,14 @@
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "99999 99999",
             "annotations": [
                 {
@@ -63,6 +100,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Serienummer: 1234567",
             "annotations": [
                 {
@@ -75,6 +120,14 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "(134258395)",
             "annotations": [
                 {
@@ -87,6 +140,14 @@
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "345934583495 patnr",
             "annotations": [
                 {
@@ -105,6 +166,14 @@
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "111222333 (bsn)",
             "annotations": [
                 {
@@ -123,6 +192,14 @@
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "bsn: 111222334",
             "annotations": [
                 {
@@ -141,6 +218,14 @@
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "123456782",
             "annotations": [
                 {
@@ -159,6 +244,14 @@
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "123456783",
             "annotations": [
                 {
@@ -171,6 +264,14 @@
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "111111111",
             "annotations": [
                 {
@@ -183,6 +284,14 @@
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "11122233",
             "annotations": [
                 {

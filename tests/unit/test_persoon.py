@@ -25,21 +25,21 @@ class TestPersoon(unittest.TestCase):
         street=[w for w in street if w is not None]
         locality=[dict['WOONPLAATS']]
         locality=[woonplaats for woonplaats in locality if woonplaats is not None and woonplaats != 'Nederland']
-        person_id = dict['PAT_MRN_ID']
+        patient_id = dict['PAT_MRN_ID']
         country = [dict['LAND_NAAM']]
         pers={"patient": Person(first_names=voornaam,
                                 surname=surname,
                                 street=street,
                                 location=locality,
                                 country = country, 
-                                person_id = dict['PAT_MRN_ID'] )}
+                                patient_id = dict['PAT_MRN_ID'] )}
         
         self.assertEqual(["Doe", "Smith"], pers["patient"].surname)
         self.assertEqual(["Jane", "Mary"], pers["patient"].first_names)
         self.assertEqual(["Dorpstraat 51"], pers["patient"].street)
         self.assertEqual(["Mokum"], pers["patient"].location)
         self.assertEqual(["Belgie"], pers["patient"].country)
-        self.assertEqual("ID_123456", pers["patient"].person_id)
+        self.assertEqual("ID_123456", pers["patient"].patient_id)
 
     def test_irregular_spaces(self):
         # tests for spaces in irregular places (leading, trailing, between duplicate tokens)
@@ -49,7 +49,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["  Zijstra        "],
                         partnername=[""],
                         given_name=[""],
-                        person_id="",
+                        patient_id="",
                         location=[""],
                         country=[""],
                         street=[""])
@@ -62,7 +62,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["   Boer "],
                         partnername=[" Vries "],
                         given_name=["Wil", "Tru "],
-                        person_id="144025",
+                        patient_id="144025",
                         location=["Utrecht ", " 3500 MG"],
                         country=["Verenigd","Koningrijk"],
                         street=["Dorpstraat 45"])
@@ -74,14 +74,14 @@ class TestPersoon(unittest.TestCase):
         self.assertEqual(["Utrecht", "3500 MG"], person.location)
         self.assertEqual(["Verenigd","Koningrijk"], person.country)
         self.assertEqual(["Dorpstraat 45"], person.street)
-        self.assertEqual("144025", person.person_id)
+        self.assertEqual("144025", person.patient_id)
 
         person = Person(first_names=["Piet", "Jan", "Klaas"],
                         initials="P.  J.K.H, ",
                         surname=["Pietersen"],
                         partnername=[],
                         given_name=[""],
-                        person_id="",
+                        patient_id="",
                         location=[""],
                         country=[""],
                         street=[""])
@@ -98,12 +98,12 @@ class TestPersoon(unittest.TestCase):
 
     def test_missing_values(self):
         person = Person(first_names=[], initials="", surname=[], partnername=[],
-                        given_name=[], person_id="", country=[], street=[], location=[])
+                        given_name=[], patient_id="", country=[], street=[], location=[])
         self.assertEqual(None, person.first_names)
         self.assertEqual("", person.initials)
         self.assertEqual(None, person.surname)
         self.assertEqual(None, person.given_name)
-        self.assertEqual("", person.person_id)
+        self.assertEqual("", person.patient_id)
         self.assertEqual(None, person.street)
         self.assertEqual(None, person.location)
         self.assertEqual(None, person.country)
@@ -115,7 +115,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["van Flintstone"],
                         partnername=["Janssen"],
                         given_name=[],
-                        person_id="",
+                        patient_id="",
                         street=[],
                         location=[],
                         country=[])
@@ -128,7 +128,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["van Flintstone"],
                         partnername=["Janssen"],
                         given_name=[],
-                        person_id="",
+                        patient_id="",
                         street=[],
                         location=[],
                         country=[])
@@ -140,7 +140,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["van Flintstone"],
                         partnername=["Nijkerk"],
                         given_name=[],
-                        person_id="",
+                        patient_id="",
                         street=[],
                         location=[],
                         country=[])
@@ -153,7 +153,7 @@ class TestPersoon(unittest.TestCase):
                         surname=["Flintstone"],
                         partnername=["Janssen de Graaf"],
                         given_name=[],
-                        person_id="",
+                        patient_id="",
                         street=[],
                         location=[],
                         country=[])

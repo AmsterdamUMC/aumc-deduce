@@ -20,7 +20,7 @@ class Person:
     street: ADRESREGEL_1
     location: woonplaats
     country: LAND_NAAM
-    person_id: PAT_MRN_ID
+    patient_id: PAT_MRN_ID
     
     
     The production calls on the production environment are found under the user 'pod-deduce' and located under the
@@ -37,14 +37,14 @@ class Person:
     surname: Optional[list[str]] = None
     partnername: Optional[list[str]] = None
     given_name: Optional[list[str]] = None
-    person_id: Optional[str] = ""
+    patient_id: Optional[str] = ""
     street: Optional[list[str]] = None
     location: Optional[list[str]] = None
     country: Optional[list[str]] = None
     
     def __init__(self, first_names: list[str],
                  surname : list[str],
-                 person_id: str,
+                 patient_id: str,
                  street: list[str],
                  location: list[str],
                  country: list[str],
@@ -73,8 +73,8 @@ class Person:
         if country:
             self.country = list(map(str.strip, country)) or None
 
-        if person_id:
-            self.person_id = person_id or None
+        if patient_id:
+            self.patient_id = patient_id or None
 
         if initials:
             self.initials = initials.strip().replace(" ", "").replace(",", ".") or None

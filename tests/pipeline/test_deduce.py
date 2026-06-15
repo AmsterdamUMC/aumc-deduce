@@ -17,7 +17,7 @@ class TestDeduce:
                                        surname=["Jansen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -75,7 +75,7 @@ class TestDeduce:
                                        surname=["Jansen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -97,7 +97,7 @@ class TestDeduce:
                                        surname=["Jansen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -120,7 +120,7 @@ class TestDeduce:
         metadata = {"patient": Person(first_names=["Pieter", "Jan", "Klaas"],
                                       surname=["Jansen"],
                                       partnername=[""],
-                                      person_id="1234567",
+                                      patient_id="1234567",
                                       street=["Oude Turfmarkt"],
                                       location=["Oude Turfmarkt", "Amsterdam"],
                                       country=["Burkina Faso"],
@@ -143,7 +143,7 @@ class TestDeduce:
                                        surname=["Jansen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -166,7 +166,7 @@ class TestDeduce:
                                        surname=["Janssen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="0003344",
+                                       patient_id="0003344",
                                        street=["dorpstraat"],
                                        country=[],
                                        location=[])}
@@ -191,7 +191,7 @@ class TestDeduce:
                                        surname=["Jansen"],
                                        partnername=[""],
                                        given_name=[],
-                                       person_id="",
+                                       patient_id="",
                                        street=[],
                                        country=[],
                                        location=[])}
@@ -219,7 +219,7 @@ class TestDeduce:
                                                surname=["van der Heide", "Jagers Op Akkerhuis"],
                                                partnername=[""],
                                                given_name=[],
-                                               person_id="",
+                                               patient_id="",
                                                street=[],
                                                country=[],
                                                location=[])}
@@ -239,7 +239,7 @@ class TestDeduce:
                                           surname=["van der Heide", "de Boer"],
                                           partnername=[""],
                                           given_name=[],
-                                          person_id="",
+                                          patient_id="",
                                           street=[],
                                           country=[],
                                           location=[])}
@@ -260,7 +260,7 @@ class TestDeduce:
                                       given_name=[],
                                       street=["Pëver", "Eerste Steeg", "Tweede Weg"],
                                       country=["Nieuw Zeeland"],
-                                      location=["Laag Plek","Wëst Nederland","1234 MG", "1234MG"], person_id="1234")}
+                                      location=["Laag Plek","Wëst Nederland","1234 MG", "1234MG"], patient_id="1234")}
         text_input = ("Dhr Welder is ziek, volledige naam WELTER,T.G. Woont in de straat EERSTE STEEG, vroeger in "
                       "de Tweede weg 218 en in de Kalverstraat 23 in het dorp lage vuursche, postcode 1234 MG "
                       "en 1234MG in het land Nieuw Zeoland.")

@@ -2,6 +2,14 @@
     "examples": [
         {
             "id": 0,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "(030) 555 5555",
             "annotations": [
                 {
@@ -14,6 +22,14 @@
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "(0517)555555",
             "annotations": [
                 {
@@ -26,6 +42,14 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "(06)55555555",
             "annotations": [
                 {
@@ -38,6 +62,14 @@
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "(06)-5555 5555",
             "annotations": [
                 {
@@ -50,6 +82,14 @@
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "+31887555555",
             "annotations": [
                 {
@@ -62,6 +102,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0031655555555",
             "annotations": [
                 {
@@ -74,6 +122,14 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "010-5555555",
             "annotations": [
                 {
@@ -86,6 +142,14 @@
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "015-5555555",
             "annotations": [
                 {
@@ -98,6 +162,14 @@
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "023-5555555",
             "annotations": [
                 {
@@ -110,6 +182,14 @@
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "030 555 5555",
             "annotations": [
                 {
@@ -122,6 +202,14 @@
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "030-5555555",
             "annotations": [
                 {
@@ -134,6 +222,14 @@
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0305555555",
             "annotations": [
                 {
@@ -146,6 +242,14 @@
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0314-555555",
             "annotations": [
                 {
@@ -158,6 +262,14 @@
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "046-555555",
             "annotations": [
                 {
@@ -170,6 +282,14 @@
         },
         {
             "id": 14,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0474 555555",
             "annotations": [
                 {
@@ -182,6 +302,14 @@
         },
         {
             "id": 15,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06 55 55 55 55",
             "annotations": [
                 {
@@ -194,6 +322,14 @@
         },
         {
             "id": 16,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06 555 555 55",
             "annotations": [
                 {
@@ -206,6 +342,14 @@
         },
         {
             "id": 17,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06-55555555",
             "annotations": [
                 {
@@ -218,6 +362,14 @@
         },
         {
             "id": 18,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0655555555",
             "annotations": [
                 {
@@ -230,6 +382,14 @@
         },
         {
             "id": 19,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 - 7555555",
             "annotations": [
                 {
@@ -242,6 +402,14 @@
         },
         {
             "id": 20,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 2555555",
             "annotations": [
                 {
@@ -254,6 +422,14 @@
         },
         {
             "id": 21,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 755 55 55",
             "annotations": [
                 {
@@ -266,6 +442,14 @@
         },
         {
             "id": 22,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 755 5555",
             "annotations": [
                 {
@@ -278,6 +462,14 @@
         },
         {
             "id": 23,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088-7555555",
             "annotations": [
                 {
@@ -290,6 +482,14 @@
         },
         {
             "id": 24,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0883155555",
             "annotations": [
                 {
@@ -302,6 +502,14 @@
         },
         {
             "id": 25,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "08875-55555",
             "annotations": [
                 {
@@ -314,6 +522,14 @@
         },
         {
             "id": 26,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "030 - 5555 555",
             "annotations": [
                 {
@@ -326,6 +542,14 @@
         },
         {
             "id": 27,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "030 - 5555555",
             "annotations": [
                 {
@@ -338,6 +562,14 @@
         },
         {
             "id": 28,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "030 5555 555",
             "annotations": [
                 {
@@ -350,6 +582,14 @@
         },
         {
             "id": 29,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0305555555",
             "annotations": [
                 {
@@ -362,6 +602,14 @@
         },
         {
             "id": 30,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06 555 555 55",
             "annotations": [
                 {
@@ -374,6 +622,14 @@
         },
         {
             "id": 31,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06 5555 5555",
             "annotations": [
                 {
@@ -386,6 +642,14 @@
         },
         {
             "id": 32,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "06-55555555",
             "annotations": [
                 {
@@ -398,6 +662,14 @@
         },
         {
             "id": 33,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "065555 5555",
             "annotations": [
                 {
@@ -410,6 +682,14 @@
         },
         {
             "id": 34,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0655555555",
             "annotations": [
                 {
@@ -422,6 +702,14 @@
         },
         {
             "id": 35,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0800 5555",
             "annotations": [
                 {
@@ -434,6 +722,14 @@
         },
         {
             "id": 36,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 - 7555555",
             "annotations": [
                 {
@@ -446,6 +742,14 @@
         },
         {
             "id": 37,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 75 555 55",
             "annotations": [
                 {
@@ -458,6 +762,14 @@
         },
         {
             "id": 38,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088 755 5555",
             "annotations": [
                 {
@@ -470,6 +782,14 @@
         },
         {
             "id": 39,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088-75 555 55",
             "annotations": [
                 {
@@ -482,6 +802,14 @@
         },
         {
             "id": 40,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "088-7555555",
             "annotations": [
                 {
@@ -494,6 +822,14 @@
         },
         {
             "id": 41,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "08875-55555",
             "annotations": [
                 {
@@ -506,6 +842,14 @@
         },
         {
             "id": 42,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "with extra digit: 088-75 555555",
             "annotations": [
                 {
@@ -518,6 +862,14 @@
         },
         {
             "id": 43,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "with 1 digit short: 088-75 5555",
             "annotations": [
                 {
@@ -530,16 +882,40 @@
         },
         {
             "id": 44,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "5348573857385",
             "annotations": []
         },
         {
             "id": 45,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234567890",
             "annotations": []
         },
         {
             "id": 46,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "0123456789",
             "annotations": [
                 {

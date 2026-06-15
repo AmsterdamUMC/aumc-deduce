@@ -762,12 +762,12 @@ class PatientDataAnnotator(dd.process.Annotator):
         Keep the patient id in memory to avoid repeatedly creating the same _firstnameslist and _surname_pattern_1-4
         If the patient is different or unknown we reset and recreate these lists. 
         """
-        if doc.metadata["patient"].person_id is None or doc.metadata["patient"].person_id != self._id_string:
+        if doc.metadata["patient"].patient_id is None or doc.metadata["patient"].patient_id != self._id_string:
 
-            if doc.metadata["patient"].person_id is None:
+            if doc.metadata["patient"].patient_id is None:
                 self._id_string=None
             else:
-                self._id_string=doc.metadata["patient"].person_id
+                self._id_string=doc.metadata["patient"].patient_id
         
         
             """
@@ -951,7 +951,8 @@ class PatientMedicalRecordNumberAnnotator(dd.process.Annotator):
         
     def annotate(self, doc: Document) -> list[Annotation]:
         annotations = []
-        medical_record_number = doc.metadata["patient"].person_id
+        patient = doc.metadata["patient"]
+        medical_record_number = patient.patient_id
         mrn_digits = re.sub(r"\D", "", medical_record_number)
 
         for match in self.mrn_regexp.finditer(doc.text):

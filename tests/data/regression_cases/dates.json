@@ -2,6 +2,14 @@
     "examples": [
         {
             "id": 0,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "24-07-1966",
             "annotations": [
                 {
@@ -14,6 +22,14 @@
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "26-4-21",
             "annotations": [
                 {
@@ -26,6 +42,14 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "6-7-1958",
             "annotations": [
                 {
@@ -38,6 +62,14 @@
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "31-05-2009",
             "annotations": [
                 {
@@ -50,6 +82,14 @@
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "12-04-'02",
             "annotations": [
                 {
@@ -62,6 +102,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "9-9-1999",
             "annotations": [
                 {
@@ -74,21 +122,53 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "32-01-2018",
             "annotations": []
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "01-13-2018",
             "annotations": []
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "01-01-3018",
             "annotations": []
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "30/5/22",
             "annotations": [
                 {
@@ -101,6 +181,14 @@
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "30-5-`22",
             "annotations": [
                 {
@@ -113,6 +201,14 @@
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "8/12/18",
             "annotations": [
                 {
@@ -125,16 +221,40 @@
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "8/12/1899",
             "annotations": []
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "8/12/20000",
             "annotations": []
         },
         {
             "id": 14,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "8.1.2022",
             "annotations": [
                 {
@@ -147,11 +267,27 @@
         },
         {
             "id": 15,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "38.1.2022",
             "annotations": []
         },
         {
             "id": 16,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "23 10 2011",
             "annotations": [
                 {
@@ -164,6 +300,14 @@
         },
         {
             "id": 17,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1 augustus 2019",
             "annotations": [
                 {
@@ -176,6 +320,14 @@
         },
         {
             "id": 18,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "17 mei 2011",
             "annotations": [
                 {
@@ -188,6 +340,14 @@
         },
         {
             "id": 19,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "17-mei-2011",
             "annotations": [
                 {
@@ -200,6 +360,14 @@
         },
         {
             "id": 20,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "17 mei '11",
             "annotations": [
                 {
@@ -212,6 +380,14 @@
         },
         {
             "id": 21,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1 aug 2012",
             "annotations": [
                 {
@@ -224,6 +400,14 @@
         },
         {
             "id": 22,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "4 jan 1999",
             "annotations": [
                 {
@@ -236,6 +420,14 @@
         },
         {
             "id": 23,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "4 JAN 1999",
             "annotations": [
                 {
@@ -248,6 +440,14 @@
         },
         {
             "id": 24,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1 AUGUSTUS 2018",
             "annotations": [
                 {
@@ -260,11 +460,27 @@
         },
         {
             "id": 25,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "38 augustus 2018",
             "annotations": []
         },
         {
             "id": 26,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "15.jan.1928",
             "annotations": [
                 {
@@ -277,6 +493,14 @@
         },
         {
             "id": 27,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "15- jan 1928",
             "annotations": [
                 {
@@ -289,11 +513,27 @@
         },
         {
             "id": 28,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1- AUGUSTUS 20181966-07-24",
             "annotations": []
         },
         {
             "id": 29,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "21-4-26",
             "annotations": [
                 {
@@ -306,6 +546,14 @@
         },
         {
             "id": 30,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1958-7-6",
             "annotations": [
                 {
@@ -318,6 +566,14 @@
         },
         {
             "id": 31,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2009-05-31",
             "annotations": [
                 {
@@ -330,6 +586,14 @@
         },
         {
             "id": 32,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "'02-04-12",
             "annotations": [
                 {
@@ -348,6 +612,14 @@
         },
         {
             "id": 33,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1999-9-9",
             "annotations": [
                 {
@@ -360,21 +632,53 @@
         },
         {
             "id": 34,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2018-01-32",
             "annotations": []
         },
         {
             "id": 35,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2018-13-01",
             "annotations": []
         },
         {
             "id": 36,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "3018-01-01",
             "annotations": []
         },
         {
             "id": 37,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "22/5/30",
             "annotations": [
                 {
@@ -387,6 +691,14 @@
         },
         {
             "id": 38,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "`22-5-30",
             "annotations": [
                 {
@@ -405,21 +717,53 @@
         },
         {
             "id": 39,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "18/12/8",
             "annotations": []
         },
         {
             "id": 40,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1899/12/8",
             "annotations": []
         },
         {
             "id": 41,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "20000/12/8",
             "annotations": []
         },
         {
             "id": 42,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2022.1.8",
             "annotations": [
                 {
@@ -432,11 +776,27 @@
         },
         {
             "id": 43,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2022.1.38",
             "annotations": []
         },
         {
             "id": 44,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2011 10 23",
             "annotations": [
                 {
@@ -449,6 +809,14 @@
         },
         {
             "id": 45,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2019 augustus 1",
             "annotations": [
                 {
@@ -461,6 +829,14 @@
         },
         {
             "id": 46,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2011 mei 17",
             "annotations": [
                 {
@@ -473,6 +849,14 @@
         },
         {
             "id": 47,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2011-mei-17",
             "annotations": [
                 {
@@ -485,6 +869,14 @@
         },
         {
             "id": 48,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "'11 mei 17",
             "annotations": [
                 {
@@ -503,6 +895,14 @@
         },
         {
             "id": 49,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2012 aug 1",
             "annotations": [
                 {
@@ -515,6 +915,14 @@
         },
         {
             "id": 50,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1999 jan 4",
             "annotations": [
                 {
@@ -527,6 +935,14 @@
         },
         {
             "id": 51,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1999 JAN 4",
             "annotations": [
                 {
@@ -539,6 +955,14 @@
         },
         {
             "id": 52,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2018 AUGUSTUS 1",
             "annotations": [
                 {
@@ -551,11 +975,27 @@
         },
         {
             "id": 53,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2018 augustus 38",
             "annotations": []
         },
         {
             "id": 54,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1928.jan.15",
             "annotations": [
                 {
@@ -568,6 +1008,14 @@
         },
         {
             "id": 55,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1928- jan 15",
             "annotations": [
                 {
@@ -580,6 +1028,14 @@
         },
         {
             "id": 56,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "2018- AUGUSTUS 1",
             "annotations": [
                 {

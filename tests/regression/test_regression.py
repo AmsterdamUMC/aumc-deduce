@@ -7,6 +7,7 @@ import pytest
 from docdeid import Annotation, AnnotationSet
 
 from deduce import Deduce
+from deduce.person import Person
 
 # Utility method to create an absolute and OS-independent path to the 
 # examples file taking into account the different names used for
@@ -14,12 +15,10 @@ from deduce import Deduce
 def create_path_to_examples(example_file_name):
     user_home = Path.home()
     user_name = os.environ.get("USER", os.environ.get("USERNAME"))
-    if ("jacob" in user_name):
-        workspace_dir = "workspace"
-    else:
-        workspace_dir = "git"
-        
-    examples_path = os.path.join(user_home, workspace_dir, "aumc-deduce", "tests", "data", "regression_cases", example_file_name)    
+    
+    workspace_dir = "git"
+    
+    examples_path = os.path.join(user_home, workspace_dir, "aumc-deduce", "tests", "data", "regression_cases", example_file_name)
     return examples_path
 
 def regression_test(
@@ -41,7 +40,17 @@ def regression_test(
         expected = AnnotationSet(
             Annotation(**annotation) for annotation in example["annotations"]
         )
-        actual = model.deidentify(text=example["text"], metadata=None, enabled=enabled).annotations
+        
+        person_dict = example["patient"]
+        model.metadata['patient'] = Person(
+                                            first_names = person_dict["first_names"],
+                                            surname = person_dict["surname"],
+                                            patient_id=person_dict["patient_id"],
+                                            street=person_dict["street"],
+                                            location=person_dict["location"],
+                                            country=person_dict["country"]
+                                           )
+        actual = model.deidentify(text=example["text"], metadata=model.metadata, enabled=enabled).annotations
         try:
             is_subset = expected.issubset(actual)
             assert is_subset == True

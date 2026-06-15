@@ -68,7 +68,6 @@ class PersonAnnotationConverter(dd.process.AnnotationProcessor):
     def __init__(self) -> None:
         # magic number anti-pattern
         def map_tag_to_prio(tag: str) -> int:
-            print(">>>>", tag)
             if "pseudo" in tag:
                 return 0
             if "patient" in tag:

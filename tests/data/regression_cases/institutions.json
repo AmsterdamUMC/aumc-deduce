@@ -2,6 +2,14 @@
     "examples": [
         {
             "id": 0,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "UMC Utrecht",
             "annotations": [
                 {
@@ -14,6 +22,14 @@
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "UMC UTRECHT",
             "annotations": [
                 {
@@ -26,6 +42,14 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "UMCU",
             "annotations": [
                 {
@@ -38,11 +62,27 @@
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Utrecht",
             "annotations": []
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Academisch Ziekenhuis Utrecht",
             "annotations": [
                 {
@@ -61,6 +101,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "ACADEMISCH ZIEKENHUIS UTRECHT",
             "annotations": [
                 {
@@ -79,6 +127,14 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "AZU",
             "annotations": [
                 {
@@ -91,6 +147,14 @@
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prinses Maxima Centrum",
             "annotations": [
                 {
@@ -109,6 +173,14 @@
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prinses M\u00e1xima Centrum",
             "annotations": [
                 {
@@ -127,6 +199,14 @@
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "PMC",
             "annotations": [
                 {
@@ -139,6 +219,14 @@
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Wilhelmina Kinderziekenhuis",
             "annotations": [
                 {
@@ -151,6 +239,14 @@
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "WKZ",
             "annotations": [
                 {
@@ -163,6 +259,14 @@
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Centraal Militair Hospitaal",
             "annotations": [
                 {
@@ -187,6 +291,14 @@
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "CMH",
             "annotations": [
                 {
@@ -199,6 +311,14 @@
         },
         {
             "id": 14,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Meander Medisch Centrum",
             "annotations": [
                 {
@@ -217,6 +337,14 @@
         },
         {
             "id": 15,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Meander",
             "annotations": [
                 {
@@ -236,6 +364,14 @@
         },
         {
             "id": 16,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "MMC",
             "annotations": [
                 {
@@ -248,6 +384,14 @@
         },
         {
             "id": 17,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Sint Antoniusziekenhuis",
             "annotations": [
                 {
@@ -266,6 +410,14 @@
         },
         {
             "id": 18,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Sint Antonius",
             "annotations": [
                 {
@@ -278,6 +430,14 @@
         },
         {
             "id": 19,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "St. Antonius",
             "annotations": [
                 {
@@ -290,26 +450,66 @@
         },
         {
             "id": 20,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Ziekenhuis",
             "annotations": []
         },
         {
             "id": 21,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Centrum",
             "annotations": []
         },
         {
             "id": 22,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Medisch Centrum",
             "annotations": []
         },
         {
             "id": 23,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zkh",
             "annotations": []
         },
         {
             "id": 24,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Isala",
             "annotations": [
                 {
@@ -322,6 +522,14 @@
         },
         {
             "id": 25,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Isala ziekenhuis",
             "annotations": [
                 {
@@ -334,6 +542,14 @@
         },
         {
             "id": 26,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Isala kliniek",
             "annotations": [
                 {
@@ -346,6 +562,14 @@
         },
         {
             "id": 27,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Erasmus Medisch Centrum",
             "annotations": [
                 {
@@ -358,6 +582,14 @@
         },
         {
             "id": 28,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Erasmus MC",
             "annotations": [
                 {
@@ -370,6 +602,14 @@
         },
         {
             "id": 29,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Het Lange Land Ziekenhuis",
             "annotations": [
                 {
@@ -388,6 +628,14 @@
         },
         {
             "id": 30,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "'t Lange Land Ziekenhuis",
             "annotations": [
                 {
@@ -406,6 +654,14 @@
         },
         {
             "id": 31,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Academisch Ziekenhuis Nymegen",
             "annotations": [
                 {
@@ -418,6 +674,14 @@
         },
         {
             "id": 32,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Alryne Ziekenhuis",
             "annotations": [
                 {
@@ -430,6 +694,14 @@
         },
         {
             "id": 33,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Canisius-Wilhelmina Ziekenhuis",
             "annotations": [
                 {
@@ -448,6 +720,14 @@
         },
         {
             "id": 34,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Canisius Wilhelmina Ziekenhuis",
             "annotations": [
                 {
@@ -466,6 +746,14 @@
         },
         {
             "id": 35,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "P.W. Janssen Ziekenhuis",
             "annotations": [
                 {
@@ -478,6 +766,14 @@
         },
         {
             "id": 36,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "PW Janssen Ziekenhuis",
             "annotations": [
                 {
@@ -490,6 +786,14 @@
         },
         {
             "id": 37,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "patient verwezen door het UMCU",
             "annotations": [
                 {
@@ -502,6 +806,14 @@
         },
         {
             "id": 38,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "in UMCU eerder behandeld",
             "annotations": [
                 {
@@ -514,11 +826,27 @@
         },
         {
             "id": 39,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "MCH",
             "annotations": []
         },
         {
             "id": 40,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Hoogstraat",
             "annotations": [
                 {
@@ -537,6 +865,14 @@
         },
         {
             "id": 41,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Hoogstraat",
             "annotations": [
                 {
@@ -549,6 +885,14 @@
         },
         {
             "id": 42,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Hoogstraat Revalidatiecentrum",
             "annotations": [
                 {
@@ -567,6 +911,14 @@
         },
         {
             "id": 43,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Altrecht",
             "annotations": [
                 {
@@ -579,6 +931,14 @@
         },
         {
             "id": 44,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Altrecht Bipolair",
             "annotations": [
                 {
@@ -591,6 +951,14 @@
         },
         {
             "id": 45,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Cant\u00e9 praktijk voor Pedagogiek en Psychologie",
             "annotations": [
                 {
@@ -603,6 +971,14 @@
         },
         {
             "id": 46,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Cante praktijk voor Pedagogiek en Psychologie",
             "annotations": [
                 {
@@ -615,6 +991,14 @@
         },
         {
             "id": 47,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Careyn",
             "annotations": [
                 {
@@ -627,6 +1011,14 @@
         },
         {
             "id": 48,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Careijn",
             "annotations": [
                 {
@@ -639,41 +1031,105 @@
         },
         {
             "id": 49,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aanzien",
             "annotations": []
         },
         {
             "id": 50,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Focus",
             "annotations": []
         },
         {
             "id": 51,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Haven",
             "annotations": []
         },
         {
             "id": 52,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Clinique",
             "annotations": []
         },
         {
             "id": 53,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Meeting",
             "annotations": []
         },
         {
             "id": 54,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Perspectief",
             "annotations": []
         },
         {
             "id": 55,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De verloskundige",
             "annotations": []
         },
         {
             "id": 56,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Compas Huisartsenpraktijk",
             "annotations": [
                 {
@@ -686,6 +1142,14 @@
         },
         {
             "id": 57,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Compas huisartsenpraktijk",
             "annotations": [
                 {
@@ -698,6 +1162,14 @@
         },
         {
             "id": 58,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Compas Huisartspraktijk",
             "annotations": [
                 {
@@ -710,6 +1182,14 @@
         },
         {
             "id": 59,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Compas huisartspraktijk",
             "annotations": [
                 {
@@ -722,6 +1202,14 @@
         },
         {
             "id": 60,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zon en Schild",
             "annotations": [
                 {
@@ -734,6 +1222,14 @@
         },
         {
             "id": 61,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Daan & Van Ardenne Huisartsen",
             "annotations": [
                 {
@@ -746,6 +1242,14 @@
         },
         {
             "id": 62,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Daan en Van Ardenne Huisartsen",
             "annotations": [
                 {
@@ -758,6 +1262,14 @@
         },
         {
             "id": 63,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Kind- en Jeugdspecialist",
             "annotations": [
                 {
@@ -770,6 +1282,14 @@
         },
         {
             "id": 64,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Kind en Jeugdspecialist",
             "annotations": [
                 {
@@ -782,6 +1302,14 @@
         },
         {
             "id": 65,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "De Koperhorst",
             "annotations": [
                 {
@@ -794,6 +1322,14 @@
         },
         {
             "id": 66,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "de Koperhorst",
             "annotations": [
                 {
@@ -806,6 +1342,14 @@
         },
         {
             "id": 67,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "patient verwezen door Altrecht",
             "annotations": [
                 {
@@ -818,6 +1362,14 @@
         },
         {
             "id": 68,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "bij Altrecht eerder behandeld",
             "annotations": [
                 {
