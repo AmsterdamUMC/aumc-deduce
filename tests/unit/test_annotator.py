@@ -1369,7 +1369,9 @@ class TestRegexpPseudoAnnotator:
 
 class TestPatientMedicalRecordNumberAnnotator:
     # Length of the MRN is 7 so we use {5} with 1 leading and tailing digit.
-    mrn_regexp = r"(\b)(\d(\D?\d\D?){5}\d)(\b)"
+    # A number of MRN numbers contain a single character 'E' as prefix for administrative reasons. The
+    # E is followed by 7 or 8 digits 
+    mrn_regexp = r"(\b)((\d(\D?\d\D?){5}\d)|(E(\d(\D?\d\D?){5,6}\d)))(\b)"
     capture_group = 2
     
     def test_non_continious_number(self):
@@ -1392,7 +1394,75 @@ class TestPatientMedicalRecordNumberAnnotator:
         expected_annotations = [
             dd.Annotation(text="000.334.4", start_char=0, end_char=9, tag="_"),
         ]
+        
+        assert annotations == expected_annotations
+        
+    def test_mrn_number_with_prefix(self):
+        
+        annotator = PatientMedicalRecordNumberAnnotator(mrn_regexp=TestPatientMedicalRecordNumberAnnotator.mrn_regexp,
+                                                 capture_group=TestPatientMedicalRecordNumberAnnotator.capture_group,
+                                                 tag="_")
+        
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       patient_id="E1234567",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        
+        doc = dd.Document("Patient nummer: E1234567.")
+        doc.metadata = metadata
+        annotations = annotator.annotate(doc)
 
+        expected_annotations = [
+            dd.Annotation(text="E1234567", start_char=16, end_char=24, tag="_"),
+        ]
+        
+        assert annotations == expected_annotations
+        
+        # The 8 digit variant
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       patient_id="E12345678",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        
+        doc = dd.Document("Patient nummer: E12345678.")
+        doc.metadata = metadata
+        annotations = annotator.annotate(doc)
+
+        expected_annotations = [
+            dd.Annotation(text="E12345678", start_char=16, end_char=25, tag="_"),
+        ]
+        
+        assert annotations == expected_annotations
+        
+        # variant with interpunction between digits
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       patient_id="E1234567",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        
+        doc = dd.Document("Patient nummer: E12.345.67.")
+        doc.metadata = metadata
+        annotations = annotator.annotate(doc)
+
+        expected_annotations = [
+            dd.Annotation(text="E12.345.67", start_char=16, end_char=26, tag="_"),
+        ]
+        
         assert annotations == expected_annotations
 
 class TestBsnAnnotator:
