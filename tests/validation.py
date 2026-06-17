@@ -20,11 +20,8 @@ def annotators_from_group(model: Deduce, group: str) -> set[str]:
 # the workspace / git directory
 def create_path_to_examples(test_file_name):
     user_home = Path.home()
-    user_name = os.environ.get("USER", os.environ.get("USERNAME"))
-    if "jacob" in user_name:
-        workspace_dir = "workspace"
-    else:
-        workspace_dir = "git"
+
+    workspace_dir = "git"
 
     examples_path = os.path.join(user_home, workspace_dir, "aumc-deduce", "tests", "regression", test_file_name)
     return examples_path

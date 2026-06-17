@@ -1380,22 +1380,57 @@ class TestPatientMedicalRecordNumberAnnotator:
                                        surname=[""],
                                        partnername=[""],
                                        given_name=[],
-                                       patient_id="0003344",
+                                       patient_id="1234567",
                                        street=[],
                                        country=[],
                                        location=[])}
         an = PatientMedicalRecordNumberAnnotator(mrn_regexp=TestPatientMedicalRecordNumberAnnotator.mrn_regexp,
                                                  capture_group=TestPatientMedicalRecordNumberAnnotator.capture_group,
                                                  tag="_")
-        doc = dd.Document("000.334.4.")
+        doc = dd.Document("123.456.7.")
         doc.metadata = metadata
         annotations = an.annotate(doc)
 
         expected_annotations = [
-            dd.Annotation(text="000.334.4", start_char=0, end_char=9, tag="_"),
+            dd.Annotation(text="123.456.7", start_char=0, end_char=9, tag="_"),
         ]
         
         assert annotations == expected_annotations
+        
+        doc = dd.Document("123-456-7.")
+        doc.metadata = metadata
+        annotations = an.annotate(doc)
+
+        expected_annotations = [
+            dd.Annotation(text="123-456-7", start_char=0, end_char=9, tag="_"),
+        ]
+        
+        assert annotations == expected_annotations
+
+
+    def test_continious_number(self):
+        metadata = {"patient": Person(first_names=["Adriaan"],
+                                       initials="",
+                                       surname=[""],
+                                       partnername=[""],
+                                       given_name=[],
+                                       patient_id="1234567",
+                                       street=[],
+                                       country=[],
+                                       location=[])}
+        an = PatientMedicalRecordNumberAnnotator(mrn_regexp=TestPatientMedicalRecordNumberAnnotator.mrn_regexp,
+                                                 capture_group=TestPatientMedicalRecordNumberAnnotator.capture_group,
+                                                 tag="_")
+        doc = dd.Document("1234567")
+        doc.metadata = metadata
+        annotations = an.annotate(doc)
+
+        expected_annotations = [
+            dd.Annotation(text="1234567", start_char=0, end_char=7, tag="_"),
+        ]
+        
+        assert annotations == expected_annotations
+
         
     def test_mrn_number_with_prefix(self):
         
