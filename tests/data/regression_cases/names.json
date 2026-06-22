@@ -2,6 +2,14 @@
     "examples": [
         {
             "id": 0,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr A",
             "annotations": [
                 {
@@ -14,6 +22,14 @@
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr ABC",
             "annotations": [
                 {
@@ -26,16 +42,40 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr abc",
             "annotations": []
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr a",
             "annotations": []
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. A",
             "annotations": [
                 {
@@ -48,6 +88,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. ABC",
             "annotations": [
                 {
@@ -60,16 +108,40 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. abc",
             "annotations": []
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. a",
             "annotations": []
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. A",
             "annotations": [
                 {
@@ -82,6 +154,14 @@
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. ABC",
             "annotations": [
                 {
@@ -94,36 +174,92 @@
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. abc",
             "annotations": []
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. aDR. A",
             "annotations": []
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "DR. ABC",
             "annotations": []
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "DR. abc",
             "annotations": []
         },
         {
             "id": 14,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "DR. a",
             "annotations": []
         },
         {
             "id": 15,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr Vi",
             "annotations": []
         },
         {
             "id": 16,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr Visser",
             "annotations": [
                 {
@@ -136,11 +272,27 @@
         },
         {
             "id": 17,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. Vi",
             "annotations": []
         },
         {
             "id": 18,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. Visser",
             "annotations": [
                 {
@@ -153,11 +305,27 @@
         },
         {
             "id": 19,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. Vi",
             "annotations": []
         },
         {
             "id": 20,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. Visser",
             "annotations": [
                 {
@@ -170,11 +338,27 @@
         },
         {
             "id": 21,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "DR. Vi",
             "annotations": []
         },
         {
             "id": 22,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "DR. Visser",
             "annotations": [
                 {
@@ -187,11 +371,27 @@
         },
         {
             "id": 23,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "dr. Olanzapine",
             "annotations": []
         },
         {
             "id": 24,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "van der Sluis",
             "annotations": [
                 {
@@ -204,6 +404,14 @@
         },
         {
             "id": 25,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "van der Damhuis",
             "annotations": [
                 {
@@ -216,6 +424,14 @@
         },
         {
             "id": 26,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Van Der Sluis",
             "annotations": [
                 {
@@ -228,6 +444,14 @@
         },
         {
             "id": 27,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "v/d Sluis",
             "annotations": [
                 {
@@ -240,6 +464,14 @@
         },
         {
             "id": 28,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "d'Sluis",
             "annotations": [
                 {
@@ -252,6 +484,14 @@
         },
         {
             "id": 29,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. Visser",
             "annotations": [
                 {
@@ -264,6 +504,14 @@
         },
         {
             "id": 30,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "ABC. Visser",
             "annotations": [
                 {
@@ -276,6 +524,14 @@
         },
         {
             "id": 31,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A Visser",
             "annotations": [
                 {
@@ -288,16 +544,40 @@
         },
         {
             "id": 32,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A Olanzapine",
             "annotations": []
         },
         {
             "id": 33,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "E. Coli",
             "annotations": []
         },
         {
             "id": 34,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. Dr.A van der Sluis",
             "annotations": [
                 {
@@ -310,6 +590,14 @@
         },
         {
             "id": 35,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. van der Sluis",
             "annotations": [
                 {
@@ -322,16 +610,40 @@
         },
         {
             "id": 36,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. van der Li",
             "annotations": []
         },
         {
             "id": 37,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A van der Li",
             "annotations": []
         },
         {
             "id": 38,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A van der Damhuis",
             "annotations": [
                 {
@@ -344,6 +656,14 @@
         },
         {
             "id": 39,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. van der Damhuis",
             "annotations": [
                 {
@@ -356,6 +676,14 @@
         },
         {
             "id": 40,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Kees",
             "annotations": [
                 {
@@ -368,6 +696,14 @@
         },
         {
             "id": 41,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Marie",
             "annotations": [
                 {
@@ -380,6 +716,14 @@
         },
         {
             "id": 42,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Daan",
             "annotations": [
                 {
@@ -392,6 +736,14 @@
         },
         {
             "id": 43,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Ahmed",
             "annotations": [
                 {
@@ -404,6 +756,14 @@
         },
         {
             "id": 44,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "kees",
             "annotations": [
                 {
@@ -416,6 +776,14 @@
         },
         {
             "id": 45,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "marie",
             "annotations": [
                 {
@@ -428,6 +796,14 @@
         },
         {
             "id": 46,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "daan",
             "annotations": [
                 {
@@ -440,6 +816,14 @@
         },
         {
             "id": 47,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "ahmed",
             "annotations": [
                 {
@@ -452,41 +836,105 @@
         },
         {
             "id": 48,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Olanzapine",
             "annotations": []
         },
         {
             "id": 49,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "April",
             "annotations": []
         },
         {
             "id": 50,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Elke",
             "annotations": []
         },
         {
             "id": 51,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Juli",
             "annotations": []
         },
         {
             "id": 52,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Nadien",
             "annotations": []
         },
         {
             "id": 53,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Per",
             "annotations": []
         },
         {
             "id": 54,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Semi",
             "annotations": []
         },
         {
             "id": 55,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zoutenbier",
             "annotations": [
                 {
@@ -499,6 +947,14 @@
         },
         {
             "id": 56,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zuidgeest",
             "annotations": [
                 {
@@ -511,6 +967,14 @@
         },
         {
             "id": 57,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Wiegmans",
             "annotations": [
                 {
@@ -523,6 +987,14 @@
         },
         {
             "id": 58,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "zoutenbier",
             "annotations": [
                 {
@@ -535,6 +1007,14 @@
         },
         {
             "id": 59,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "zuidgeest",
             "annotations": [
                 {
@@ -547,6 +1027,14 @@
         },
         {
             "id": 60,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "wiegmans",
             "annotations": [
                 {
@@ -559,41 +1047,105 @@
         },
         {
             "id": 61,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Rust",
             "annotations": []
         },
         {
             "id": 62,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Onrust",
             "annotations": []
         },
         {
             "id": 63,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Voogd",
             "annotations": []
         },
         {
             "id": 64,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Vrij",
             "annotations": []
         },
         {
             "id": 65,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Kracht",
             "annotations": []
         },
         {
             "id": 66,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Hart",
             "annotations": []
         },
         {
             "id": 67,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Tel",
             "annotations": []
         },
         {
             "id": 68,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Visser-de Jong",
             "annotations": [
                 {
@@ -606,6 +1158,14 @@
         },
         {
             "id": 69,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A de Jong",
             "annotations": [
                 {
@@ -618,6 +1178,14 @@
         },
         {
             "id": 70,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A De Jong",
             "annotations": [
                 {
@@ -630,6 +1198,14 @@
         },
         {
             "id": 71,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.B.C. Visser",
             "annotations": [
                 {
@@ -642,6 +1218,14 @@
         },
         {
             "id": 72,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.B.C.D. Visser",
             "annotations": [
                 {
@@ -654,6 +1238,14 @@
         },
         {
             "id": 73,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.B.C.D.E. Visser",
             "annotations": [
                 {
@@ -666,6 +1258,14 @@
         },
         {
             "id": 74,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.B.C.D.E.F. Visser",
             "annotations": [
                 {
@@ -678,6 +1278,14 @@
         },
         {
             "id": 75,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.B.C. de Vries",
             "annotations": [
                 {
@@ -690,6 +1298,14 @@
         },
         {
             "id": 76,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Voornaam Visser",
             "annotations": [
                 {
@@ -702,6 +1318,14 @@
         },
         {
             "id": 77,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Piet Visser",
             "annotations": [
                 {
@@ -714,6 +1338,14 @@
         },
         {
             "id": 78,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Marieke Visser",
             "annotations": [
                 {
@@ -726,6 +1358,14 @@
         },
         {
             "id": 79,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Olanzapine Visser",
             "annotations": [
                 {
@@ -738,6 +1378,14 @@
         },
         {
             "id": 80,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. Visser",
             "annotations": [
                 {
@@ -750,6 +1398,14 @@
         },
         {
             "id": 81,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Piet Achternaam",
             "annotations": [
                 {
@@ -762,6 +1418,14 @@
         },
         {
             "id": 82,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Piet Olanzapine",
             "annotations": [
                 {
@@ -774,6 +1438,14 @@
         },
         {
             "id": 83,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Piet Dhr.",
             "annotations": [
                 {
@@ -786,6 +1458,14 @@
         },
         {
             "id": 84,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. Visser",
             "annotations": [
                 {
@@ -798,6 +1478,14 @@
         },
         {
             "id": 85,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. Ing. Dr. Visser",
             "annotations": [
                 {
@@ -810,6 +1498,14 @@
         },
         {
             "id": 86,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof.Dr. Visser",
             "annotations": [
                 {
@@ -822,6 +1518,14 @@
         },
         {
             "id": 87,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. A.B. Visser",
             "annotations": [
                 {
@@ -834,6 +1538,14 @@
         },
         {
             "id": 89,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Mevrouw Visser",
             "annotations": [
                 {
@@ -846,6 +1558,14 @@
         },
         {
             "id": 90,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. Visser-Visser",
             "annotations": [
                 {
@@ -858,6 +1578,14 @@
         },
         {
             "id": 91,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Mw. Prof. Dr. A.B. de Vries",
             "annotations": [
                 {
@@ -870,6 +1598,14 @@
         },
         {
             "id": 92,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Dr. A.B. v.d. Sluis",
             "annotations": [
                 {
@@ -882,6 +1618,14 @@
         },
         {
             "id": 93,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. Achternaam-Achternaam",
             "annotations": [
                 {
@@ -894,16 +1638,40 @@
         },
         {
             "id": 95,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "de Heer",
             "annotations": []
         },
         {
             "id": 96,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "de Vrouw",
             "annotations": []
         },
         {
             "id": 98,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "de Weledelgeleerde Heer Visser",
             "annotations": [
                 {
@@ -916,6 +1684,14 @@
         },
         {
             "id": 99,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "de weledelgeleerde heer Visser",
             "annotations": [
                 {
@@ -928,6 +1704,14 @@
         },
         {
             "id": 100,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "mijnheer Visser",
             "annotations": [
                 {
@@ -940,6 +1724,14 @@
         },
         {
             "id": 101,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Ph. Van der Laan",
             "annotations": [
                 {
@@ -952,6 +1744,14 @@
         },
         {
             "id": 102,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A.Th.Chr. Van der Laan",
             "annotations": [
                 {
@@ -964,6 +1764,14 @@
         },
         {
             "id": 103,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Ah. Van der Laan",
             "annotations": [
                 {
@@ -976,6 +1784,14 @@
         },
         {
             "id": 104,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "J. Th. Bakker",
             "annotations": [
                 {
@@ -988,6 +1804,14 @@
         },
         {
             "id": 105,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "J. Th. A. Bakker",
             "annotations": [
                 {
@@ -1000,6 +1824,14 @@
         },
         {
             "id": 106,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. Th. Bakker",
             "annotations": [
                 {
@@ -1012,6 +1844,14 @@
         },
         {
             "id": 107,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. Th. Ir. Bakker",
             "annotations": [
                 {
@@ -1030,46 +1870,118 @@
         },
         {
             "id": 108,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Ziekenhuis te Amersfoort",
             "annotations": []
         },
         {
             "id": 109,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "M. Alzheimer",
             "annotations": []
         },
         {
             "id": 110,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "N. Suralis",
             "annotations": []
         },
         {
             "id": 111,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "M. Auricularis",
             "annotations": []
         },
         {
             "id": 112,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "I. Multiple",
             "annotations": []
         },
         {
             "id": 113,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "I. Ulna",
             "annotations": []
         },
         {
             "id": 114,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "A. Brachialis",
             "annotations": []
         },
         {
             "id": 115,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "V. Cava Inferior",
             "annotations": []
         },
         {
             "id": 116,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "B. Bakker Neuroloog",
             "annotations": [
                 {
@@ -1082,6 +1994,14 @@
         },
         {
             "id": 117,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Jan-Willem",
             "annotations": [
                 {
@@ -1094,6 +2014,14 @@
         },
         {
             "id": 118,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Jan-Onbekendenaam",
             "annotations": [
                 {
@@ -1106,6 +2034,14 @@
         },
         {
             "id": 119,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Onbekendenaam-Willem",
             "annotations": [
                 {
@@ -1118,6 +2054,14 @@
         },
         {
             "id": 120,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "El Ahmadi",
             "annotations": [
                 {
@@ -1130,6 +2074,14 @@
         },
         {
             "id": 121,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bruins Slot",
             "annotations": [
                 {
@@ -1142,6 +2094,14 @@
         },
         {
             "id": 122,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Groot Wassink",
             "annotations": [
                 {
@@ -1154,6 +2114,14 @@
         },
         {
             "id": 123,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Pieter Oude Nijhuis",
             "annotations": [
                 {
@@ -1166,16 +2134,40 @@
         },
         {
             "id": 124,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "ziekte van Zoon",
             "annotations":  []
         },
         {
             "id": 125,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Turner's ziekte",
             "annotations": []
         },
         {
             "id": 126,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Pierre-Robin sequentie",
             "annotations": []
         }

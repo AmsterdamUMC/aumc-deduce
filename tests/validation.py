@@ -20,11 +20,8 @@ def annotators_from_group(model: Deduce, group: str) -> set[str]:
 # the workspace / git directory
 def create_path_to_examples(test_file_name):
     user_home = Path.home()
-    user_name = os.environ.get("USER", os.environ.get("USERNAME"))
-    if "jacob" in user_name:
-        workspace_dir = "workspace"
-    else:
-        workspace_dir = "git"
+
+    workspace_dir = "git"
 
     examples_path = os.path.join(user_home, workspace_dir, "aumc-deduce", "tests", "regression", test_file_name)
     return examples_path
@@ -80,7 +77,7 @@ class TestValidationFile:
             surname = columns[4].split()
             partner_name = columns[5].split()
             given_names = columns[6].split()
-            person_id = columns[7]
+            patient_id = columns[7]
             street = columns[8].split()
             location = columns[9].split()
             country = columns[10].split()
@@ -99,7 +96,7 @@ class TestValidationFile:
                                                  street=street,
                                                  location=location,
                                                  country=country,
-                                                 person_id=person_id)}
+                                                 patient_id=patient_id)}
 
             
             result_document = model.deidentify(text=identifiable_input, metadata=patient_details, disabled={'dates', 'age','longnumber'})

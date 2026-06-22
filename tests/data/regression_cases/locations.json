@@ -2,6 +2,14 @@
     "examples": [
         {
             "id": 0,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Utrecht",
             "annotations": [
                 {
@@ -14,6 +22,14 @@
         },
         {
             "id": 1,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "UTRECHT",
             "annotations": [
                 {
@@ -26,16 +42,40 @@
         },
         {
             "id": 2,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Utr\u00e9cht",
             "annotations": []
         },
         {
             "id": 3,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Utrechts",
             "annotations": []
         },
         {
             "id": 4,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "utrecht",
             "annotations": [
                 {
@@ -48,6 +88,14 @@
         },
         {
             "id": 5,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bolsward",
             "annotations": [
                 {
@@ -60,6 +108,14 @@
         },
         {
             "id": 6,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bontekoe",
             "annotations": [
                 {
@@ -72,6 +128,14 @@
         },
         {
             "id": 7,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Boornbergum",
             "annotations": [
                 {
@@ -84,31 +148,79 @@
         },
         {
             "id": 8,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Oost",
             "annotations": []
         },
         {
             "id": 9,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Centrum",
             "annotations": []
         },
         {
             "id": 10,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Noord",
             "annotations": []
         },
         {
             "id": 11,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "West",
             "annotations": []
         },
         {
             "id": 12,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zuid",
             "annotations": []
         },
         {
             "id": 13,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Borkel en Schaft",
             "annotations": [
                 {
@@ -121,6 +233,14 @@
         },
         {
             "id": 14,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bosch en Duin",
             "annotations": [
                 {
@@ -133,6 +253,14 @@
         },
         {
             "id": 15,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "bosch en duin",
             "annotations": [
                 {
@@ -145,6 +273,14 @@
         },
         {
             "id": 16,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Boven-Leeuwen",
             "annotations": [
                 {
@@ -157,6 +293,14 @@
         },
         {
             "id": 17,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Boven Leeuwen",
             "annotations": [
                 {
@@ -169,6 +313,14 @@
         },
         {
             "id": 18,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk",
             "annotations": [
                 {
@@ -181,6 +333,14 @@
         },
         {
             "id": 19,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk (NH)",
             "annotations": [
                 {
@@ -193,6 +353,14 @@
         },
         {
             "id": 20,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk (ZH)",
             "annotations": [
                 {
@@ -205,6 +373,14 @@
         },
         {
             "id": 21,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk (nh)",
             "annotations": [
                 {
@@ -217,6 +393,14 @@
         },
         {
             "id": 22,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk ZH",
             "annotations": [
                 {
@@ -229,6 +413,14 @@
         },
         {
             "id": 23,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk NH",
             "annotations": [
                 {
@@ -241,6 +433,14 @@
         },
         {
             "id": 24,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk L",
             "annotations": [
                 {
@@ -253,6 +453,14 @@
         },
         {
             "id": 25,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Bovenkerk (L)",
             "annotations": [
                 {
@@ -265,6 +473,14 @@
         },
         {
             "id": 26,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Drie\u00ebnhuizen",
             "annotations": [
                 {
@@ -277,6 +493,14 @@
         },
         {
             "id": 27,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Drieenhuizen",
             "annotations": [
                 {
@@ -289,6 +513,14 @@
         },
         {
             "id": 28,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Friesland",
             "annotations": [
                 {
@@ -301,6 +533,14 @@
         },
         {
             "id": 29,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Noord Brabant",
             "annotations": [
                 {
@@ -313,6 +553,14 @@
         },
         {
             "id": 30,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Noord-Brabant",
             "annotations": [
                 {
@@ -325,6 +573,14 @@
         },
         {
             "id": 31,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Eemvallei",
             "annotations": [
                 {
@@ -337,6 +593,14 @@
         },
         {
             "id": 32,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Friese Wouden",
             "annotations": [
                 {
@@ -349,6 +613,14 @@
         },
         {
             "id": 33,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Goeree-Overflakkee",
             "annotations": [
                 {
@@ -367,6 +639,14 @@
         },
         {
             "id": 34,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Alphen-Chaam",
             "annotations": [
                 {
@@ -385,6 +665,14 @@
         },
         {
             "id": 35,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Molenlanden",
             "annotations": [
                 {
@@ -397,6 +685,14 @@
         },
         {
             "id": 36,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Nederweert",
             "annotations": [
                 {
@@ -409,6 +705,14 @@
         },
         {
             "id": 37,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Smallingerland",
             "annotations": [
                 {
@@ -421,6 +725,14 @@
         },
         {
             "id": 38,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaabaan 1",
             "annotations": [
                 {
@@ -433,6 +745,14 @@
         },
         {
             "id": 39,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaabolwerk 1",
             "annotations": [
                 {
@@ -445,6 +765,14 @@
         },
         {
             "id": 40,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaadam 1",
             "annotations": [
                 {
@@ -457,6 +785,14 @@
         },
         {
             "id": 41,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaadijk 1",
             "annotations": [
                 {
@@ -469,6 +805,14 @@
         },
         {
             "id": 42,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaadreef 1",
             "annotations": [
                 {
@@ -481,6 +825,14 @@
         },
         {
             "id": 43,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaadrf 1",
             "annotations": [
                 {
@@ -493,6 +845,14 @@
         },
         {
             "id": 44,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaadyk 1",
             "annotations": [
                 {
@@ -505,6 +865,14 @@
         },
         {
             "id": 45,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaagr 1",
             "annotations": [
                 {
@@ -517,6 +885,14 @@
         },
         {
             "id": 46,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaagracht 1",
             "annotations": [
                 {
@@ -529,6 +905,14 @@
         },
         {
             "id": 47,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaahf 1",
             "annotations": [
                 {
@@ -541,6 +925,14 @@
         },
         {
             "id": 48,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaahof 1",
             "annotations": [
                 {
@@ -553,6 +945,14 @@
         },
         {
             "id": 49,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaakade 1",
             "annotations": [
                 {
@@ -565,6 +965,14 @@
         },
         {
             "id": 50,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaalaan 1",
             "annotations": [
                 {
@@ -577,6 +985,14 @@
         },
         {
             "id": 51,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaln 1",
             "annotations": [
                 {
@@ -589,6 +1005,14 @@
         },
         {
             "id": 52,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaamarkt 1",
             "annotations": [
                 {
@@ -601,6 +1025,14 @@
         },
         {
             "id": 53,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaamrkt 1",
             "annotations": [
                 {
@@ -613,6 +1045,14 @@
         },
         {
             "id": 54,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaapad 1",
             "annotations": [
                 {
@@ -625,6 +1065,14 @@
         },
         {
             "id": 55,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaapark 1",
             "annotations": [
                 {
@@ -637,6 +1085,14 @@
         },
         {
             "id": 56,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaapd 1",
             "annotations": [
                 {
@@ -649,6 +1105,14 @@
         },
         {
             "id": 57,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaplantsoen 1",
             "annotations": [
                 {
@@ -661,6 +1125,14 @@
         },
         {
             "id": 58,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaplein 1",
             "annotations": [
                 {
@@ -673,6 +1145,14 @@
         },
         {
             "id": 59,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaapln 1",
             "annotations": [
                 {
@@ -685,6 +1165,14 @@
         },
         {
             "id": 60,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaplnts 1",
             "annotations": [
                 {
@@ -697,6 +1185,14 @@
         },
         {
             "id": 61,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaprk 1",
             "annotations": [
                 {
@@ -709,6 +1205,14 @@
         },
         {
             "id": 62,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaasingel 1",
             "annotations": [
                 {
@@ -721,6 +1225,14 @@
         },
         {
             "id": 63,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaasngl 1",
             "annotations": [
                 {
@@ -733,6 +1245,14 @@
         },
         {
             "id": 64,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaast 1",
             "annotations": [
                 {
@@ -745,6 +1265,14 @@
         },
         {
             "id": 65,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaasteeg 1",
             "annotations": [
                 {
@@ -757,6 +1285,14 @@
         },
         {
             "id": 66,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaastg 1",
             "annotations": [
                 {
@@ -769,6 +1305,14 @@
         },
         {
             "id": 67,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaastr 1",
             "annotations": [
                 {
@@ -781,6 +1325,14 @@
         },
         {
             "id": 68,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaastraat 1",
             "annotations": [
                 {
@@ -793,6 +1345,14 @@
         },
         {
             "id": 69,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaaweg 1",
             "annotations": [
                 {
@@ -805,6 +1365,14 @@
         },
         {
             "id": 70,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaawg 1",
             "annotations": [
                 {
@@ -817,21 +1385,53 @@
         },
         {
             "id": 71,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Aaaweg",
             "annotations": []
         },
         {
             "id": 72,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "aaaweg",
             "annotations": []
         },
         {
             "id": 73,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "aaaweg 1",
             "annotations": []
         },
         {
             "id": 74,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Professor Doctor J.C. Schoutelaan 1",
             "annotations": [
                 {
@@ -850,6 +1450,14 @@
         },
         {
             "id": 75,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Doctor J.C. Schoutelaan 1",
             "annotations": [
                 {
@@ -868,6 +1476,14 @@
         },
         {
             "id": 76,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. J.C. Schoutelaan 1",
             "annotations": [
                 {
@@ -886,6 +1502,14 @@
         },
         {
             "id": 77,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. JC Schoutelaan 1",
             "annotations": [
                 {
@@ -904,6 +1528,14 @@
         },
         {
             "id": 78,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Prof. Dr. JC Schoutelaan 1",
             "annotations": [
                 {
@@ -922,6 +1554,14 @@
         },
         {
             "id": 79,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Professor Lor\u00e9straat 1",
             "annotations": [
                 {
@@ -934,6 +1574,14 @@
         },
         {
             "id": 80,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Protonenlaan 1",
             "annotations": [
                 {
@@ -946,6 +1594,14 @@
         },
         {
             "id": 81,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Protterstrjitte 1",
             "annotations": [
                 {
@@ -958,11 +1614,27 @@
         },
         {
             "id": 82,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Zomaar Een Straatnaam 1",
             "annotations": []
         },
         {
             "id": 83,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1",
             "annotations": [
                 {
@@ -975,6 +1647,14 @@
         },
         {
             "id": 84,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 11",
             "annotations": [
                 {
@@ -987,6 +1667,14 @@
         },
         {
             "id": 85,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 111",
             "annotations": [
                 {
@@ -999,6 +1687,14 @@
         },
         {
             "id": 86,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1111",
             "annotations": [
                 {
@@ -1011,11 +1707,27 @@
         },
         {
             "id": 87,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 11111",
             "annotations": []
         },
         {
             "id": 88,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1a",
             "annotations": [
                 {
@@ -1028,6 +1740,14 @@
         },
         {
             "id": 89,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1A",
             "annotations": [
                 {
@@ -1040,6 +1760,14 @@
         },
         {
             "id": 90,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1 a",
             "annotations": [
                 {
@@ -1052,6 +1780,14 @@
         },
         {
             "id": 91,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1 A",
             "annotations": [
                 {
@@ -1064,16 +1800,40 @@
         },
         {
             "id": 92,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1ab",
             "annotations": []
         },
         {
             "id": 93,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1Ab",
             "annotations": []
         },
         {
             "id": 94,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1 ab",
             "annotations": [
                 {
@@ -1086,6 +1846,14 @@
         },
         {
             "id": 95,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1 Ab",
             "annotations": [
                 {
@@ -1098,6 +1866,14 @@
         },
         {
             "id": 96,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Heidelberglaan 1 BIS",
             "annotations": [
                 {
@@ -1110,6 +1886,14 @@
         },
         {
             "id": 97,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234AA",
             "annotations": [
                 {
@@ -1122,6 +1906,14 @@
         },
         {
             "id": 98,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234aa",
             "annotations": [
                 {
@@ -1134,6 +1926,14 @@
         },
         {
             "id": 99,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234 AA",
             "annotations": [
                 {
@@ -1146,31 +1946,79 @@
         },
         {
             "id": 100,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1234 aa",
             "annotations": []
         },
         {
             "id": 101,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1250MG",
             "annotations": []
         },
         {
             "id": 102,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1250mg",
             "annotations": []
         },
         {
             "id": 103,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1250 MG",
             "annotations": []
         },
         {
             "id": 104,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "1250 mg",
             "annotations": []
         },
         {
             "id": 105,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 1",
             "annotations": [
                 {
@@ -1183,6 +2031,14 @@
         },
         {
             "id": 106,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 12",
             "annotations": [
                 {
@@ -1195,6 +2051,14 @@
         },
         {
             "id": 107,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 123",
             "annotations": [
                 {
@@ -1207,6 +2071,14 @@
         },
         {
             "id": 108,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 1234",
             "annotations": [
                 {
@@ -1219,6 +2091,14 @@
         },
         {
             "id": 109,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 12345",
             "annotations": [
                 {
@@ -1231,6 +2111,14 @@
         },
         {
             "id": 110,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "Postbus 123456",
             "annotations": [
                 {
@@ -1243,6 +2131,14 @@
         },
         {
             "id": 111,
+            "patient": {
+				"first_names": "",
+				"surname": "",
+				"patient_id": "123456",
+				"street": "",
+				"location": "",
+				"country": ""
+			},
             "text": "postbus 1234",
             "annotations": [
                 {

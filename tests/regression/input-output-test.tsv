@@ -33,3 +33,11 @@
 10	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	pat_id_rec_10	Dorpstraat	Mokkumerhei	NEDERLAND	Geldige voorbeelden zijn 999997610 en 999996009. Patientnummer is 01234 en ander ID: 01234567890.	Geldige voorbeelden zijn [BSN-1] en [BSN-2]. Patientnummer is 01234 en ander ID: [ID-1].
 # test for the length check in the BSN annotator.
 11	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	pat_id_rec_11	Dorpstraat	Mokkumerhei	NEDERLAND	12.5 5.6 11.764 9.3	12.5 5.6 11.764 9.3
+# A couple of test cases for the MRN (Medisch Dossier Nummer). Patient numbers of 8 digits without interpunctions are masked with [ID-N] whereas those with interpunction are masked with [MRN-N]
+12	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 1234568	Patient nummer: [ID-1]
+13	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 12.345.68	Patient nummer: [MRN-1]
+14	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 12-345-68.	Patient nummer: [MRN-1].
+# MRN with an E prefixed
+15	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E7654321	Patient nummer: [MRN-1]
+16	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E76.543.21	Patient nummer: [MRN-1]
+17	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E76-543-21.	Patient nummer: [MRN-1].
