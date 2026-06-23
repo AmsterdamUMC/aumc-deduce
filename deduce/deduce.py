@@ -27,10 +27,8 @@ from deduce.lookup_structs import get_lookup_structs, load_raw_itemsets
 from deduce.redactor import DeduceRedactor
 from deduce.tokenizer import DeduceTokenizer
 
-try:
-    __version__ = importlib.metadata.version(__package__ or __name__)
-except:
-    __version__ = "test.1.2.3"
+
+__version__ = importlib.metadata.version(__package__ or __name__)
 
 
 _BASE_PATH = Path(os.path.dirname(__file__)).parent
@@ -75,6 +73,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         build_lookup_structs: bool = False,
     ) -> None:
 
+        logging.info("Deduce version: " + __version__)
         global all_lists
 
         super().__init__()

@@ -3,6 +3,7 @@
 	<name>aumc-deduce</name>
 	<comment></comment>
 	<projects>
+		<project>docdeid</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
