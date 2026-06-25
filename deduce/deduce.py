@@ -27,7 +27,10 @@ from deduce.lookup_structs import get_lookup_structs, load_raw_itemsets
 from deduce.redactor import DeduceRedactor
 from deduce.tokenizer import DeduceTokenizer
 
-
+#
+# The correct version is obtained by the runtime only after 'poetry install' has been been
+# run. An example of the poetry output is:
+# Installing the current project: deduce (4.0.1rc1)
 __version__ = importlib.metadata.version(__package__ or __name__)
 
 
