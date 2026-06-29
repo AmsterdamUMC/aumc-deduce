@@ -20,10 +20,28 @@ Before starting, some things to consider:
   * `make build-docs` builds the docs
 
 ## Runing the tests
+### Unit tests
+The command below runs all the unit tests including line coverage. The expected coverage percentage can be specified in `pyproject.toml` in the `[tool.pytest.ini_options]` section. Please ensure that this coverage is maintained or even better improved.
+```bash pytest .```
+### Regression tests
+Two files contain regression tests. These files checks if the text in raw unaonynimised clinical notes matches the expected output after
+`deduce` anonymisation. The two files are: `input-output-test.tsv` and `input-output-test.tsv`. In the `scripts` directory there is a bash script
+which runs both the unit and the regression test. This script ought to be run prior to commiting any code modifications.
+```bash ./scripts/run-dev-test.sh```
 
-```bash
-pytest .
-```
+Both files include dummy patient personal data which allows testing combination of clinical note text in combination with personal data provided
+to `deduce`. 
+
+## Version & branch mangement
+A number of scripts are available for version and branch admistration. These are located in the `scipts` directory. The branch managment strategy
+in `deduce` is based on [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/). Separate feature and release 
+branches are used to allow parallel development with in a team of developers. Each feature branch when finished must be merged back into the `develop` 
+branch. Once that branch is ready to be released / promoted to another envionment a separte `release` branch should be created. The steps needed are 
+describe below.
+
+### Release branch creation
+1. Edit the file VERSION.txt and bump the version numbers.
+2.  
 
 ## PR checlist
 

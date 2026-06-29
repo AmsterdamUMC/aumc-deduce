@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 4.0.2 (24-06-2026)
 Release candidate for the AmsterdamUMC version of DEDUCE. 
 ### The following JIRA items were solved:
-RDMD-97, RDMD-95 Removal of some identifiable information remaining in the notes
-RDMD-99 Version Administration (partially finished)
+- **RDMD-97**, **RDMD-95** Removal of some identifiable information remaining in the notes
+- **RDMD-99** Version Administration (partially finished)
 
 ## 3.0.2 (2023-02-15)
 
