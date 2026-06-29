@@ -37,7 +37,7 @@ function check_version_tag_present_in_project() {
 
 TAG_VERSION=`cat /home/$USER/git/aumc-deduce/pyproject.toml | grep 'version =' | cut -d '=' -f2 | tr -d ' ' | tr -d '"'`
 TAG_VERSION=`echo "v$TAG_VERSION"`
-echo "Going to create version tags with the following value: $TAG_VERSION as defined in the pyproject.toml file."
+echo "Going to create Git version tags with the following value: $TAG_VERSION as defined in the pyproject.toml file."
 
 if ! proceed_yes_no; then
 	exit 1
@@ -72,13 +72,13 @@ fi
 COMMON_MESSAGE="Creation of version tag: $TAG_VERSION"
 # TODO give the user the option to write an other message
 
-git -C /home/$USER/git/aumc-deduce/ tag --annotate --edit --message "$COMMON_MESSAGE}" $TAG_VERSION
+git -C /home/$USER/git/aumc-deduce/ tag --annotate --edit --message "$COMMON_MESSAGE" $TAG_VERSION
 git -C /home/$USER/git/aumc-deduce/ push origin $TAG_VERSION
 
-git -C /home/$USER/git/aumc-deduce-conf/ tag --annotate --edit --message "$COMMON_MESSAGE}" $TAG_VERSION
+git -C /home/$USER/git/aumc-deduce-conf/ tag --annotate --edit --message "$COMMON_MESSAGE" $TAG_VERSION
 git -C /home/$USER/git/aumc-deduce-conf/ push origin $TAG_VERSION
 
-git -C /home/$USER/git/aumc-deduce-supplements/ tag --annotate --edit --message "$COMMON_MESSAGE}" $TAG_VERSION
+git -C /home/$USER/git/aumc-deduce-supplements/ tag --annotate --edit --message "$COMMON_MESSAGE" $TAG_VERSION
 git -C /home/$USER/git/aumc-deduce-supplements/ push origin $TAG_VERSION
 
 # TODO	1).Abort / cancel the tag operation if one of the steps returns an error or user cancels the edit operation?
