@@ -1,6 +1,6 @@
 [project]
 name = "deduce"
-version = "4.0.2-rc1"
+version = "4.0.2-rc2"
 description = "Deduce: de-identification method for Dutch medical text - AUMC version"
 authors = [
 	{name = "Vincent Menger", email =  "vmenger@protonmail.com"}
