@@ -3,8 +3,7 @@
 # Checks if the associated projects (aumc-deduce, aumc-deduce-conf and aumc-deduce-supplemental) have 
 # the correct branches checked out.
 # The branches are:
-# 	aumc-deduce: checks in the pyproject.toml. If it contains a release candidate (rcXXXX) the the branch must be
-#                "release-X.Y.Z""
+# 	aumc-deduce: checks in the pyproject.toml. the branch must be 'release-X.Y.Z'. "
 #   aumc-deduce-conf: "non-confidential"
 #   aumc-deduce-supplemental: "main"
 #
@@ -18,7 +17,7 @@ EXPECTED_RELEASE_BRANCH_AUMC_DEDUCE_SUPPLEMENTAL="main"
 function is_branch_as_expected() {
 	DIRECTORY=$1
 	EXPECTED_BRANCH=$2
-	
+	# The currently checked out branch is indicated with an asterix
 	CURRENT_BRANCH=`git -C $DIRECTORY branch -a  | grep "*" | cut -d " " -f2`
 
 	if [ $CURRENT_BRANCH == $EXPECTED_BRANCH ]; then 
@@ -36,14 +35,7 @@ VER_MAJOR=${VERSION_LIST[0]}
 VER_MINOR=${VERSION_LIST[1]}
 VER_PATCH=${VERSION_LIST[2]}
 
-grep -qi "rc" <<< ${BASE_LIST[1]}
-IS_RC=$?
-
-#if [ $IS_RC == 0 ]; then
 EXPECTED_RELEASE_BRANCH_AUMC_DEDUCE="release-$VER_MAJOR.$VER_MINOR.$VER_PATCH"
-#else
-#	EXPECTED_RELEASE_BRANCH_AUMC_DEDUCE=""
-#fi
 
 
 
