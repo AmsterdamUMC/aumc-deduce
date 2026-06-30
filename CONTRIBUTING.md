@@ -38,10 +38,23 @@ in `deduce` is based on [A successful Git branching model](https://nvie.com/post
 branches are used to allow parallel development with in a team of developers. Each feature branch when finished must be merged back into the `develop` 
 branch. Once that branch is ready to be released / promoted to another envionment a separte `release` branch should be created. The steps needed are 
 describe below.
+The version format and syntax largely adheres to the semantic versioning standard: [https://semver.org/](https://semver.org/). In Git however a '**v**'
+prefix is added whilst in the code not. Release candidates are denoted by a postfix '**rc<NUMBER>**'. The version tags are stored in 2 locations in the code:
+1. The main source is the `VERSION.txt` file which registers the numerical part of the version in the format <MAJOR>.<MINOR>.<PATCH>. 
+2. The version which is used by our build tool Poetry is stored in the `pyproject.toml` file. In this location the postfix with the release candidate is 
+stored. The version administration scripts use both files;
+
 
 ### Release branch creation
 1. Edit the file VERSION.txt and bump the version numbers.
-2.  
+2. Run the script `scripts/create-release-branch.sh`. A prompt is given to optionally create a new release-candidate tag.
+**Note: if the version tag in pyproject.toml is modified manually you MUST run `poetry install` separately!**. 
+The `poetry.lock` file is needed to obtain the version information and the `poetry install` command updates this file.
+
+### Git version tag creation
+Git version tags are created with the script `scripts/create-version-tags.sh`. A default message is present in the script. This message
+can optionally be edited in the git editor which is started up. Note that this step is done 3 times, once for each the `deduce` subprojects.
+
 
 ## PR checlist
 

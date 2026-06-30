@@ -3,7 +3,7 @@
 # Checks if the associated projects (aumc-deduce, aumc-deduce-conf and aumc-deduce-supplemental) have 
 # the correct branches checked out.
 # The branches are:
-# 	aumc-deduce: checks in the pyproject.toml. the branch must be 'release-X.Y.Z'. "
+# 	aumc-deduce: checks in the pyproject.toml. the branch must be 'release-X.Y.Z' "
 #   aumc-deduce-conf: "non-confidential"
 #   aumc-deduce-supplemental: "main"
 #
