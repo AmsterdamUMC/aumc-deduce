@@ -41,3 +41,7 @@
 15	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E7654321	Patient nummer: [MRN-1]
 16	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E76.543.21	Patient nummer: [MRN-1]
 17	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E76-543-21.	Patient nummer: [MRN-1].
+# MRN not supplied correctly but found based on prefix
+18	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 1.234.567	Patient nummer: [MRN-1]
+19	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr.: 1.234.567	Patient nummer: [MRN-1]
+20	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	patientnummer: 1.234.567.	patientnummer: [MRN-1]
