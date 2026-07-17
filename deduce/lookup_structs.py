@@ -26,6 +26,9 @@ from deduce.lookup_struct_loader import (
 )
 from deduce.utils import apply_transform, optional_load_items, optional_load_json
 
+
+
+
 _SRC_SUBDIR = "src"
 _CACHE_SUBDIR = "cache"
 _CACHE_FILE = "lookup_structs.pickle"
@@ -47,6 +50,7 @@ _LOOKUP_TRIE_LOADERS = {
 }
 
 
+
 def load_raw_itemset(path: Path) -> set[str]:
     """
     Load the raw items from a lookup list. This works by loading the data in items.txt,
@@ -60,7 +64,8 @@ def load_raw_itemset(path: Path) -> set[str]:
     Returns:
         The raw items, as a set of strings.
     """
-    logging.info("Loading items from: " + os.path.abspath(path))
+    logger = logging.getLogger("deduce")
+    logger.info("Loading items from: " + os.path.abspath(path))
     items = optional_load_items(path / "items.txt")
     exceptions = optional_load_items(path / "exceptions.txt")
 
@@ -109,8 +114,8 @@ def load_raw_itemsets(base_path: Path, subdirs: list[str]) -> dict[str, set[str]
         name = lst.split("/")[-1]
         name = name.removeprefix("lst_")
         lists[name] = load_raw_itemset(base_path / _SRC_SUBDIR / lst)
-
-    logging.info("Finished loading items.")
+    logger = logging.getLogger("deduce")
+    logger.info("Finished loading items.")
     return lists
 
 
@@ -228,8 +233,9 @@ def get_lookup_structs(
 
         if lookup_structs is not None:
             return lookup_structs
-
-    logging.info(
+    
+    logger = logging.getLogger("deduce")
+    logger.info(
         "Please wait 1-2 minutes while lookup data structures are being "
         "loaded and built. This process is only triggered for new installs, "
         "when the source lookup lists have changed on disk, or when "

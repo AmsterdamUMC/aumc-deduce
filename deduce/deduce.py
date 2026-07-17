@@ -5,7 +5,6 @@ import itertools
 import json
 import logging
 import os
-import sys
 import warnings
 from pathlib import Path
 from typing import Any, Optional, Union
@@ -27,7 +26,6 @@ from deduce.lookup_structs import get_lookup_structs, load_raw_itemsets
 from deduce.redactor import DeduceRedactor
 from deduce.tokenizer import DeduceTokenizer
 
-
 __version__ = importlib.metadata.version(__package__ or __name__)
 
 
@@ -35,8 +33,7 @@ _BASE_PATH = Path(os.path.dirname(__file__)).parent
 _LOOKUP_LIST_PATH = _BASE_PATH / "deduce" / "data" / "lookup"
 _BASE_CONFIG_FILE = _BASE_PATH / "base_config.json"
 
-
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logger = logging.getLogger()
 warnings.simplefilter(action="default")
 
 
@@ -72,12 +69,11 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
         lookup_data_path: Union[str, Path] = _LOOKUP_LIST_PATH,
         build_lookup_structs: bool = False,
     ) -> None:
-
-        logging.info("Deduce version: " + __version__)
+        logger = logging.getLogger('dedu')
+        logger.info("Deduce version: " + __version__)
         global all_lists
 
         super().__init__()
-
         if config_file is not None:
 
             warnings.warn(
@@ -97,7 +93,7 @@ class Deduce(dd.DocDeid):  # pylint: disable=R0903
             self.lookup_data_path = config_file_path.joinpath(Path(self.config["lookup_table_path"]))
         else:
             self.lookup_data_path = Path(self._initialize_lookup_data_path(lookup_data_path))
-        logging.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
+        logger.info("Loading lookup data structures from: '" + str(self.lookup_data_path.absolute()) + "'.")
         self.tokenizers = {"default": self._initialize_tokenizer(self.lookup_data_path)}
 
         if "all_lists" in self.config.keys():
