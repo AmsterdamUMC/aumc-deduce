@@ -51,6 +51,8 @@
 23	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr.: 1.234.567 With some text after	[PATIENT_NUMBER-1] With some text after
 24	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	With some text before and patientnummer: 1.234.567. and also after.	With some text before and [PATIENT_NUMBER-1]. and also after.
 # Test for dates annotated with hyphens followed by a number which together pass the 11-proof
-25	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18-01-2022\t0	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18-01-2022\t0.
-26	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18-01-2022A0	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18-01-2022 0.
-27	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18 01 2022A0	Test for a date with hyphens followed by a number which together pass the 11-proof: Immature Granulocyten 18-01-2022 0.
+25	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Immature Granulocyten 18-01-2022\t0	Immature Granulocyten 18-01-2022\t0
+26	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Immature Granulocyten 18-01-2022 0	Immature Granulocyten 18-01-2022 0
+27	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Immature Granulocyten 180120220	Immature Granulocyten [BSN-1]
+28	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Immature Granulocyten 18 01 2022A0	Immature Granulocyten 18 01 2022A0
+29	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	pat_id_rec_2	Dorpstraat	Mokkumerhei	NEDERLAND	BSN: 999997610.	[NUMMERWOORD-1][BSN-1].
