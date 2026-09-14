@@ -81,8 +81,8 @@ class TestValidationFile:
             street = columns[8].split()
             location = columns[9].split()
             country = columns[10].split()
-            identifiable_input = columns[11]
-            expected_output = columns[12]
+            identifiable_input = columns[11].replace('\\t', '\u0009')
+            expected_output = columns[12].replace('\\t', '\u0009')
             
             # The fields used in patient_details must match used for production runs. The used fields for production runs are defined
             # in the worker1 Python script in the aumc-deduce-prod project. The call to the patient_details and the call to the deidentify 
