@@ -36,7 +36,7 @@
 # A couple of test cases for the MRN (Medisch Dossier Nummer). Patient numbers of 8 digits without interpunctions are masked with [ID-N] whereas those with interpunction are masked with [MRN-N]
 12	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 1234568	Patient nummer: [ID-1]
 13	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 12.345.68	[PATIENT_NUMBER-1]
-14	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 12-345-68.	Patient nummer: [MRN-1].
+14	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	1234568	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: 12-345-68.	[PATIENT_NUMBER-1].
 # MRN with an E prefixed
 15	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E7654321	Patient nummer: [MRN-1]
 16	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patient nummer: E76.543.21	Patient nummer: [MRN-1]
@@ -63,3 +63,7 @@
 34	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Echte met puntjes: 180.120.220. Vervolg tekst	Echte met puntjes: [BSN-1]. Vervolg tekst
 35	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Echte met kommas: 180,120,220. Vervolg tekst	Echte met kommas: [BSN-1]. Vervolg tekst
 36	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Echte met spaties: 180 120 220. Vervolg tekst	Echte met spaties: [BSN-1]. Vervolg tekst
+37	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr.  : 1.234.567/mk/fb	[PATIENT_NUMBER-1]/mk/fb
+38	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr.    : 1.234.567                  	[PATIENT_NUMBER-1]                  
+39	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Amsterdam, pat.nr. 1.234.567.	[LOCATIE-1], [PATIENT_NUMBER-1].
+40	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Tekst ervoor: patiënt nummer 1.234.567.	Tekst ervoor: [PATIENT_NUMBER-1].
