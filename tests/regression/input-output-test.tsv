@@ -71,3 +71,5 @@
 42	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Pat #            1.234.456	[PATIENT_NUMBER-1]
 43	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr \r\n1.234.567), voor \r\nOesophagusmano	[PATIENT_NUMBER-1]), voor \r\nOesophagusmano
 44	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr.5.071.198.\r\n\r\nDermato-oncologische 	[PATIENT_NUMBER-1].\r\n\r\nDermato-oncologische 
+45	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat.nr  : 1.234.567           	[PATIENT_NUMBER-1]           
+46	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	PAT.NR. 1.234.456.\n\r\n\r\n\rOp 01.01.01 kon [PA 	[PATIENT_NUMBER-1].\n\r\n\r\n\rOp 01.01.01 kon [PA 
