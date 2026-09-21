@@ -75,3 +75,4 @@
 46	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	PAT.NR. 1.234.456.\n\r\n\r\n\rOp 01.01.01 kon [PA 	[PATIENT_NUMBER-1].\n\r\n\r\n\rOp 01.01.01 kon [PA 
 47	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat. nr.\n\rKinder Willemina Ziekenhuis 1.234.456 	[PATIENT_NUMBER-1] 
 48	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	pat. nr. Slotervaart Ziekenhuis: 1.234.456.	[PATIENT_NUMBER-1].
+49	P	Aa Bb Cc	B	AaaBBB	Partner	Primo	E7654321	Dorpstraat	Mokkumerhei	NEDERLAND	Patiëntnr.: 1.234.456, documentnr. 111166666	[PATIENT_NUMBER-1], documentnr. [ID-1]
