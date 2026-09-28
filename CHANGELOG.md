@@ -5,9 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 4.1.0.rc3
-Updates to the fixes after issues where found in the fixes for **RDMD-97** and **RDMD-98**.
-False positive BSN-annotations for dates matching the 11-proof
+## 4.1.0 (28-09-2026)
+Release of approved version for **RDMD-97** and **RDMD-98**.
+Resolved were:
+- false positive BSN-annotations for dates matching the 11-proof
+- remaining patient numbers when prefixes were followed by a hospital identifier
+- patient numbers variants with separators between digit groups
 
 ## 4.0.2 (24-06-2026)
 Release candidate for the AmsterdamUMC version of DEDUCE. 
